@@ -1,0 +1,25 @@
+	/*
+ * 
+ */
+package concreta.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class AggregationItemSemanticEditPolicy extends concreta.diagram.edit.policies.ConcretaBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public AggregationItemSemanticEditPolicy() {
+				super(concreta.diagram.providers.ConcretaElementTypes.Aggregation_4002);
+	}
+
+			/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+		return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	}
+					
+	}

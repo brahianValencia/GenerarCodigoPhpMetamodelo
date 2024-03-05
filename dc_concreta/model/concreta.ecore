@@ -86,10 +86,45 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Classba"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Classba"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Containment" eSuperTypes="#//Relationshipba"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Relationshipba"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationshipba"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relationshipba"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Containment" eSuperTypes="#//Relationshipba">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="source.decoration" value="filledrhomb"/>
+      <details key="target.decoration" value="none"/>
+      <details key="width" value="2"/>
+      <details key="color" value="0,0,0"/>
+      <details key="style" value="solid"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Relationshipba">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="source.decoration" value="rhomb"/>
+      <details key="target.decoration" value="none"/>
+      <details key="width" value="2"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationshipba">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="width" value="2"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relationshipba">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="source.decoration" value="none"/>
+      <details key="target.decoration" value="closedarrow"/>
+      <details key="width" value="2"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Clasifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributebaC" upperBound="-1"

@@ -1,0 +1,46 @@
+pluginName=Concreta Plugin
+providerName=Sample Plugin Provider, Inc
+
+editorName=Concreta Diagram Editing
+context.description=Concreta Diagram Editing
+context.name=In Concreta Diagram Editor
+newWizardName=Concreta Diagram
+newWizardDesc=Creates Concreta diagram.
+
+initDiagramActionLabel=Initialize concreta_diagram diagram file
+
+
+navigatorContentName=*.concreta_diagram diagram contents
+domainNavigatorContentName=*.concreta model contents
+update.diagram.name=Update Concreta diagram
+update.diagram.description=Perform Concreta diagram update
+
+
+# Property Sheet
+tab.appearance=Appearance
+tab.diagram=Rulers & Grid
+tab.domain=Core
+
+# Preferences
+prefpage.dc_concreta.diagram.general=Concreta Diagram
+prefpage.dc_concreta.diagram.appearance=Appearance
+prefpage.dc_concreta.diagram.connections=Connections
+prefpage.dc_concreta.diagram.printing=Printing
+prefpage.dc_concreta.diagram.rulersAndGrid=Rulers And Grid
+
+
+# Providers
+metatype.name.DiagramClassba_1000=Undefined
+metatype.name.Classba_2001=Classba
+metatype.name.Attributeba_3001=Attributeba
+metatype.name.Methodba_3002=Methodba
+
+# Commands and menu actions
+cmdcategory.name=Concreta Editor Commands
+cmdcategory.desc=Concreta Editor Commands
+
+metatype.name.Interface_2002=Interface
+metatype.name.Abstract_2003=Abstract
+metatype.name.Packageba_2004=Packageba
+metatype.name.Containment_4001=Containment
+metatype.name.Aggregation_4002=Aggregation

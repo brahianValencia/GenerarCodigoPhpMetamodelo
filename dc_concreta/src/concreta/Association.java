@@ -10,7 +10,7 @@ package concreta;
  *
  *
  * @see concreta.ConcretaPackage#getAssociation()
- * @model
+ * @model annotation="gmf.link source='source' target='target' width='2' color='0,0,0'"
  * @generated
  */
 public interface Association extends Relationshipba {

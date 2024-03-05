@@ -35,6 +35,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
+import concreta.Aggregation;
+import concreta.Association;
+import concreta.Classba;
+import concreta.Containment;
+import concreta.DiagramClassba;
+import concreta.Generalization;
+import concreta.diagram.part.ConcretaDiagramEditorPlugin;
 import concreta.diagram.part.ConcretaVisualIDRegistry;
 import concreta.diagram.providers.ConcretaElementTypes;
 
@@ -279,6 +286,90 @@ public class ConcretaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = ConcretaDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			ConcretaDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	* @generated
+	*/
+	public static class LinkConstraints {
+
+		/**
+		* @generated
+		*/
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateContainment_4001(DiagramClassba container, Classba source, Classba target) {
+			return canExistContainment_4001(container, null, source, target);
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canCreateAggregation_4002(DiagramClassba container, Classba source, Classba target) {
+			return canExistAggregation_4002(container, null, source, target);
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canCreateAssociation_4003(DiagramClassba container, Classba source, Classba target) {
+			return canExistAssociation_4003(container, null, source, target);
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canCreateGeneralization_4004(DiagramClassba container, Classba source, Classba target) {
+			return canExistGeneralization_4004(container, null, source, target);
+		}
+
+		/**
+					* @generated
+					*/
+		public boolean canExistContainment_4001(DiagramClassba container, Containment linkInstance, Classba source,
+				Classba target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistAggregation_4002(DiagramClassba container, Aggregation linkInstance, Classba source,
+				Classba target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistAssociation_4003(DiagramClassba container, Association linkInstance, Classba source,
+				Classba target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistGeneralization_4004(DiagramClassba container, Generalization linkInstance,
+				Classba source, Classba target) {
+			return true;
 		}
 	}
 

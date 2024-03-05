@@ -10,7 +10,7 @@ package concreta;
  *
  *
  * @see concreta.ConcretaPackage#getAggregation()
- * @model
+ * @model annotation="gmf.link source='source' target='target' source.decoration='rhomb' target.decoration='none' width='2' color='0,0,0'"
  * @generated
  */
 public interface Aggregation extends Relationshipba {

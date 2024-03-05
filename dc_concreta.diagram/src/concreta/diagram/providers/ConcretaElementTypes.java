@@ -19,9 +19,13 @@ import org.eclipse.swt.graphics.Image;
 
 import concreta.ConcretaPackage;
 import concreta.diagram.edit.parts.AbstractEditPart;
+import concreta.diagram.edit.parts.AggregationEditPart;
+import concreta.diagram.edit.parts.AssociationEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
+import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
+import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
@@ -89,6 +93,26 @@ public class ConcretaElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType Containment_4001 = getElementType("dc_concreta.diagram.Containment_4001"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType Aggregation_4002 = getElementType("dc_concreta.diagram.Aggregation_4002"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType Association_4003 = getElementType("dc_concreta.diagram.Association_4003"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType Generalization_4004 = getElementType("dc_concreta.diagram.Generalization_4004"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -137,6 +161,14 @@ public class ConcretaElementTypes {
 			elements.put(Attributeba_3001, ConcretaPackage.eINSTANCE.getAttributeba());
 
 			elements.put(Methodba_3002, ConcretaPackage.eINSTANCE.getMethodba());
+
+			elements.put(Containment_4001, ConcretaPackage.eINSTANCE.getContainment());
+
+			elements.put(Aggregation_4002, ConcretaPackage.eINSTANCE.getAggregation());
+
+			elements.put(Association_4003, ConcretaPackage.eINSTANCE.getAssociation());
+
+			elements.put(Generalization_4004, ConcretaPackage.eINSTANCE.getGeneralization());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -161,6 +193,10 @@ public class ConcretaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Packageba_2004);
 			KNOWN_ELEMENT_TYPES.add(Attributeba_3001);
 			KNOWN_ELEMENT_TYPES.add(Methodba_3002);
+			KNOWN_ELEMENT_TYPES.add(Containment_4001);
+			KNOWN_ELEMENT_TYPES.add(Aggregation_4002);
+			KNOWN_ELEMENT_TYPES.add(Association_4003);
+			KNOWN_ELEMENT_TYPES.add(Generalization_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -184,6 +220,14 @@ public class ConcretaElementTypes {
 			return Attributeba_3001;
 		case MethodbaEditPart.VISUAL_ID:
 			return Methodba_3002;
+		case ContainmentEditPart.VISUAL_ID:
+			return Containment_4001;
+		case AggregationEditPart.VISUAL_ID:
+			return Aggregation_4002;
+		case AssociationEditPart.VISUAL_ID:
+			return Association_4003;
+		case GeneralizationEditPart.VISUAL_ID:
+			return Generalization_4004;
 		}
 		return null;
 	}

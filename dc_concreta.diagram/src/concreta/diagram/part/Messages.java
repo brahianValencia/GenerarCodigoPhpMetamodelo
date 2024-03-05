@@ -251,6 +251,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String Connections2Group_title;
+
+	/**
+	* @generated
+	*/
 	public static String Abstract1CreationTool_title;
 
 	/**
@@ -311,6 +316,46 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String Aggregation1CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Aggregation1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Association2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Association2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Containment3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Containment3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Generalization4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Generalization4CreationTool_desc;
+
+	/**
+	* @generated
+	*/
 	public static String InterfaceInterfaceLstAttributesbaCompartmentEditPart_title;
 
 	/**
@@ -342,6 +387,81 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String CommandName_OpenDiagram;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_DiagramClassba_1000_links;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classba_2001_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Classba_2001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Interface_2002_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Interface_2002_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Abstract_2003_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Abstract_2003_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Containment_4001_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Containment_4001_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Aggregation_4002_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Aggregation_4002_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Association_4003_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Association_4003_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Generalization_4004_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Generalization_4004_source;
 
 	/**
 	* @generated

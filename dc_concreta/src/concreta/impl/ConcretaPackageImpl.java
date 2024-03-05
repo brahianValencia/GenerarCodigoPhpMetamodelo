@@ -971,6 +971,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		createGmf_1Annotations();
 		// gmf.compartment
 		createGmf_2Annotations();
+		// gmf.link
+		createGmf_3Annotations();
 	}
 
 	/**
@@ -1070,6 +1072,59 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		   new String[] {
 			 "layout", "list",
 			 "collapsible", "true"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.link";	
+		addAnnotation
+		  (containmentEClass, 
+		   source, 
+		   new String[] {
+			 "source", "source",
+			 "target", "target",
+			 "source.decoration", "filledrhomb",
+			 "target.decoration", "none",
+			 "width", "2",
+			 "color", "0,0,0",
+			 "style", "solid"
+		   });	
+		addAnnotation
+		  (aggregationEClass, 
+		   source, 
+		   new String[] {
+			 "source", "source",
+			 "target", "target",
+			 "source.decoration", "rhomb",
+			 "target.decoration", "none",
+			 "width", "2",
+			 "color", "0,0,0"
+		   });	
+		addAnnotation
+		  (associationEClass, 
+		   source, 
+		   new String[] {
+			 "source", "source",
+			 "target", "target",
+			 "width", "2",
+			 "color", "0,0,0"
+		   });	
+		addAnnotation
+		  (generalizationEClass, 
+		   source, 
+		   new String[] {
+			 "source", "source",
+			 "target", "target",
+			 "source.decoration", "none",
+			 "target.decoration", "closedarrow",
+			 "width", "2",
+			 "color", "0,0,0"
 		   });
 	}
 

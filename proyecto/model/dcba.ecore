@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dcba" nsURI="http:///dcba.ecore" nsPrefix="dcba">
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EBooleanObject" instanceClassName="java.lang.Boolean"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDoubleObject" instanceClassName="java.lang.Double"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EIntegerObject" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EList" instanceClassName="org.eclipse.emf.common.util.EList"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EChar" instanceClassName="char"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ArrayList" instanceClassName="java.util.ArrayList"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelFactory">
+    <eOperations name="cargar" eType="#//ModelFactory">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = null;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;try {&#xA;resource.load(java.util.Collections.EMPTY_MAP);&#xA;modelFactory = (ModelFactory) resource.getContents().get(0);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return modelFactory;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="salvar">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="ModelFactory modelFactory = this;&#xA;org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI(&quot;platform:/resource/&quot;+ruta);&#xA;org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();&#xA;org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);&#xA;resource.getContents().add(modelFactory);&#xA;try {&#xA;resource.save(java.util.Collections.EMPTY_MAP);&#xA;} catch (java.io.IOException e) {&#xA;// TO-DO Auto-generated catch block&#xA;e.printStackTrace();&#xA;}&#xA;&#xA;return;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="ruta" eType="#//String"/>
+    </eOperations>
+    <eOperations name="implementarModelo">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="//TODO implementarModelo&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+        containment="true" eOpposite="#//domain/Domain/theModelFactory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+        containment="true" eOpposite="#//ui/UI/theModelFactory"/>
+  </eClassifiers>
+  <eSubpackages name="domain" nsURI="http:///dcba/domain.ecore" nsPrefix="dcba.domain">
+    <eClassifiers xsi:type="ecore:EClass" name="Domain">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassifierba" upperBound="-1"
+          eType="#//domain/abstracts/Classifierba" containment="true" eOpposite="#//domain/abstracts/Classifierba/ownedByDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagramba" upperBound="-1"
+          eType="#//domain/concreta/ClassDiagramba" eOpposite="#//domain/concreta/ClassDiagramba/lstDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lstProjectba" upperBound="-1"
+          eType="#//domain/concreta/Projectba" containment="true" eOpposite="#//domain/concreta/Projectba/ownedByDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" eType="#//ui/UI"
+          eOpposite="#//ui/UI/theDomain"/>
+    </eClassifiers>
+    <eSubpackages name="abstracts" nsURI="http:///dcba/domain/abstracts.ecore" nsPrefix="dcba.domain.abstracts">
+      <eClassifiers xsi:type="ecore:EClass" name="Attributeba">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="theClassifierba" eType="#//domain/abstracts/Classifierba"
+            eOpposite="#//domain/abstracts/Classifierba/lstAttributebaC"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassba" eType="#//domain/abstracts/Classba"
+            eOpposite="#//domain/abstracts/Classba/lstAttributeba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Classba" eSuperTypes="#//domain/abstracts/Classifierba">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPersistent" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributeba" upperBound="-1"
+            eType="#//domain/abstracts/Attributeba" containment="true" eOpposite="#//domain/abstracts/Attributeba/ownedByClassba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackageba" eType="#//domain/abstracts/Packageba"
+            eOpposite="#//domain/abstracts/Packageba/lstClassba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethodba" upperBound="-1"
+            eType="#//domain/abstracts/Methodba" containment="true" eOpposite="#//domain/abstracts/Methodba/ownedByClassba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipSourceba"
+            upperBound="-1" eType="#//domain/abstracts/Relationshipba" containment="true"
+            eOpposite="#//domain/abstracts/Relationshipba/source"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipTargetba"
+            upperBound="-1" eType="#//domain/abstracts/Relationshipba" eOpposite="#//domain/abstracts/Relationshipba/target"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Classifierba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributebaC" upperBound="-1"
+            eType="#//domain/abstracts/Attributeba" eOpposite="#//domain/abstracts/Attributeba/theClassifierba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
+            eOpposite="#//domain/Domain/lstClassifierba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstParameterdba" upperBound="-1"
+            eType="#//domain/abstracts/Parameterdba" eOpposite="#//domain/abstracts/Parameterdba/theClassifierba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Methodba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassba" eType="#//domain/abstracts/Classba"
+            eOpposite="#//domain/abstracts/Classba/lstMethodba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstParameterdba" upperBound="-1"
+            eType="#//domain/abstracts/Parameterdba" containment="true" eOpposite="#//domain/abstracts/Parameterdba/ownedByMethodba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Packageba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassba" upperBound="-1"
+            eType="#//domain/abstracts/Classba" containment="true" eOpposite="#//domain/abstracts/Classba/lstPackageba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByPackageba" eType="#//domain/abstracts/Packageba"
+            eOpposite="#//domain/abstracts/Packageba/lstPackageba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackageba" upperBound="-1"
+            eType="#//domain/abstracts/Packageba" containment="true" eOpposite="#//domain/abstracts/Packageba/ownedByPackageba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByProjectba" eType="#//domain/abstracts/Projectba"
+            eOpposite="#//domain/abstracts/Projectba/lstPackageba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Parameterdba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMethodba" eType="#//domain/abstracts/Methodba"
+            eOpposite="#//domain/abstracts/Methodba/lstParameterdba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="theClassifierba" eType="#//domain/abstracts/Classifierba"
+            eOpposite="#//domain/abstracts/Classifierba/lstParameterdba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataTypeba" eSuperTypes="#//domain/abstracts/Classifierba"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Projectba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackageba" upperBound="-1"
+            eType="#//domain/abstracts/Packageba" containment="true" eOpposite="#//domain/abstracts/Packageba/ownedByProjectba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="#//String"
+            defaultValueLiteral=" "/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Relationshipba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//domain/abstracts/Classba"
+            eOpposite="#//domain/abstracts/Classba/lstRelationshipSourceba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAggregation" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAssociation" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCompositon" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isGeneralization" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicitySource"
+            eType="#//String" defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicityTarget"
+            eType="#//String"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolSource" eType="#//String"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolTarget" eType="#//String"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//domain/abstracts/Classba"
+            eOpposite="#//domain/abstracts/Classba/lstRelationshipTargetba"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="concreta" nsURI="http:///dcba/domain/concreta.ecore" nsPrefix="dcba.domain.concreta">
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeConcreteba">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassConcreteba"
+            eType="#//domain/concreta/ClassConcreteba" eOpposite="#//domain/concreta/ClassConcreteba/lstAttributeConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByMethodConcreteba"
+            eType="#//domain/concreta/MethodConcreteba" eOpposite="#//domain/concreta/MethodConcreteba/lstAttributeConcreteba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ClassConcreteba">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializable" eType="#//EBooleanObject"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributeConcreteba"
+            upperBound="-1" eType="#//domain/concreta/AttributeConcreteba" containment="true"
+            eOpposite="#//domain/concreta/AttributeConcreteba/ownedByClassConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethodConcreteba"
+            upperBound="-1" eType="#//domain/concreta/MethodConcreteba" containment="true"
+            eOpposite="#//domain/concreta/MethodConcreteba/ownedByClassConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassDiagramba"
+            eType="#//domain/concreta/ClassDiagramba" eOpposite="#//domain/concreta/ClassDiagramba/lstClassConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstIn" upperBound="-1"
+            eType="#//domain/concreta/RelationClass" eOpposite="#//domain/concreta/RelationClass/target"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstOut" upperBound="-1"
+            eType="#//domain/concreta/RelationClass" eOpposite="#//domain/concreta/RelationClass/source"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ClassDiagramba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassConcreteba"
+            upperBound="-1" eType="#//domain/concreta/ClassConcreteba" containment="true"
+            eOpposite="#//domain/concreta/ClassConcreteba/ownedByClassDiagramba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstDomain" upperBound="-1"
+            eType="#//domain/Domain" eOpposite="#//domain/Domain/lstClassDiagramba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationClass" upperBound="-1"
+            eType="#//domain/concreta/RelationClass" containment="true" eOpposite="#//domain/concreta/RelationClass/ownedByClassDiagramba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackageConcreteba"
+            upperBound="-1" eType="#//domain/concreta/PackageConcreteba" containment="true"
+            eOpposite="#//domain/concreta/PackageConcreteba/ownedByClassDiagramba"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByProjectba" eType="#//domain/concreta/Projectba"
+            eOpposite="#//domain/concreta/Projectba/lstClassDiagramba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Containment" eSuperTypes="#//domain/concreta/RelationClass"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Generalizationba" eSuperTypes="#//domain/concreta/RelationClass"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Implements" eSuperTypes="#//domain/concreta/RelationClass"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MethodConcreteba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassConcreteba"
+            eType="#//domain/concreta/ClassConcreteba" eOpposite="#//domain/concreta/ClassConcreteba/lstMethodConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="semantic" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributeConcreteba"
+            upperBound="-1" eType="#//domain/concreta/AttributeConcreteba" containment="true"
+            eOpposite="#//domain/concreta/AttributeConcreteba/ownedByMethodConcreteba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PackageConcreteba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassDiagramba"
+            eType="#//domain/concreta/ClassDiagramba" eOpposite="#//domain/concreta/ClassDiagramba/lstPackageConcreteba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="#//String"
+            defaultValueLiteral=" "/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Projectba">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lstClassDiagramba"
+            upperBound="-1" eType="#//domain/concreta/ClassDiagramba" containment="true"
+            eOpposite="#//domain/concreta/ClassDiagramba/ownedByProjectba"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByDomain" eType="#//domain/Domain"
+            eOpposite="#//domain/Domain/lstProjectba"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RelationClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ownedByClassDiagramba"
+            eType="#//domain/concreta/ClassDiagramba" eOpposite="#//domain/concreta/ClassDiagramba/lstRelationClass"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mulB" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multA" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolA" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolB" eType="#//String"
+            defaultValueLiteral=" "/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//domain/concreta/ClassConcreteba"
+            eOpposite="#//domain/concreta/ClassConcreteba/lstIn"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//domain/concreta/ClassConcreteba"
+            eOpposite="#//domain/concreta/ClassConcreteba/lstOut"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="ui" nsURI="http:///dcba/ui.ecore" nsPrefix="dcba.ui">
+    <eClassifiers xsi:type="ecore:EClass" name="UI">
+      <eOperations name="implementarModelo">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="//TODO implementarModelo&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theModelFactory" eType="#//ModelFactory"
+          eOpposite="#//ModelFactory/theUI"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+          eOpposite="#//domain/Domain/theUI"/>
+    </eClassifiers>
+    <eSubpackages name="viewmodels" nsURI="http:///dcba/ui/viewmodels.ecore" nsPrefix="dcba.ui.viewmodels"/>
+  </eSubpackages>
+</ecore:EPackage>

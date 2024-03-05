@@ -20,14 +20,22 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import concreta.Aggregation;
+import concreta.Association;
+import concreta.Containment;
 import concreta.DiagramClassba;
+import concreta.Generalization;
 import concreta.diagram.edit.parts.AbstractEditPart;
 import concreta.diagram.edit.parts.AbstractNameEditPart;
+import concreta.diagram.edit.parts.AggregationEditPart;
+import concreta.diagram.edit.parts.AssociationEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ClassbaNameEditPart;
+import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
+import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.InterfaceNameEditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
@@ -115,6 +123,14 @@ public class ConcretaNavigatorLabelProvider extends LabelProvider
 			return getImage("Navigator?Node?http://concreta?Attributeba", ConcretaElementTypes.Attributeba_3001); //$NON-NLS-1$
 		case MethodbaEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://concreta?Methodba", ConcretaElementTypes.Methodba_3002); //$NON-NLS-1$
+		case ContainmentEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://concreta?Containment", ConcretaElementTypes.Containment_4001); //$NON-NLS-1$
+		case AggregationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://concreta?Aggregation", ConcretaElementTypes.Aggregation_4002); //$NON-NLS-1$
+		case AssociationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://concreta?Association", ConcretaElementTypes.Association_4003); //$NON-NLS-1$
+		case GeneralizationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://concreta?Generalization", ConcretaElementTypes.Generalization_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -187,6 +203,14 @@ public class ConcretaNavigatorLabelProvider extends LabelProvider
 			return getAttributeba_3001Text(view);
 		case MethodbaEditPart.VISUAL_ID:
 			return getMethodba_3002Text(view);
+		case ContainmentEditPart.VISUAL_ID:
+			return getContainment_4001Text(view);
+		case AggregationEditPart.VISUAL_ID:
+			return getAggregation_4002Text(view);
+		case AssociationEditPart.VISUAL_ID:
+			return getAssociation_4003Text(view);
+		case GeneralizationEditPart.VISUAL_ID:
+			return getGeneralization_4004Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -296,6 +320,58 @@ public class ConcretaNavigatorLabelProvider extends LabelProvider
 					ParserOptions.NONE.intValue());
 		} else {
 			ConcretaDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getContainment_4001Text(View view) {
+		Containment domainModelElement = (Containment) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getMultS();
+		} else {
+			ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAggregation_4002Text(View view) {
+		Aggregation domainModelElement = (Aggregation) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getMultS();
+		} else {
+			ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAssociation_4003Text(View view) {
+		Association domainModelElement = (Association) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getMultS();
+		} else {
+			ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getGeneralization_4004Text(View view) {
+		Generalization domainModelElement = (Generalization) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getMultS();
+		} else {
+			ConcretaDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 4004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

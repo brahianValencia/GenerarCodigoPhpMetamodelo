@@ -10,7 +10,7 @@ package concreta;
  *
  *
  * @see concreta.ConcretaPackage#getGeneralization()
- * @model
+ * @model annotation="gmf.link source='source' target='target' source.decoration='none' target.decoration='closedarrow' width='2' color='0,0,0'"
  * @generated
  */
 public interface Generalization extends Relationshipba {

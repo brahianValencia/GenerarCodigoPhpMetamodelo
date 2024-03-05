@@ -10,7 +10,7 @@ package concreta;
  *
  *
  * @see concreta.ConcretaPackage#getContainment()
- * @model
+ * @model annotation="gmf.link source='source' target='target' source.decoration='filledrhomb' target.decoration='none' width='2' color='0,0,0' style='solid'"
  * @generated
  */
 public interface Containment extends Relationshipba {

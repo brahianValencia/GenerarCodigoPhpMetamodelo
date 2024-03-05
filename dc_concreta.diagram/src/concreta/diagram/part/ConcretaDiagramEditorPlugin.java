@@ -22,6 +22,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import concreta.diagram.edit.policies.ConcretaBaseItemSemanticEditPolicy;
 import concreta.diagram.providers.ElementInitializers;
 import concreta.provider.ConcretaItemProviderAdapterFactory;
 
@@ -63,6 +64,11 @@ public class ConcretaDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
+	private ConcretaBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	* @generated
+	*/
 	private ElementInitializers initializers;
 
 	/**
@@ -88,6 +94,7 @@ public class ConcretaDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
 		initializers = null;
 		instance = null;
 		super.stop(context);
@@ -201,6 +208,20 @@ public class ConcretaDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new ConcretaDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	* @generated
+	*/
+	public ConcretaBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	* @generated
+	*/
+	public void setLinkConstraints(ConcretaBaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
 	}
 
 	/**

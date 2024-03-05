@@ -81,6 +81,19 @@ public class ConcretaEditPartFactory implements EditPartFactory {
 
 			case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
 				return new ClassbaClassbaLstMethodbaCompartmentEditPart(view);
+
+			case ContainmentEditPart.VISUAL_ID:
+				return new ContainmentEditPart(view);
+
+			case AggregationEditPart.VISUAL_ID:
+				return new AggregationEditPart(view);
+
+			case AssociationEditPart.VISUAL_ID:
+				return new AssociationEditPart(view);
+
+			case GeneralizationEditPart.VISUAL_ID:
+				return new GeneralizationEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

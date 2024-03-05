@@ -16,13 +16,17 @@ import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEdi
 import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
 import concreta.diagram.edit.parts.AbstractEditPart;
 import concreta.diagram.edit.parts.AbstractNameEditPart;
+import concreta.diagram.edit.parts.AggregationEditPart;
+import concreta.diagram.edit.parts.AssociationEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ClassbaNameEditPart;
+import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
+import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
@@ -302,6 +306,18 @@ public class ConcretaVisualIDRegistry {
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
+		}
+		if (ConcretaPackage.eINSTANCE.getContainment().isSuperTypeOf(domainElement.eClass())) {
+			return ContainmentEditPart.VISUAL_ID;
+		}
+		if (ConcretaPackage.eINSTANCE.getAggregation().isSuperTypeOf(domainElement.eClass())) {
+			return AggregationEditPart.VISUAL_ID;
+		}
+		if (ConcretaPackage.eINSTANCE.getAssociation().isSuperTypeOf(domainElement.eClass())) {
+			return AssociationEditPart.VISUAL_ID;
+		}
+		if (ConcretaPackage.eINSTANCE.getGeneralization().isSuperTypeOf(domainElement.eClass())) {
+			return GeneralizationEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
