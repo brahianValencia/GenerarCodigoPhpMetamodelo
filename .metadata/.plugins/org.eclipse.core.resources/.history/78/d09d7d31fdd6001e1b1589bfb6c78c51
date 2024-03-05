@@ -1,0 +1,340 @@
+/**
+ */
+package abstracta.impl;
+
+import abstracta.AbstractaPackage;
+import abstracta.Attributeba;
+import abstracta.Clasifier;
+import abstracta.Classba;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Attributeba</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link abstracta.impl.AttributebaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstracta.impl.AttributebaImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link abstracta.impl.AttributebaImpl#getOwnedByClassba <em>Owned By Classba</em>}</li>
+ *   <li>{@link abstracta.impl.AttributebaImpl#getTheClasifierba <em>The Clasifierba</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class AttributebaImpl extends EObjectImpl implements Attributeba {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEFAULT_VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOwnedByClassba() <em>Owned By Classba</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedByClassba()
+	 * @generated
+	 * @ordered
+	 */
+	protected Classba ownedByClassba;
+
+	/**
+	 * The cached value of the '{@link #getTheClasifierba() <em>The Clasifierba</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTheClasifierba()
+	 * @generated
+	 * @ordered
+	 */
+	protected Clasifier theClasifierba;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributebaImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return AbstractaPackage.Literals.ATTRIBUTEBA;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.ATTRIBUTEBA__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDefaultValue() {
+		return defaultValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultValue(String newDefaultValue) {
+		String oldDefaultValue = defaultValue;
+		defaultValue = newDefaultValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.ATTRIBUTEBA__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Classba getOwnedByClassba() {
+		if (ownedByClassba != null && ownedByClassba.eIsProxy()) {
+			InternalEObject oldOwnedByClassba = (InternalEObject)ownedByClassba;
+			ownedByClassba = (Classba)eResolveProxy(oldOwnedByClassba);
+			if (ownedByClassba != oldOwnedByClassba) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA, oldOwnedByClassba, ownedByClassba));
+			}
+		}
+		return ownedByClassba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Classba basicGetOwnedByClassba() {
+		return ownedByClassba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwnedByClassba(Classba newOwnedByClassba) {
+		Classba oldOwnedByClassba = ownedByClassba;
+		ownedByClassba = newOwnedByClassba;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA, oldOwnedByClassba, ownedByClassba));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Clasifier getTheClasifierba() {
+		if (theClasifierba != null && theClasifierba.eIsProxy()) {
+			InternalEObject oldTheClasifierba = (InternalEObject)theClasifierba;
+			theClasifierba = (Clasifier)eResolveProxy(oldTheClasifierba);
+			if (theClasifierba != oldTheClasifierba) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA, oldTheClasifierba, theClasifierba));
+			}
+		}
+		return theClasifierba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Clasifier basicGetTheClasifierba() {
+		return theClasifierba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTheClasifierba(Clasifier newTheClasifierba) {
+		Clasifier oldTheClasifierba = theClasifierba;
+		theClasifierba = newTheClasifierba;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA, oldTheClasifierba, theClasifierba));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case AbstractaPackage.ATTRIBUTEBA__NAME:
+				return getName();
+			case AbstractaPackage.ATTRIBUTEBA__DEFAULT_VALUE:
+				return getDefaultValue();
+			case AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA:
+				if (resolve) return getOwnedByClassba();
+				return basicGetOwnedByClassba();
+			case AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA:
+				if (resolve) return getTheClasifierba();
+				return basicGetTheClasifierba();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case AbstractaPackage.ATTRIBUTEBA__NAME:
+				setName((String)newValue);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__DEFAULT_VALUE:
+				setDefaultValue((String)newValue);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA:
+				setOwnedByClassba((Classba)newValue);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA:
+				setTheClasifierba((Clasifier)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case AbstractaPackage.ATTRIBUTEBA__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__DEFAULT_VALUE:
+				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA:
+				setOwnedByClassba((Classba)null);
+				return;
+			case AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA:
+				setTheClasifierba((Clasifier)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case AbstractaPackage.ATTRIBUTEBA__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractaPackage.ATTRIBUTEBA__DEFAULT_VALUE:
+				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case AbstractaPackage.ATTRIBUTEBA__OWNED_BY_CLASSBA:
+				return ownedByClassba != null;
+			case AbstractaPackage.ATTRIBUTEBA__THE_CLASIFIERBA:
+				return theClasifierba != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", defaultValue: ");
+		result.append(defaultValue);
+		result.append(')');
+		return result.toString();
+	}
+
+} //AttributebaImpl

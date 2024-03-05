@@ -1,0 +1,185 @@
+/**
+ */
+package abstracta;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Relationshipba</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link abstracta.Relationshipba#getIsAgregation <em>Is Agregation</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getIsComposition <em>Is Composition</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getIsGeneralization <em>Is Generalization</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getIsAssociation <em>Is Association</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getSource <em>Source</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getTarget <em>Target</em>}</li>
+ * </ul>
+ *
+ * @see abstracta.AbstractaPackage#getRelationshipba()
+ * @model
+ * @generated
+ */
+public interface Relationshipba extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Is Agregation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Agregation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Agregation</em>' attribute.
+	 * @see #setIsAgregation(Boolean)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_IsAgregation()
+	 * @model
+	 * @generated
+	 */
+	Boolean getIsAgregation();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getIsAgregation <em>Is Agregation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Agregation</em>' attribute.
+	 * @see #getIsAgregation()
+	 * @generated
+	 */
+	void setIsAgregation(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Composition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Composition</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Composition</em>' attribute.
+	 * @see #setIsComposition(Boolean)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_IsComposition()
+	 * @model
+	 * @generated
+	 */
+	Boolean getIsComposition();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getIsComposition <em>Is Composition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Composition</em>' attribute.
+	 * @see #getIsComposition()
+	 * @generated
+	 */
+	void setIsComposition(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Generalization</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Generalization</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Generalization</em>' attribute.
+	 * @see #setIsGeneralization(Boolean)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_IsGeneralization()
+	 * @model
+	 * @generated
+	 */
+	Boolean getIsGeneralization();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getIsGeneralization <em>Is Generalization</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Generalization</em>' attribute.
+	 * @see #getIsGeneralization()
+	 * @generated
+	 */
+	void setIsGeneralization(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Association</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Association</em>' attribute.
+	 * @see #setIsAssociation(Boolean)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_IsAssociation()
+	 * @model
+	 * @generated
+	 */
+	Boolean getIsAssociation();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getIsAssociation <em>Is Association</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Association</em>' attribute.
+	 * @see #getIsAssociation()
+	 * @generated
+	 */
+	void setIsAssociation(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(Classba)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_Source()
+	 * @model
+	 * @generated
+	 */
+	Classba getSource();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getSource <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(Classba value);
+
+	/**
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(Classba)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_Target()
+	 * @model
+	 * @generated
+	 */
+	Classba getTarget();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
+	void setTarget(Classba value);
+
+} // Relationshipba

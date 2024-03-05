@@ -1,0 +1,17 @@
+/**
+ */
+package concreta;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Interface</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see concreta.ConcretaPackage#getInterface()
+ * @model annotation="gmf.node label='name'"
+ * @generated
+ */
+public interface Interface extends Classba {
+} // Interface

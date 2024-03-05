@@ -1,0 +1,96 @@
+/**
+ */
+package abstracta;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Methodba</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link abstracta.Methodba#getName <em>Name</em>}</li>
+ *   <li>{@link abstracta.Methodba#getOwnedByClassba <em>Owned By Classba</em>}</li>
+ *   <li>{@link abstracta.Methodba#getLstParametersba <em>Lst Parametersba</em>}</li>
+ * </ul>
+ *
+ * @see abstracta.AbstractaPackage#getMethodba()
+ * @model
+ * @generated
+ */
+public interface Methodba extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see abstracta.AbstractaPackage#getMethodba_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Methodba#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Owned By Classba</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owned By Classba</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owned By Classba</em>' reference.
+	 * @see #setOwnedByClassba(Classba)
+	 * @see abstracta.AbstractaPackage#getMethodba_OwnedByClassba()
+	 * @model
+	 * @generated
+	 */
+	Classba getOwnedByClassba();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Methodba#getOwnedByClassba <em>Owned By Classba</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Owned By Classba</em>' reference.
+	 * @see #getOwnedByClassba()
+	 * @generated
+	 */
+	void setOwnedByClassba(Classba value);
+
+	/**
+	 * Returns the value of the '<em><b>Lst Parametersba</b></em>' containment reference list.
+	 * The list contents are of type {@link abstracta.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Parametersba</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Parametersba</em>' containment reference list.
+	 * @see abstracta.AbstractaPackage#getMethodba_LstParametersba()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getLstParametersba();
+
+} // Methodba

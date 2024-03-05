@@ -1,0 +1,71 @@
+#
+
+pluginName = Abstracta Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_ModelFactoryAbstracta_type = Model Factory Abstracta
+_UI_Projectba_type = Projectba
+_UI_Packageba_type = Packageba
+_UI_Classba_type = Classba
+_UI_Relationshipba_type = Relationshipba
+_UI_Clasifier_type = Clasifier
+_UI_PrimitiveDataType_type = Primitive Data Type
+_UI_Attributeba_type = Attributeba
+_UI_Methodba_type = Methodba
+_UI_Parameter_type = Parameter
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_ModelFactoryAbstracta_lstProjectba_feature = Lst Projectba
+_UI_ModelFactoryAbstracta_lstClasifierba_feature = Lst Clasifierba
+_UI_Projectba_name_feature = Name
+_UI_Projectba_path_feature = Path
+_UI_Projectba_lstPackages_feature = Lst Packages
+_UI_Packageba_name_feature = Name
+_UI_Packageba_path_feature = Path
+_UI_Packageba_listPackages_feature = List Packages
+_UI_Packageba_lstClass_feature = Lst Class
+_UI_Classba_isAbstract_feature = Is Abstract
+_UI_Classba_isInterface_feature = Is Interface
+_UI_Classba_isFinalClass_feature = Is Final Class
+_UI_Classba_lstRelationshipSourceba_feature = Lst Relationship Sourceba
+_UI_Classba_lstAttributesba_feature = Lst Attributesba
+_UI_Classba_lstRelationshipTargetba_feature = Lst Relationship Targetba
+_UI_Classba_lstMethodba_feature = Lst Methodba
+_UI_Relationshipba_isAgregation_feature = Is Agregation
+_UI_Relationshipba_isComposition_feature = Is Composition
+_UI_Relationshipba_isGeneralization_feature = Is Generalization
+_UI_Relationshipba_isAssociation_feature = Is Association
+_UI_Relationshipba_source_feature = Source
+_UI_Relationshipba_target_feature = Target
+_UI_Clasifier_name_feature = Name
+_UI_Clasifier_lstAttributebaC_feature = Lst Attributeba C
+_UI_Attributeba_name_feature = Name
+_UI_Attributeba_defaultValue_feature = Default Value
+_UI_Attributeba_ownedByClassba_feature = Owned By Classba
+_UI_Attributeba_theClasifierba_feature = The Clasifierba
+_UI_Methodba_name_feature = Name
+_UI_Methodba_ownedByClassba_feature = Owned By Classba
+_UI_Methodba_lstParametersba_feature = Lst Parametersba
+_UI_Parameter_name_feature = Name
+_UI_Parameter_ownedByMethodba_feature = Owned By Methodba
+_UI_Parameter_theClasifierba_feature = The Clasifierba
+_UI_Unknown_feature = Unspecified
+
+_UI_Classba_path_feature = Path
+_UI_Relationshipba_multS_feature = Mult S
+_UI_Relationshipba_multT_feature = Mult T
+_UI_Relationshipba_rolS_feature = Rol S
+_UI_Relationshipba_rolTS_feature = Rol TS
+_UI_Attributeba_type_feature = Type
+_UI_Methodba_retorno_feature = Retorno

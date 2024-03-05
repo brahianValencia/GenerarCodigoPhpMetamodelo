@@ -1,0 +1,126 @@
+@namespace(uri="http://concreta",prefix="concreta")
+package concreta;
+
+class ModelFactoryConcreta{
+	val Projectba[*] lstProjectba;
+	val Clasifier[*] lstClasifierba;
+}
+
+class Projectba{
+	attr String name;
+	attr String path;
+	val DiagramClassba[*] lstDiagramClassba;
+}
+
+@gmf.diagram
+class DiagramClassba{
+	attr String name;
+	attr String path;
+	val Classba[*] lstClass;	
+	val Packageba[*] lstPackageba;
+	val Relationshipba[*] lstRelationshipba;	
+}
+
+@gmf.node(label = "name", border.style="solid", figure="rectangle", color="201,209,113")
+class Packageba{
+	attr String name;
+	attr String path;
+	val Packageba[*] listPackages;
+	val Classba[*] lstClass;	
+}
+
+@gmf.node(label = "name", border.style="solid", figure="rectangle", color="201,209,113")
+class Classba extends Clasifier{
+	attr String path;
+	@gmf.compartment(layout="list",collapsible="true")
+	val Attributeba[*] lstAttributesba;
+    @gmf.compartment(layout="list",collapsible="true")
+	val Methodba[*] lstMethodba;
+	attr AccessModifyba accessModify;
+}
+
+@gmf.node(label = "name", border.style="solid", figure="rectangle", color="119,104,71")
+class Interface extends Classba{
+	
+}
+
+@gmf.node(label = "name", border.style="solid", figure="rectangle", color="106,112,230")
+class Abstract extends Classba{
+	
+}
+
+abstract class Relationshipba {
+	attr String multS;
+	attr String multT;
+	attr String rolS;
+	attr String rolTS;
+	ref Classba source;
+	ref Classba target;
+}
+
+@gmf.link(source.decoration ="filledrhomb")
+class Containment extends Relationshipba{
+	
+}
+
+//@gmf.link(target="propias", style="dash", width="2", source.decoration ="rhomb", color="255,0,0")
+class Aggregation extends Relationshipba{
+	
+}
+
+//@gmf.link(target="propias", style="dash", width="2", source.decoration ="rhomb", color="255,0,0")
+class Association extends Relationshipba{
+	
+}
+
+//@gmf.link(target="propias", style="dash", width="2", source.decoration ="rhomb", color="255,0,0")
+class Generalization extends Relationshipba{
+	
+}
+
+class Clasifier{
+	attr String name;
+	ref Attributeba[*] lstAttributebaC;
+}
+
+class PrimitiveDataType extends Clasifier{
+	
+}
+
+@gmf.node(label = "name", border.style="solid", figure="rectangle", color="201,209,113")
+class Attributeba {
+
+	attr String name;
+	attr String defaultValue;
+	ref Classba classba;
+	ref Clasifier type;
+	attr AccessModifyba accessModify;
+	
+}
+
+@gmf.node(label="name")
+class Methodba {
+	
+	attr String name;
+	attr AccessModifyba accessModify;
+	val Clasifier retorno;
+	ref Classba classba;
+	val Parameter[*] lstParametersba;
+}
+
+class Parameter{
+	
+	attr String name;
+	ref Methodba methodba;
+	ref Clasifier type;
+}
+
+enum AccessModifyba{
+	
+	PUBLIC=1;
+	PRIVATE=2;
+	PROTECTED=3;
+	DEFAULT=4;
+}
+
+

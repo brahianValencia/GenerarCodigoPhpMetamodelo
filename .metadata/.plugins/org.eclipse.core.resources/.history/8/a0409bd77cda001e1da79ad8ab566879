@@ -1,0 +1,14 @@
+/*
+ * 
+ */
+package concreta.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class ConcretaModelingAssistantProviderOfPackagebaEditPart extends concreta.diagram.providers.ConcretaModelingAssistantProvider {
+
+					
+	
+
+	}

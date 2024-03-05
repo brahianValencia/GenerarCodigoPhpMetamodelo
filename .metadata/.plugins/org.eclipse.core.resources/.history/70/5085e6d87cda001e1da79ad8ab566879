@@ -1,0 +1,279 @@
+/*
+* 
+*/
+package concreta.diagram.part;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+
+import concreta.Attributeba;
+import concreta.Classba;
+import concreta.DiagramClassba;
+import concreta.Methodba;
+import concreta.diagram.edit.parts.AttributebaEditPart;
+import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.ClassbaEditPart;
+import concreta.diagram.edit.parts.DiagramClassbaEditPart;
+import concreta.diagram.edit.parts.MethodbaEditPart;
+
+/**
+ * @generated
+ */
+public class ConcretaDiagramUpdater {
+
+	/**
+	* @generated
+	*/
+	public static boolean isShortcutOrphaned(View view) {
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getSemanticChildren(View view) {
+		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
+		case DiagramClassbaEditPart.VISUAL_ID:
+			return getDiagramClassba_1000SemanticChildren(view);
+		case ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			return getClassbaClassbaLstAttributesbaCompartment_7001SemanticChildren(view);
+		case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			return getClassbaClassbaLstMethodbaCompartment_7002SemanticChildren(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getDiagramClassba_1000SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.emptyList();
+		}
+		DiagramClassba modelElement = (DiagramClassba) view.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstClass().iterator(); it.hasNext();) {
+			Classba childElement = (Classba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ClassbaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getClassbaClassbaLstAttributesbaCompartment_7001SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Classba modelElement = (Classba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstAttributesba().iterator(); it.hasNext();) {
+			Attributeba childElement = (Attributeba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == AttributebaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getClassbaClassbaLstMethodbaCompartment_7002SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Classba modelElement = (Classba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstMethodba().iterator(); it.hasNext();) {
+			Methodba childElement = (Methodba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == MethodbaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getContainedLinks(View view) {
+		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
+		case DiagramClassbaEditPart.VISUAL_ID:
+			return getDiagramClassba_1000ContainedLinks(view);
+		case ClassbaEditPart.VISUAL_ID:
+			return getClassba_2001ContainedLinks(view);
+		case AttributebaEditPart.VISUAL_ID:
+			return getAttributeba_3001ContainedLinks(view);
+		case MethodbaEditPart.VISUAL_ID:
+			return getMethodba_3002ContainedLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getIncomingLinks(View view) {
+		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
+		case ClassbaEditPart.VISUAL_ID:
+			return getClassba_2001IncomingLinks(view);
+		case AttributebaEditPart.VISUAL_ID:
+			return getAttributeba_3001IncomingLinks(view);
+		case MethodbaEditPart.VISUAL_ID:
+			return getMethodba_3002IncomingLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getOutgoingLinks(View view) {
+		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
+		case ClassbaEditPart.VISUAL_ID:
+			return getClassba_2001OutgoingLinks(view);
+		case AttributebaEditPart.VISUAL_ID:
+			return getAttributeba_3001OutgoingLinks(view);
+		case MethodbaEditPart.VISUAL_ID:
+			return getMethodba_3002OutgoingLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getDiagramClassba_1000ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getClassba_2001ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3001ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getMethodba_3002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getClassba_2001IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3001IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getMethodba_3002IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getClassba_2001OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3001OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getMethodba_3002OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		* @generated
+		*/
+		@Override
+
+		public List<ConcretaNodeDescriptor> getSemanticChildren(View view) {
+			return ConcretaDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		* @generated
+		*/
+		@Override
+
+		public List<ConcretaLinkDescriptor> getContainedLinks(View view) {
+			return ConcretaDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		* @generated
+		*/
+		@Override
+
+		public List<ConcretaLinkDescriptor> getIncomingLinks(View view) {
+			return ConcretaDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		* @generated
+		*/
+		@Override
+
+		public List<ConcretaLinkDescriptor> getOutgoingLinks(View view) {
+			return ConcretaDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
+
+}

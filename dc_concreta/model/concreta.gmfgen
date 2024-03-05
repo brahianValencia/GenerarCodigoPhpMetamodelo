@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" copyrightText="">
+  <diagram visualID="1000" editPartClassName="DiagramClassbaEditPart" itemSemanticEditPolicyClassName="DiagramClassbaItemSemanticEditPolicy" canonicalEditPolicyClassName="DiagramClassbaCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true" liveValidationUIFeedback="true">
+    <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="DiagramClassbaEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <containsShortcutsTo>concreta</containsShortcutsTo>
+    <shortcutsProvidedFor>concreta</shortcutsProvidedFor>
+    <domainDiagramElement href="concreta.genmodel#//concreta/DiagramClassba"/>
+    <childNodes visualID="3001" editPartClassName="AttributebaEditPart" itemSemanticEditPolicyClassName="AttributebaItemSemanticEditPolicy" canonicalEditPolicyClassName="AttributebaCanonicalEditPolicy" graphicalNodeEditPolicyClassName="AttributebaGraphicalNodeEditPolicy" createCommandClassName="AttributebaCreateCommand" containers="//@diagram/@compartments.0 //@diagram/@compartments.2 //@diagram/@compartments.4">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AttributebaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AttributebaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributebaFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAttributebaLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributebaFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAttributebaLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAttributebaLabelFigure.setText(&quot;Attributeba&quot;);&#xA;&#xA;this.add(fFigureAttributebaLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAttributebaLabelFigure() {&#xA;&#x9;&#x9;return fFigureAttributebaLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 201, 209, 113);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Attributeba"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/Classba/lstAttributesba"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/Classba/lstAttributesba"/>
+      </modelFacet>
+      <labels visualID="5001" editPartClassName="AttributebaNameEditPart" itemSemanticEditPolicyClassName="AttributebaNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAttributebaLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Attributeba/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes visualID="3002" editPartClassName="MethodbaEditPart" itemSemanticEditPolicyClassName="MethodbaItemSemanticEditPolicy" canonicalEditPolicyClassName="MethodbaCanonicalEditPolicy" graphicalNodeEditPolicyClassName="MethodbaGraphicalNodeEditPolicy" createCommandClassName="MethodbaCreateCommand" containers="//@diagram/@compartments.1 //@diagram/@compartments.3 //@diagram/@compartments.5">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="MethodbaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="MethodbaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MethodbaFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMethodbaLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MethodbaFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMethodbaLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMethodbaLabelFigure.setText(&quot;Methodba&quot;);&#xA;&#xA;this.add(fFigureMethodbaLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMethodbaLabelFigure() {&#xA;&#x9;&#x9;return fFigureMethodbaLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Methodba"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/Classba/lstMethodba"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/Classba/lstMethodba"/>
+      </modelFacet>
+      <labels visualID="5002" editPartClassName="MethodbaNameEditPart" itemSemanticEditPolicyClassName="MethodbaNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureMethodbaLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Methodba/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes visualID="2002" editPartClassName="InterfaceEditPart" itemSemanticEditPolicyClassName="InterfaceItemSemanticEditPolicy" canonicalEditPolicyClassName="InterfaceCanonicalEditPolicy" compartments="//@diagram/@compartments.0 //@diagram/@compartments.1" graphicalNodeEditPolicyClassName="InterfaceGraphicalNodeEditPolicy" createCommandClassName="InterfaceCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="InterfaceEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="InterfaceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InterfaceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureInterfaceLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fInterfaceLstAttributesbaCompartmentFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fInterfaceLstMethodbaCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InterfaceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureInterfaceLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureInterfaceLabelFigure.setText(&quot;Interface&quot;);&#xA;fFigureInterfaceLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureInterfaceLabelFigure);&#xA;&#xA;&#xA;&#xA;fInterfaceLstAttributesbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fInterfaceLstAttributesbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fInterfaceLstAttributesbaCompartmentFigure);&#xA;&#xA;&#xA;&#xA;fInterfaceLstMethodbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fInterfaceLstMethodbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fInterfaceLstMethodbaCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInterfaceLabelFigure() {&#xA;&#x9;&#x9;return fFigureInterfaceLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getInterfaceLstAttributesbaCompartmentFigure() {&#xA;&#x9;&#x9;return fInterfaceLstAttributesbaCompartmentFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getInterfaceLstMethodbaCompartmentFigure() {&#xA;&#x9;&#x9;return fInterfaceLstMethodbaCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 119, 104, 71);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Interface"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+      </modelFacet>
+      <labels visualID="5004" editPartClassName="InterfaceNameEditPart" itemSemanticEditPolicyClassName="InterfaceNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureInterfaceLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Clasifier/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2003" editPartClassName="AbstractEditPart" itemSemanticEditPolicyClassName="AbstractItemSemanticEditPolicy" canonicalEditPolicyClassName="AbstractCanonicalEditPolicy" compartments="//@diagram/@compartments.2 //@diagram/@compartments.3" graphicalNodeEditPolicyClassName="AbstractGraphicalNodeEditPolicy" createCommandClassName="AbstractCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="AbstractEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AbstractFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AbstractFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAbstractLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fAbstractLstAttributesbaCompartmentFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fAbstractLstMethodbaCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AbstractFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAbstractLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAbstractLabelFigure.setText(&quot;Abstract&quot;);&#xA;fFigureAbstractLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureAbstractLabelFigure);&#xA;&#xA;&#xA;&#xA;fAbstractLstAttributesbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fAbstractLstAttributesbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fAbstractLstAttributesbaCompartmentFigure);&#xA;&#xA;&#xA;&#xA;fAbstractLstMethodbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fAbstractLstMethodbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fAbstractLstMethodbaCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAbstractLabelFigure() {&#xA;&#x9;&#x9;return fFigureAbstractLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getAbstractLstAttributesbaCompartmentFigure() {&#xA;&#x9;&#x9;return fAbstractLstAttributesbaCompartmentFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getAbstractLstMethodbaCompartmentFigure() {&#xA;&#x9;&#x9;return fAbstractLstMethodbaCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 106, 112, 230);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Abstract"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+      </modelFacet>
+      <labels visualID="5005" editPartClassName="AbstractNameEditPart" itemSemanticEditPolicyClassName="AbstractNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureAbstractLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Clasifier/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2001" editPartClassName="ClassbaEditPart" itemSemanticEditPolicyClassName="ClassbaItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassbaCanonicalEditPolicy" compartments="//@diagram/@compartments.4 //@diagram/@compartments.5" graphicalNodeEditPolicyClassName="ClassbaGraphicalNodeEditPolicy" createCommandClassName="ClassbaCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ClassbaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ClassbaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ClassbaFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureClassbaLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fClassbaLstAttributesbaCompartmentFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fClassbaLstMethodbaCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ClassbaFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureClassbaLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureClassbaLabelFigure.setText(&quot;Classba&quot;);&#xA;fFigureClassbaLabelFigure.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(10000)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;&#xA;this.add(fFigureClassbaLabelFigure);&#xA;&#xA;&#xA;&#xA;fClassbaLstAttributesbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fClassbaLstAttributesbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fClassbaLstAttributesbaCompartmentFigure);&#xA;&#xA;&#xA;&#xA;fClassbaLstMethodbaCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fClassbaLstMethodbaCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fClassbaLstMethodbaCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureClassbaLabelFigure() {&#xA;&#x9;&#x9;return fFigureClassbaLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getClassbaLstAttributesbaCompartmentFigure() {&#xA;&#x9;&#x9;return fClassbaLstAttributesbaCompartmentFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getClassbaLstMethodbaCompartmentFigure() {&#xA;&#x9;&#x9;return fClassbaLstMethodbaCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 201, 209, 113);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <behaviour xsi:type="gmfgen:OpenDiagramBehaviour"/>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Classba"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstClass"/>
+      </modelFacet>
+      <labels visualID="5003" editPartClassName="ClassbaNameEditPart" itemSemanticEditPolicyClassName="ClassbaNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureClassbaLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Clasifier/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes visualID="2004" editPartClassName="PackagebaEditPart" itemSemanticEditPolicyClassName="PackagebaItemSemanticEditPolicy" canonicalEditPolicyClassName="PackagebaCanonicalEditPolicy" graphicalNodeEditPolicyClassName="PackagebaGraphicalNodeEditPolicy" createCommandClassName="PackagebaCreateCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="PackagebaEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="PackagebaFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PackagebaFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePackagebaLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PackagebaFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePackagebaLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePackagebaLabelFigure.setText(&quot;Packageba&quot;);&#xA;&#xA;this.add(fFigurePackagebaLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePackagebaLabelFigure() {&#xA;&#x9;&#x9;return fFigurePackagebaLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 201, 209, 113);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="concreta.genmodel#//concreta/Packageba"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstPackageba"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstPackageba"/>
+      </modelFacet>
+      <labels visualID="5006" editPartClassName="PackagebaNameEditPart" itemSemanticEditPolicyClassName="PackagebaNameItemSemanticEditPolicy" elementIcon="true">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigurePackagebaLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Packageba/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <compartments visualID="7003" editPartClassName="InterfaceInterfaceLstAttributesbaCompartmentEditPart" itemSemanticEditPolicyClassName="InterfaceInterfaceLstAttributesbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="InterfaceInterfaceLstAttributesbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="InterfaceLstAttributesbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getInterfaceLstAttributesbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7004" editPartClassName="InterfaceInterfaceLstMethodbaCompartmentEditPart" itemSemanticEditPolicyClassName="InterfaceInterfaceLstMethodbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="InterfaceInterfaceLstMethodbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="InterfaceLstMethodbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getInterfaceLstMethodbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7005" editPartClassName="AbstractAbstractLstAttributesbaCompartmentEditPart" itemSemanticEditPolicyClassName="AbstractAbstractLstAttributesbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="AbstractAbstractLstAttributesbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="AbstractLstAttributesbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.1">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getAbstractLstAttributesbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7006" editPartClassName="AbstractAbstractLstMethodbaCompartmentEditPart" itemSemanticEditPolicyClassName="AbstractAbstractLstMethodbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="AbstractAbstractLstMethodbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="AbstractLstMethodbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.1">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getAbstractLstMethodbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7001" editPartClassName="ClassbaClassbaLstAttributesbaCompartmentEditPart" itemSemanticEditPolicyClassName="ClassbaClassbaLstAttributesbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassbaClassbaLstAttributesbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="ClassbaLstAttributesbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getClassbaLstAttributesbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments visualID="7002" editPartClassName="ClassbaClassbaLstMethodbaCompartmentEditPart" itemSemanticEditPolicyClassName="ClassbaClassbaLstMethodbaCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="ClassbaClassbaLstMethodbaCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1" title="ClassbaLstMethodbaCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getClassbaLstMethodbaCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <palette>
+      <groups title="Objects" collapse="true">
+        <entries xsi:type="gmfgen:ToolEntry" title="Abstract" description="Create new Abstract" genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Attributeba" description="Create new Attributeba" genNodes="//@diagram/@childNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Classba" description="Create new Classba" genNodes="//@diagram/@topLevelNodes.2"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Interface" description="Create new Interface" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Methodba" description="Create new Methodba" genNodes="//@diagram/@childNodes.1"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Packageba" description="Create new Packageba" genNodes="//@diagram/@topLevelNodes.3"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.general" name="Concreta Diagram">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.appearance" name="Appearance" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.connections" name="Connections" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.printing" name="Printing" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin printingEnabled="true">
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+  </plugin>
+  <editor/>
+  <navigator>
+    <childReferences child="//@diagram"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
+    <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.1"/>
+    <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@childNodes.0"/>
+    <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@childNodes.1"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.2"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.3"/>
+  </navigator>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <domainGenModel href="concreta.genmodel#/"/>
+  <labelParsers extensibleViaService="true">
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
+  </labelParsers>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+</gmfgen:GenEditorGenerator>

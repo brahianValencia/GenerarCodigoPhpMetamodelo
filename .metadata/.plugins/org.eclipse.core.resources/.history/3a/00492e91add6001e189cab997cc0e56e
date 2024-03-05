@@ -1,0 +1,49 @@
+@namespace(uri="http://abstracta",prefix="abstracta")
+package abstracta;
+
+class ModelFactoryAbstracta{
+	val Projectba[*] lstProjectba;
+}
+
+class Projectba{
+	attr String name;
+	attr String path;
+	val Packageba[*] lstPackages;
+}
+
+class Packageba{
+	attr String name;
+	attr String path;
+	val Packageba[*] listPackages;
+	val Classba[*] lstClass;	
+}
+
+class Classba extends Clasifier{
+	attr Boolean isAbstract;
+	val Relationshipba[*] lstRelationshipSourceba;
+	ref Relationshipba[*] lstRelationshipTargetba;
+}
+
+class Relationshipba {
+	attr Boolean isAgregation;
+	attr Boolean isComposition;
+	attr Boolean is;
+	ref Classba source;
+	ref Classba target;
+	 
+	
+}
+
+class Clasifier{
+	attr String name;
+}
+
+class PrimitiveDataType extends Clasifier{
+	
+}
+
+class Attributeba {
+
+	attr String name;
+	attr String defaultValue;
+}

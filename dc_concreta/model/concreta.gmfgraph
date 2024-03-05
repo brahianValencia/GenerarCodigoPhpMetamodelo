@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="concreta">
+  <figures name="Default">
+    <descriptors name="PackagebaFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PackagebaFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="201" green="209" blue="113"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PackagebaLabelFigure" text="Packageba"/>
+      </actualFigure>
+      <accessors accessor="getFigurePackagebaLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ClassbaFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ClassbaFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="201" green="209" blue="113"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassbaLabelFigure" text="Classba">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassbaLstAttributesbaCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassbaLstMethodbaCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureClassbaLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getClassbaLstAttributesbaCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getClassbaLstMethodbaCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="InterfaceFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="InterfaceFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="119" green="104" blue="71"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="InterfaceLabelFigure" text="Interface">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="InterfaceLstAttributesbaCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="InterfaceLstMethodbaCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureInterfaceLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getInterfaceLstAttributesbaCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors accessor="getInterfaceLstMethodbaCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="AbstractFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="AbstractFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="106" green="112" blue="230"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AbstractLabelFigure" text="Abstract">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="AbstractLstAttributesbaCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="AbstractLstMethodbaCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureAbstractLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getAbstractLstAttributesbaCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors accessor="getAbstractLstMethodbaCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="AttributebaFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="AttributebaFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="201" green="209" blue="113"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AttributebaLabelFigure" text="Attributeba"/>
+      </actualFigure>
+      <accessors accessor="getFigureAttributebaLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="MethodbaFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MethodbaFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MethodbaLabelFigure" text="Methodba"/>
+      </actualFigure>
+      <accessors accessor="getFigureMethodbaLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Packageba" figure="PackagebaFigure"/>
+  <nodes name="Classba" figure="ClassbaFigure"/>
+  <nodes name="Interface" figure="InterfaceFigure"/>
+  <nodes name="Abstract" figure="AbstractFigure"/>
+  <nodes name="Attributeba" figure="AttributebaFigure"/>
+  <nodes name="Methodba" figure="MethodbaFigure"/>
+  <compartments name="ClassbaLstAttributesbaCompartment" figure="ClassbaFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="ClassbaLstMethodbaCompartment" figure="ClassbaFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <compartments name="InterfaceLstAttributesbaCompartment" figure="InterfaceFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <compartments name="InterfaceLstMethodbaCompartment" figure="InterfaceFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <compartments name="AbstractLstAttributesbaCompartment" figure="AbstractFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments name="AbstractLstMethodbaCompartment" figure="AbstractFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.2"/>
+  <labels name="PackagebaLabel" figure="PackagebaFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ClassbaLabel" figure="ClassbaFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="InterfaceLabel" figure="InterfaceFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="AbstractLabel" figure="AbstractFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="AttributebaLabel" figure="AttributebaFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="MethodbaLabel" figure="MethodbaFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+</gmfgraph:Canvas>

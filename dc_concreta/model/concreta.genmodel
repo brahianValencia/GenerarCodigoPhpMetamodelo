@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/dc_concreta/src" modelPluginID="dc_concreta"
+    modelName="Concreta" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>concreta.emf</foreignModel>
+  <genPackages prefix="Concreta" disposableProviderFactory="true" ecorePackage="concreta.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="concreta.ecore#//AccessModifyba">
+      <genEnumLiterals ecoreEnumLiteral="concreta.ecore#//AccessModifyba/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="concreta.ecore#//AccessModifyba/PRIVATE"/>
+      <genEnumLiterals ecoreEnumLiteral="concreta.ecore#//AccessModifyba/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="concreta.ecore#//AccessModifyba/DEFAULT"/>
+    </genEnums>
+    <genClasses ecoreClass="concreta.ecore#//ModelFactoryConcreta">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//ModelFactoryConcreta/lstProjectba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//ModelFactoryConcreta/lstClasifierba"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Projectba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Projectba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Projectba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Projectba/lstDiagramClassba"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//DiagramClassba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//DiagramClassba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//DiagramClassba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstPackageba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstRelationshipba"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Packageba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Packageba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Packageba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Packageba/listPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Packageba/lstClass"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Classba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Classba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Classba/lstAttributesba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Classba/lstMethodba"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Classba/accessModify"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Interface"/>
+    <genClasses ecoreClass="concreta.ecore#//Abstract"/>
+    <genClasses image="false" ecoreClass="concreta.ecore#//Relationshipba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/multS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/multT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/rolS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/rolTS"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Relationshipba/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Relationshipba/target"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Containment"/>
+    <genClasses ecoreClass="concreta.ecore#//Aggregation"/>
+    <genClasses ecoreClass="concreta.ecore#//Association"/>
+    <genClasses ecoreClass="concreta.ecore#//Generalization"/>
+    <genClasses ecoreClass="concreta.ecore#//Clasifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Clasifier/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Clasifier/lstAttributebaC"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//PrimitiveDataType"/>
+    <genClasses ecoreClass="concreta.ecore#//Attributeba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Attributeba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Attributeba/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Attributeba/classba"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Attributeba/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Attributeba/accessModify"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Methodba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/accessModify"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/retorno"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/classba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/lstParametersba"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Parameter/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Parameter/methodba"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Parameter/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
