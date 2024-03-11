@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
+import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
@@ -49,7 +50,15 @@ import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPar
 import concreta.diagram.edit.parts.AbstractEditPart;
 import concreta.diagram.edit.parts.AbstractNameEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
+import concreta.diagram.edit.parts.AggregationMultSEditPart;
+import concreta.diagram.edit.parts.AggregationMultTEditPart;
+import concreta.diagram.edit.parts.AggregationRolSEditPart;
+import concreta.diagram.edit.parts.AggregationRolTEditPart;
 import concreta.diagram.edit.parts.AssociationEditPart;
+import concreta.diagram.edit.parts.AssociationMultSEditPart;
+import concreta.diagram.edit.parts.AssociationMultTEditPart;
+import concreta.diagram.edit.parts.AssociationRolSEditPart;
+import concreta.diagram.edit.parts.AssociationRolTEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
@@ -57,8 +66,13 @@ import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ClassbaNameEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
+import concreta.diagram.edit.parts.ContainmentMultSEditPart;
+import concreta.diagram.edit.parts.ContainmentMultTEditPart;
+import concreta.diagram.edit.parts.ContainmentRolSEditPart;
+import concreta.diagram.edit.parts.ContainmentRolTEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
@@ -254,6 +268,9 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 					preferencesHint);
 		case GeneralizationEditPart.VISUAL_ID:
 			return createGeneralization_4004(getSemanticElement(semanticAdapter), containerView, index, persisted,
+					preferencesHint);
+		case ImplementationEditPart.VISUAL_ID:
+			return createImplementation_4005(getSemanticElement(semanticAdapter), containerView, index, persisted,
 					preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -530,6 +547,26 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
+		Node label6001 = createLabel(edge, ConcretaVisualIDRegistry.getType(ContainmentRolSEditPart.VISUAL_ID));
+		label6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6001 = (Location) label6001.getLayoutConstraint();
+		location6001.setX(0);
+		location6001.setY(12);
+		Node label6002 = createLabel(edge, ConcretaVisualIDRegistry.getType(ContainmentMultSEditPart.VISUAL_ID));
+		label6002.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6002 = (Location) label6002.getLayoutConstraint();
+		location6002.setX(-20);
+		location6002.setY(-12);
+		Node label6003 = createLabel(edge, ConcretaVisualIDRegistry.getType(ContainmentRolTEditPart.VISUAL_ID));
+		label6003.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6003 = (Location) label6003.getLayoutConstraint();
+		location6003.setX(3);
+		location6003.setY(12);
+		Node label6004 = createLabel(edge, ConcretaVisualIDRegistry.getType(ContainmentMultTEditPart.VISUAL_ID));
+		label6004.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6004 = (Location) label6004.getLayoutConstraint();
+		location6004.setX(20);
+		location6004.setY(-12);
 		return edge;
 	}
 
@@ -567,6 +604,26 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
+		Node label6005 = createLabel(edge, ConcretaVisualIDRegistry.getType(AggregationRolSEditPart.VISUAL_ID));
+		label6005.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6005 = (Location) label6005.getLayoutConstraint();
+		location6005.setX(0);
+		location6005.setY(12);
+		Node label6006 = createLabel(edge, ConcretaVisualIDRegistry.getType(AggregationMultSEditPart.VISUAL_ID));
+		label6006.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6006 = (Location) label6006.getLayoutConstraint();
+		location6006.setX(-20);
+		location6006.setY(-12);
+		Node label6007 = createLabel(edge, ConcretaVisualIDRegistry.getType(AggregationRolTEditPart.VISUAL_ID));
+		label6007.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6007 = (Location) label6007.getLayoutConstraint();
+		location6007.setX(3);
+		location6007.setY(12);
+		Node label6008 = createLabel(edge, ConcretaVisualIDRegistry.getType(AggregationMultTEditPart.VISUAL_ID));
+		label6008.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6008 = (Location) label6008.getLayoutConstraint();
+		location6008.setX(20);
+		location6008.setY(-12);
 		return edge;
 	}
 
@@ -604,6 +661,26 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
+		Node label6009 = createLabel(edge, ConcretaVisualIDRegistry.getType(AssociationRolSEditPart.VISUAL_ID));
+		label6009.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6009 = (Location) label6009.getLayoutConstraint();
+		location6009.setX(0);
+		location6009.setY(12);
+		Node label6010 = createLabel(edge, ConcretaVisualIDRegistry.getType(AssociationMultSEditPart.VISUAL_ID));
+		label6010.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6010 = (Location) label6010.getLayoutConstraint();
+		location6010.setX(-20);
+		location6010.setY(-12);
+		Node label6011 = createLabel(edge, ConcretaVisualIDRegistry.getType(AssociationRolTEditPart.VISUAL_ID));
+		label6011.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6011 = (Location) label6011.getLayoutConstraint();
+		location6011.setX(3);
+		location6011.setY(12);
+		Node label6012 = createLabel(edge, ConcretaVisualIDRegistry.getType(AssociationMultTEditPart.VISUAL_ID));
+		label6012.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6012 = (Location) label6012.getLayoutConstraint();
+		location6012.setX(20);
+		location6012.setY(-12);
 		return edge;
 	}
 
@@ -623,6 +700,43 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(ConcretaVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		edge.setElement(domainElement);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createImplementation_4005(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(ConcretaVisualIDRegistry.getType(ImplementationEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();

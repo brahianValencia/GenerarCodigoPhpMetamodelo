@@ -65,6 +65,7 @@ public class MethodbaItemProvider
 
 			addNamePropertyDescriptor(object);
 			addAccessModifyPropertyDescriptor(object);
+			addRetornoPropertyDescriptor(object);
 			addClassbaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -115,6 +116,28 @@ public class MethodbaItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Retorno feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRetornoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Methodba_retorno_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Methodba_retorno_feature", "_UI_Methodba_type"),
+				 ConcretaPackage.Literals.METHODBA__RETORNO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Classba feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,7 +171,6 @@ public class MethodbaItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConcretaPackage.Literals.METHODBA__RETORNO);
 			childrenFeatures.add(ConcretaPackage.Literals.METHODBA__LST_PARAMETERSBA);
 		}
 		return childrenFeatures;
@@ -209,7 +231,6 @@ public class MethodbaItemProvider
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConcretaPackage.METHODBA__RETORNO:
 			case ConcretaPackage.METHODBA__LST_PARAMETERSBA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -227,31 +248,6 @@ public class MethodbaItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.METHODBA__RETORNO,
-				 ConcretaFactory.eINSTANCE.createClasifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.METHODBA__RETORNO,
-				 ConcretaFactory.eINSTANCE.createClassba()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.METHODBA__RETORNO,
-				 ConcretaFactory.eINSTANCE.createInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.METHODBA__RETORNO,
-				 ConcretaFactory.eINSTANCE.createAbstract()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.METHODBA__RETORNO,
-				 ConcretaFactory.eINSTANCE.createPrimitiveDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter

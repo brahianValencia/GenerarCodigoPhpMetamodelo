@@ -85,14 +85,53 @@ public class ConcretaEditPartFactory implements EditPartFactory {
 			case ContainmentEditPart.VISUAL_ID:
 				return new ContainmentEditPart(view);
 
+			case ContainmentRolSEditPart.VISUAL_ID:
+				return new ContainmentRolSEditPart(view);
+
+			case ContainmentMultSEditPart.VISUAL_ID:
+				return new ContainmentMultSEditPart(view);
+
+			case ContainmentRolTEditPart.VISUAL_ID:
+				return new ContainmentRolTEditPart(view);
+
+			case ContainmentMultTEditPart.VISUAL_ID:
+				return new ContainmentMultTEditPart(view);
+
 			case AggregationEditPart.VISUAL_ID:
 				return new AggregationEditPart(view);
+
+			case AggregationRolSEditPart.VISUAL_ID:
+				return new AggregationRolSEditPart(view);
+
+			case AggregationMultSEditPart.VISUAL_ID:
+				return new AggregationMultSEditPart(view);
+
+			case AggregationRolTEditPart.VISUAL_ID:
+				return new AggregationRolTEditPart(view);
+
+			case AggregationMultTEditPart.VISUAL_ID:
+				return new AggregationMultTEditPart(view);
 
 			case AssociationEditPart.VISUAL_ID:
 				return new AssociationEditPart(view);
 
+			case AssociationRolSEditPart.VISUAL_ID:
+				return new AssociationRolSEditPart(view);
+
+			case AssociationMultSEditPart.VISUAL_ID:
+				return new AssociationMultSEditPart(view);
+
+			case AssociationRolTEditPart.VISUAL_ID:
+				return new AssociationRolTEditPart(view);
+
+			case AssociationMultTEditPart.VISUAL_ID:
+				return new AssociationMultTEditPart(view);
+
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);
+
+			case ImplementationEditPart.VISUAL_ID:
+				return new ImplementationEditPart(view);
 
 			}
 		}

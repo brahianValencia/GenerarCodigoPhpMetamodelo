@@ -64,7 +64,7 @@ public class GeneralizationItemProvider extends RelationshipbaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Generalization)object).getMultS();
+		String label = ((Generalization)object).getIde();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Generalization_type") :
 			getString("_UI_Generalization_type") + " " + label;

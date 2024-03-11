@@ -22,7 +22,6 @@ class Packageba{
 class Classba extends Clasifier{
 	attr Boolean isAbstract;
 	attr Boolean isInterface;
-	attr Boolean isFinalClass;
 	attr AccessModifyba modifyAcces;
 	attr String path;
 	val Relationshipba[*] lstRelationshipSourceba;
@@ -38,10 +37,11 @@ class Relationshipba {
 	attr Boolean isContainment;
 	attr Boolean isGeneralization;
 	attr Boolean isAssociation;
+	attr Boolean isImplementation;
 	attr String multS;
 	attr String multT;
 	attr String rolS;
-	attr String rolTS;
+	attr String rolT;
 	ref Classba source;
 	ref Classba target;
 }
@@ -68,7 +68,7 @@ class Attributeba {
 class Methodba {
 	
 	attr String name;
-	val Clasifier retorno;
+	ref Clasifier retorno;
 	ref Classba classba;
 	val Parameter[*] lstParametersba;
 	attr AccessModifyba modifyAcces;

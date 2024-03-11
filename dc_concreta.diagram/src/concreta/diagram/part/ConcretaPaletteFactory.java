@@ -55,6 +55,7 @@ public class ConcretaPaletteFactory {
 		paletteContainer.add(createAssociation2CreationTool());
 		paletteContainer.add(createContainment3CreationTool());
 		paletteContainer.add(createGeneralization4CreationTool());
+		paletteContainer.add(createImplementation5CreationTool());
 		return paletteContainer;
 	}
 
@@ -179,6 +180,19 @@ public class ConcretaPaletteFactory {
 				Collections.singletonList(ConcretaElementTypes.Generalization_4004));
 		entry.setId("createGeneralization4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ConcretaElementTypes.getImageDescriptor(ConcretaElementTypes.Generalization_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createImplementation5CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.Implementation5CreationTool_title,
+				Messages.Implementation5CreationTool_desc,
+				Collections.singletonList(ConcretaElementTypes.Implementation_4005));
+		entry.setId("createImplementation5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ConcretaElementTypes.getImageDescriptor(ConcretaElementTypes.Implementation_4005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

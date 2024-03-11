@@ -356,6 +356,16 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String Implementation5CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Implementation5CreationTool_desc;
+
+	/**
+	* @generated
+	*/
 	public static String InterfaceInterfaceLstAttributesbaCompartmentEditPart_title;
 
 	/**
@@ -462,6 +472,16 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_Generalization_4004_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Implementation_4005_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Implementation_4005_source;
 
 	/**
 	* @generated

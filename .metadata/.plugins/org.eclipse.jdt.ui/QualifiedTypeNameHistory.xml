@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.jface.preference.IPreferenceStore"/>
+<fullyQualifiedTypeName name="org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants"/>
+<fullyQualifiedTypeName name="org.eclipse.gmf.runtime.notation.Routing"/>
+<fullyQualifiedTypeName name="abstracta.ModelFactoryAbstracta"/>
+<fullyQualifiedTypeName name="abstracta.Projectba"/>
+<fullyQualifiedTypeName name="abstracta.Classba"/>
+<fullyQualifiedTypeName name="concreta.Projectba"/>
+<fullyQualifiedTypeName name="concreta.DiagramClassba"/>
+<fullyQualifiedTypeName name="abstracta.Packageba"/>
+<fullyQualifiedTypeName name="concreta.Relationshipba"/>
+<fullyQualifiedTypeName name="concreta.Abstract"/>
+<fullyQualifiedTypeName name="concreta.Classba"/>
+<fullyQualifiedTypeName name="abstracta.Attributeba"/>
+</qualifiedTypeNameHistroy>

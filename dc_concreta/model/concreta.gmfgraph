@@ -23,6 +23,13 @@
       <template x="-2" y="-2"/>
       <template/>
     </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
     <descriptors name="PackagebaFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="PackagebaFigure">
         <backgroundColor xsi:type="gmfgraph:RGBColor" red="201" green="209" blue="113"/>
@@ -120,6 +127,47 @@
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
+    <descriptors name="ImplementationFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImplementationFigure" lineWidth="2" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ContainmentrolSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentrolSLabel" text="rolS"/>
+    </descriptors>
+    <descriptors name="ContainmentmultSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentmultSLabel" text="multS"/>
+    </descriptors>
+    <descriptors name="ContainmentrolTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentrolTLabel" text="rolT"/>
+    </descriptors>
+    <descriptors name="ContainmentmultTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContainmentmultTLabel" text="multT"/>
+    </descriptors>
+    <descriptors name="AggregationrolSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AggregationrolSLabel" text="rolS"/>
+    </descriptors>
+    <descriptors name="AggregationmultSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AggregationmultSLabel" text="multS"/>
+    </descriptors>
+    <descriptors name="AggregationrolTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AggregationrolTLabel" text="rolT"/>
+    </descriptors>
+    <descriptors name="AggregationmultTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AggregationmultTLabel" text="multT"/>
+    </descriptors>
+    <descriptors name="AssociationrolSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationrolSLabel" text="rolS"/>
+    </descriptors>
+    <descriptors name="AssociationmultSLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationmultSLabel" text="multS"/>
+    </descriptors>
+    <descriptors name="AssociationrolTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationrolTLabel" text="rolT"/>
+    </descriptors>
+    <descriptors name="AssociationmultTLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AssociationmultTLabel" text="multT"/>
+    </descriptors>
   </figures>
   <nodes name="Packageba" figure="PackagebaFigure"/>
   <nodes name="Classba" figure="ClassbaFigure"/>
@@ -131,6 +179,7 @@
   <connections name="Aggregation" figure="AggregationFigure"/>
   <connections name="Association" figure="AssociationFigure"/>
   <connections name="Generalization" figure="GeneralizationFigure"/>
+  <connections name="Implementation" figure="ImplementationFigure"/>
   <compartments name="ClassbaLstAttributesbaCompartment" figure="ClassbaFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <compartments name="ClassbaLstMethodbaCompartment" figure="ClassbaFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <compartments name="InterfaceLstAttributesbaCompartment" figure="InterfaceFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
@@ -143,4 +192,52 @@
   <labels name="AbstractLabel" figure="AbstractFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels name="AttributebaLabel" figure="AttributebaFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels name="MethodbaLabel" figure="MethodbaFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="ContainmentrolSLabel" figure="ContainmentrolSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" y="12"/>
+  </labels>
+  <labels name="ContainmentmultSLabel" figure="ContainmentmultSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-20" y="-12"/>
+  </labels>
+  <labels name="ContainmentrolTLabel" figure="ContainmentrolTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="3" y="12"/>
+  </labels>
+  <labels name="ContainmentmultTLabel" figure="ContainmentmultTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="20" y="-12"/>
+  </labels>
+  <labels name="AggregationrolSLabel" figure="AggregationrolSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" y="12"/>
+  </labels>
+  <labels name="AggregationmultSLabel" figure="AggregationmultSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-20" y="-12"/>
+  </labels>
+  <labels name="AggregationrolTLabel" figure="AggregationrolTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="3" y="12"/>
+  </labels>
+  <labels name="AggregationmultTLabel" figure="AggregationmultTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="20" y="-12"/>
+  </labels>
+  <labels name="AssociationrolSLabel" figure="AssociationrolSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" y="12"/>
+  </labels>
+  <labels name="AssociationmultSLabel" figure="AssociationmultSLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="END"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-20" y="-12"/>
+  </labels>
+  <labels name="AssociationrolTLabel" figure="AssociationrolTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="3" y="12"/>
+  </labels>
+  <labels name="AssociationmultTLabel" figure="AssociationmultTLabelFigure" elementIcon="false">
+    <facets xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="20" y="-12"/>
+  </labels>
 </gmfgraph:Canvas>

@@ -87,6 +87,8 @@ public class AggregationCreateCommand extends EditElementCommand {
 		getContainer().getLstRelationshipba().add(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
+		newElement.setMultS("n");
+		newElement.setRolS("lst"+getSource().getName()+"s");
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

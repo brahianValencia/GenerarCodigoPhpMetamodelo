@@ -135,6 +135,42 @@
         <sourceMetaFeature href="concreta.genmodel#//concreta/Relationshipba/source"/>
         <targetMetaFeature href="concreta.genmodel#//concreta/Relationshipba/target"/>
       </modelFacet>
+      <labels visualID="6001" editPartClassName="ContainmentRolSEditPart" itemSemanticEditPolicyClassName="ContainmentRolSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentrolSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentrolSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentrolSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6002" editPartClassName="ContainmentMultSEditPart" itemSemanticEditPolicyClassName="ContainmentMultSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentmultSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentmultSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentmultSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6003" editPartClassName="ContainmentRolTEditPart" itemSemanticEditPolicyClassName="ContainmentRolTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentrolTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentrolTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentrolTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolT"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6004" editPartClassName="ContainmentMultTEditPart" itemSemanticEditPolicyClassName="ContainmentMultTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ContainmentmultTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContainmentmultTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContainmentmultTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multT"/>
+        </modelFacet>
+      </labels>
     </links>
     <links visualID="4002" editPartClassName="AggregationEditPart" itemSemanticEditPolicyClassName="AggregationItemSemanticEditPolicy" createCommandClassName="AggregationCreateCommand" reorientCommandClassName="AggregationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -149,6 +185,42 @@
         <sourceMetaFeature href="concreta.genmodel#//concreta/Relationshipba/source"/>
         <targetMetaFeature href="concreta.genmodel#//concreta/Relationshipba/target"/>
       </modelFacet>
+      <labels visualID="6005" editPartClassName="AggregationRolSEditPart" itemSemanticEditPolicyClassName="AggregationRolSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AggregationrolSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AggregationrolSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AggregationrolSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6006" editPartClassName="AggregationMultSEditPart" itemSemanticEditPolicyClassName="AggregationMultSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AggregationmultSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AggregationmultSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AggregationmultSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6007" editPartClassName="AggregationRolTEditPart" itemSemanticEditPolicyClassName="AggregationRolTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AggregationrolTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AggregationrolTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AggregationrolTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolT"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6008" editPartClassName="AggregationMultTEditPart" itemSemanticEditPolicyClassName="AggregationMultTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AggregationmultTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AggregationmultTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AggregationmultTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multT"/>
+        </modelFacet>
+      </labels>
     </links>
     <links visualID="4003" editPartClassName="AssociationEditPart" itemSemanticEditPolicyClassName="AssociationItemSemanticEditPolicy" createCommandClassName="AssociationCreateCommand" reorientCommandClassName="AssociationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -163,6 +235,42 @@
         <sourceMetaFeature href="concreta.genmodel#//concreta/Relationshipba/source"/>
         <targetMetaFeature href="concreta.genmodel#//concreta/Relationshipba/target"/>
       </modelFacet>
+      <labels visualID="6009" editPartClassName="AssociationRolSEditPart" itemSemanticEditPolicyClassName="AssociationRolSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationrolSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationrolSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationrolSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6010" editPartClassName="AssociationMultSEditPart" itemSemanticEditPolicyClassName="AssociationMultSItemSemanticEditPolicy" alignment="TARGET">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationmultSLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationmultSLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationmultSLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multS&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="-20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multS"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6011" editPartClassName="AssociationRolTEditPart" itemSemanticEditPolicyClassName="AssociationRolTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationrolTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationrolTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationrolTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;rolT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="3" y="12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/rolT"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="6012" editPartClassName="AssociationMultTEditPart" itemSemanticEditPolicyClassName="AssociationMultTItemSemanticEditPolicy" alignment="SOURCE">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="AssociationmultTLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationmultTLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationmultTLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;multT&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          <attributes xsi:type="gmfgen:LabelOffsetAttributes" x="20" y="-12"/>
+        </viewmap>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="concreta.genmodel#//concreta/Relationshipba/multT"/>
+        </modelFacet>
+      </labels>
     </links>
     <links visualID="4004" editPartClassName="GeneralizationEditPart" itemSemanticEditPolicyClassName="GeneralizationItemSemanticEditPolicy" createCommandClassName="GeneralizationCreateCommand" reorientCommandClassName="GeneralizationReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
@@ -172,6 +280,20 @@
       </viewmap>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass href="concreta.genmodel#//concreta/Generalization"/>
+        <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstRelationshipba"/>
+        <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstRelationshipba"/>
+        <sourceMetaFeature href="concreta.genmodel#//concreta/Relationshipba/source"/>
+        <targetMetaFeature href="concreta.genmodel#//concreta/Relationshipba/target"/>
+      </modelFacet>
+    </links>
+    <links visualID="4005" editPartClassName="ImplementationEditPart" itemSemanticEditPolicyClassName="ImplementationItemSemanticEditPolicy" createCommandClassName="ImplementationCreateCommand" reorientCommandClassName="ImplementationReorientCommand">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ImplementationEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ImplementationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ImplementationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ImplementationFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedForeground="true"/>
+      </viewmap>
+      <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass href="concreta.genmodel#//concreta/Implementation"/>
         <containmentMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstRelationshipba"/>
         <childMetaFeature href="concreta.genmodel#//concreta/DiagramClassba/lstRelationshipba"/>
         <sourceMetaFeature href="concreta.genmodel#//concreta/Relationshipba/source"/>
@@ -216,6 +338,7 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Association" description="Create new Association" genLinks="//@diagram/@links.2"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Containment" description="Create new Containment" genLinks="//@diagram/@links.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Generalization" description="Create new Generalization" genLinks="//@diagram/@links.3"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Implementation" description="Create new Implementation" genLinks="//@diagram/@links.4"/>
       </groups>
     </palette>
     <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="dc_concreta.diagram.general" name="Concreta Diagram">
@@ -295,6 +418,19 @@
     <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.3" child="//@diagram/@topLevelNodes.2" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram" child="//@diagram/@links.4" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.4" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@links.4" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.2" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@links.4" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.1" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.1" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@topLevelNodes.2" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.2" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -310,7 +446,7 @@
   </propertySheet>
   <domainGenModel href="concreta.genmodel#/"/>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
+    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.0/@labels.3/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet //@diagram/@links.1/@labels.3/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet //@diagram/@links.2/@labels.1/@modelFacet //@diagram/@links.2/@labels.2/@modelFacet //@diagram/@links.2/@labels.3/@modelFacet"/>
   </labelParsers>
   <contextMenus context="//@diagram">
     <items xsi:type="gmfgen:LoadResourceAction"/>

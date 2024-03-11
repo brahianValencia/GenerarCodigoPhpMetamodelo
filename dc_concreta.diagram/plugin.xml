@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Concreta"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2003,2001,2004,3001,3002"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2002,2003,2001,2004,3001,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004"/>
+            <method name="getType()" value="4001,4002,4003,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5004,5005,5003,5006,5001,5002"/>
@@ -465,6 +465,16 @@
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://concreta">
+         <metamodelType
+               id="dc_concreta.diagram.Implementation_4005"
+               name="%metatype.name.Implementation_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Implementation"
+               edithelper="concreta.diagram.edit.helpers.ImplementationEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -488,6 +498,7 @@
          <elementType ref="dc_concreta.diagram.Aggregation_4002"/>
          <elementType ref="dc_concreta.diagram.Association_4003"/>
          <elementType ref="dc_concreta.diagram.Generalization_4004"/>
+         <elementType ref="dc_concreta.diagram.Implementation_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

@@ -65,10 +65,11 @@ public class RelationshipbaItemProvider
 			addIsContainmentPropertyDescriptor(object);
 			addIsGeneralizationPropertyDescriptor(object);
 			addIsAssociationPropertyDescriptor(object);
+			addIsImplementationPropertyDescriptor(object);
 			addMultSPropertyDescriptor(object);
 			addMultTPropertyDescriptor(object);
 			addRolSPropertyDescriptor(object);
-			addRolTSPropertyDescriptor(object);
+			addRolTPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 		}
@@ -186,6 +187,28 @@ public class RelationshipbaItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Implementation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsImplementationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Relationshipba_isImplementation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_isImplementation_feature", "_UI_Relationshipba_type"),
+				 AbstractaPackage.Literals.RELATIONSHIPBA__IS_IMPLEMENTATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Mult S feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,19 +275,19 @@ public class RelationshipbaItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Rol TS feature.
+	 * This adds a property descriptor for the Rol T feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRolTSPropertyDescriptor(Object object) {
+	protected void addRolTPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Relationshipba_rolTS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_rolTS_feature", "_UI_Relationshipba_type"),
-				 AbstractaPackage.Literals.RELATIONSHIPBA__ROL_TS,
+				 getString("_UI_Relationshipba_rolT_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_rolT_feature", "_UI_Relationshipba_type"),
+				 AbstractaPackage.Literals.RELATIONSHIPBA__ROL_T,
 				 true,
 				 false,
 				 false,
@@ -360,10 +383,11 @@ public class RelationshipbaItemProvider
 			case AbstractaPackage.RELATIONSHIPBA__IS_CONTAINMENT:
 			case AbstractaPackage.RELATIONSHIPBA__IS_GENERALIZATION:
 			case AbstractaPackage.RELATIONSHIPBA__IS_ASSOCIATION:
+			case AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION:
 			case AbstractaPackage.RELATIONSHIPBA__MULT_S:
 			case AbstractaPackage.RELATIONSHIPBA__MULT_T:
 			case AbstractaPackage.RELATIONSHIPBA__ROL_S:
-			case AbstractaPackage.RELATIONSHIPBA__ROL_TS:
+			case AbstractaPackage.RELATIONSHIPBA__ROL_T:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

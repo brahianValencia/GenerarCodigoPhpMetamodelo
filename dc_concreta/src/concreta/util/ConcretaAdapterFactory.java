@@ -116,6 +116,10 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 				return createGeneralizationAdapter();
 			}
 			@Override
+			public Adapter caseImplementation(Implementation object) {
+				return createImplementationAdapter();
+			}
+			@Override
 			public Adapter caseClasifier(Clasifier object) {
 				return createClasifierAdapter();
 			}
@@ -320,6 +324,20 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGeneralizationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link concreta.Implementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concreta.Implementation
+	 * @generated
+	 */
+	public Adapter createImplementationAdapter() {
 		return null;
 	}
 

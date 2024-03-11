@@ -246,6 +246,11 @@ public class DiagramClassbaItemProvider
 			(createChildParameter
 				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA,
 				 ConcretaFactory.eINSTANCE.createGeneralization()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA,
+				 ConcretaFactory.eINSTANCE.createImplementation()));
 	}
 
 	/**

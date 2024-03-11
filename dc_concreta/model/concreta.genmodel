@@ -42,10 +42,11 @@
     <genClasses ecoreClass="concreta.ecore#//Interface"/>
     <genClasses ecoreClass="concreta.ecore#//Abstract"/>
     <genClasses image="false" ecoreClass="concreta.ecore#//Relationshipba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/ide"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/multS"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/multT"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/rolS"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/rolTS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/rolT"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Relationshipba/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Relationshipba/target"/>
     </genClasses>
@@ -53,6 +54,7 @@
     <genClasses ecoreClass="concreta.ecore#//Aggregation"/>
     <genClasses ecoreClass="concreta.ecore#//Association"/>
     <genClasses ecoreClass="concreta.ecore#//Generalization"/>
+    <genClasses ecoreClass="concreta.ecore#//Implementation"/>
     <genClasses ecoreClass="concreta.ecore#//Clasifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Clasifier/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Clasifier/lstAttributebaC"/>
@@ -68,7 +70,7 @@
     <genClasses ecoreClass="concreta.ecore#//Methodba">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/accessModify"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/retorno"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/retorno"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/classba"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/lstParametersba"/>
     </genClasses>

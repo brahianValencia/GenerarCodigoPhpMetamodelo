@@ -46,11 +46,12 @@ public class ConcretaModelingAssistantProviderOfAbstractEditPart extends Concret
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(AbstractEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(ConcretaElementTypes.Containment_4001);
 		types.add(ConcretaElementTypes.Aggregation_4002);
 		types.add(ConcretaElementTypes.Association_4003);
 		types.add(ConcretaElementTypes.Generalization_4004);
+		types.add(ConcretaElementTypes.Implementation_4005);
 		return types;
 	}
 
@@ -107,6 +108,15 @@ public class ConcretaModelingAssistantProviderOfAbstractEditPart extends Concret
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Generalization_4004);
 		}
+		if (targetEditPart instanceof InterfaceEditPart) {
+			types.add(ConcretaElementTypes.Implementation_4005);
+		}
+		if (targetEditPart instanceof AbstractEditPart) {
+			types.add(ConcretaElementTypes.Implementation_4005);
+		}
+		if (targetEditPart instanceof ClassbaEditPart) {
+			types.add(ConcretaElementTypes.Implementation_4005);
+		}
 		return types;
 	}
 
@@ -141,6 +151,10 @@ public class ConcretaModelingAssistantProviderOfAbstractEditPart extends Concret
 			types.add(ConcretaElementTypes.Interface_2002);
 			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
+		} else if (relationshipType == ConcretaElementTypes.Implementation_4005) {
+			types.add(ConcretaElementTypes.Interface_2002);
+			types.add(ConcretaElementTypes.Abstract_2003);
+			types.add(ConcretaElementTypes.Classba_2001);
 		}
 		return types;
 	}
@@ -159,11 +173,12 @@ public class ConcretaModelingAssistantProviderOfAbstractEditPart extends Concret
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(AbstractEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(ConcretaElementTypes.Containment_4001);
 		types.add(ConcretaElementTypes.Aggregation_4002);
 		types.add(ConcretaElementTypes.Association_4003);
 		types.add(ConcretaElementTypes.Generalization_4004);
+		types.add(ConcretaElementTypes.Implementation_4005);
 		return types;
 	}
 
@@ -195,6 +210,10 @@ public class ConcretaModelingAssistantProviderOfAbstractEditPart extends Concret
 			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Generalization_4004) {
+			types.add(ConcretaElementTypes.Interface_2002);
+			types.add(ConcretaElementTypes.Abstract_2003);
+			types.add(ConcretaElementTypes.Classba_2001);
+		} else if (relationshipType == ConcretaElementTypes.Implementation_4005) {
 			types.add(ConcretaElementTypes.Interface_2002);
 			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);

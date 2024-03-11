@@ -266,7 +266,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getClasifier()
 	 * @generated
 	 */
-	int CLASIFIER = 12;
+	int CLASIFIER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -525,13 +525,22 @@ public interface ConcretaPackage extends EPackage {
 	int RELATIONSHIPBA = 7;
 
 	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIPBA__IDE = 0;
+
+	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__MULT_S = 0;
+	int RELATIONSHIPBA__MULT_S = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mult T</b></em>' attribute.
@@ -540,7 +549,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__MULT_T = 1;
+	int RELATIONSHIPBA__MULT_T = 2;
 
 	/**
 	 * The feature id for the '<em><b>Rol S</b></em>' attribute.
@@ -549,16 +558,16 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__ROL_S = 2;
+	int RELATIONSHIPBA__ROL_S = 3;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__ROL_TS = 3;
+	int RELATIONSHIPBA__ROL_T = 4;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -567,7 +576,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__SOURCE = 4;
+	int RELATIONSHIPBA__SOURCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -576,7 +585,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__TARGET = 5;
+	int RELATIONSHIPBA__TARGET = 6;
 
 	/**
 	 * The number of structural features of the '<em>Relationshipba</em>' class.
@@ -585,7 +594,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA_FEATURE_COUNT = 6;
+	int RELATIONSHIPBA_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link concreta.impl.ContainmentImpl <em>Containment</em>}' class.
@@ -596,6 +605,15 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 */
 	int CONTAINMENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINMENT__IDE = RELATIONSHIPBA__IDE;
 
 	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
@@ -625,13 +643,13 @@ public interface ConcretaPackage extends EPackage {
 	int CONTAINMENT__ROL_S = RELATIONSHIPBA__ROL_S;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINMENT__ROL_TS = RELATIONSHIPBA__ROL_TS;
+	int CONTAINMENT__ROL_T = RELATIONSHIPBA__ROL_T;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -671,6 +689,15 @@ public interface ConcretaPackage extends EPackage {
 	int AGGREGATION = 9;
 
 	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGGREGATION__IDE = RELATIONSHIPBA__IDE;
+
+	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -698,13 +725,13 @@ public interface ConcretaPackage extends EPackage {
 	int AGGREGATION__ROL_S = RELATIONSHIPBA__ROL_S;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGGREGATION__ROL_TS = RELATIONSHIPBA__ROL_TS;
+	int AGGREGATION__ROL_T = RELATIONSHIPBA__ROL_T;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -744,6 +771,15 @@ public interface ConcretaPackage extends EPackage {
 	int ASSOCIATION = 10;
 
 	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__IDE = RELATIONSHIPBA__IDE;
+
+	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,13 +807,13 @@ public interface ConcretaPackage extends EPackage {
 	int ASSOCIATION__ROL_S = RELATIONSHIPBA__ROL_S;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__ROL_TS = RELATIONSHIPBA__ROL_TS;
+	int ASSOCIATION__ROL_T = RELATIONSHIPBA__ROL_T;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -817,6 +853,15 @@ public interface ConcretaPackage extends EPackage {
 	int GENERALIZATION = 11;
 
 	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZATION__IDE = RELATIONSHIPBA__IDE;
+
+	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -844,13 +889,13 @@ public interface ConcretaPackage extends EPackage {
 	int GENERALIZATION__ROL_S = RELATIONSHIPBA__ROL_S;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERALIZATION__ROL_TS = RELATIONSHIPBA__ROL_TS;
+	int GENERALIZATION__ROL_T = RELATIONSHIPBA__ROL_T;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -880,6 +925,88 @@ public interface ConcretaPackage extends EPackage {
 	int GENERALIZATION_FEATURE_COUNT = RELATIONSHIPBA_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link concreta.impl.ImplementationImpl <em>Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concreta.impl.ImplementationImpl
+	 * @see concreta.impl.ConcretaPackageImpl#getImplementation()
+	 * @generated
+	 */
+	int IMPLEMENTATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__IDE = RELATIONSHIPBA__IDE;
+
+	/**
+	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__MULT_S = RELATIONSHIPBA__MULT_S;
+
+	/**
+	 * The feature id for the '<em><b>Mult T</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__MULT_T = RELATIONSHIPBA__MULT_T;
+
+	/**
+	 * The feature id for the '<em><b>Rol S</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__ROL_S = RELATIONSHIPBA__ROL_S;
+
+	/**
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__ROL_T = RELATIONSHIPBA__ROL_T;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__SOURCE = RELATIONSHIPBA__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION__TARGET = RELATIONSHIPBA__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPLEMENTATION_FEATURE_COUNT = RELATIONSHIPBA_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link concreta.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -887,7 +1014,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getPrimitiveDataType()
 	 * @generated
 	 */
-	int PRIMITIVE_DATA_TYPE = 13;
+	int PRIMITIVE_DATA_TYPE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -924,7 +1051,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getAttributeba()
 	 * @generated
 	 */
-	int ATTRIBUTEBA = 14;
+	int ATTRIBUTEBA = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -988,7 +1115,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getMethodba()
 	 * @generated
 	 */
-	int METHODBA = 15;
+	int METHODBA = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1009,7 +1136,7 @@ public interface ConcretaPackage extends EPackage {
 	int METHODBA__ACCESS_MODIFY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Retorno</b></em>' containment reference.
+	 * The feature id for the '<em><b>Retorno</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1052,7 +1179,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 16;
+	int PARAMETER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1098,7 +1225,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getAccessModifyba()
 	 * @generated
 	 */
-	int ACCESS_MODIFYBA = 17;
+	int ACCESS_MODIFYBA = 18;
 
 
 	/**
@@ -1380,6 +1507,17 @@ public interface ConcretaPackage extends EPackage {
 	EClass getRelationshipba();
 
 	/**
+	 * Returns the meta object for the attribute '{@link concreta.Relationshipba#getIde <em>Ide</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ide</em>'.
+	 * @see concreta.Relationshipba#getIde()
+	 * @see #getRelationshipba()
+	 * @generated
+	 */
+	EAttribute getRelationshipba_Ide();
+
+	/**
 	 * Returns the meta object for the attribute '{@link concreta.Relationshipba#getMultS <em>Mult S</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1413,15 +1551,15 @@ public interface ConcretaPackage extends EPackage {
 	EAttribute getRelationshipba_RolS();
 
 	/**
-	 * Returns the meta object for the attribute '{@link concreta.Relationshipba#getRolTS <em>Rol TS</em>}'.
+	 * Returns the meta object for the attribute '{@link concreta.Relationshipba#getRolT <em>Rol T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rol TS</em>'.
-	 * @see concreta.Relationshipba#getRolTS()
+	 * @return the meta object for the attribute '<em>Rol T</em>'.
+	 * @see concreta.Relationshipba#getRolT()
 	 * @see #getRelationshipba()
 	 * @generated
 	 */
-	EAttribute getRelationshipba_RolTS();
+	EAttribute getRelationshipba_RolT();
 
 	/**
 	 * Returns the meta object for the reference '{@link concreta.Relationshipba#getSource <em>Source</em>}'.
@@ -1484,6 +1622,16 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGeneralization();
+
+	/**
+	 * Returns the meta object for class '{@link concreta.Implementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Implementation</em>'.
+	 * @see concreta.Implementation
+	 * @generated
+	 */
+	EClass getImplementation();
 
 	/**
 	 * Returns the meta object for class '{@link concreta.Clasifier <em>Clasifier</em>}'.
@@ -1625,10 +1773,10 @@ public interface ConcretaPackage extends EPackage {
 	EAttribute getMethodba_AccessModify();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link concreta.Methodba#getRetorno <em>Retorno</em>}'.
+	 * Returns the meta object for the reference '{@link concreta.Methodba#getRetorno <em>Retorno</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Retorno</em>'.
+	 * @return the meta object for the reference '<em>Retorno</em>'.
 	 * @see concreta.Methodba#getRetorno()
 	 * @see #getMethodba()
 	 * @generated
@@ -1957,6 +2105,14 @@ public interface ConcretaPackage extends EPackage {
 		EClass RELATIONSHIPBA = eINSTANCE.getRelationshipba();
 
 		/**
+		 * The meta object literal for the '<em><b>Ide</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONSHIPBA__IDE = eINSTANCE.getRelationshipba_Ide();
+
+		/**
 		 * The meta object literal for the '<em><b>Mult S</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1981,12 +2137,12 @@ public interface ConcretaPackage extends EPackage {
 		EAttribute RELATIONSHIPBA__ROL_S = eINSTANCE.getRelationshipba_RolS();
 
 		/**
-		 * The meta object literal for the '<em><b>Rol TS</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rol T</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATIONSHIPBA__ROL_TS = eINSTANCE.getRelationshipba_RolTS();
+		EAttribute RELATIONSHIPBA__ROL_T = eINSTANCE.getRelationshipba_RolT();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -2043,6 +2199,16 @@ public interface ConcretaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GENERALIZATION = eINSTANCE.getGeneralization();
+
+		/**
+		 * The meta object literal for the '{@link concreta.impl.ImplementationImpl <em>Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concreta.impl.ImplementationImpl
+		 * @see concreta.impl.ConcretaPackageImpl#getImplementation()
+		 * @generated
+		 */
+		EClass IMPLEMENTATION = eINSTANCE.getImplementation();
 
 		/**
 		 * The meta object literal for the '{@link concreta.impl.ClasifierImpl <em>Clasifier</em>}' class.
@@ -2157,7 +2323,7 @@ public interface ConcretaPackage extends EPackage {
 		EAttribute METHODBA__ACCESS_MODIFY = eINSTANCE.getMethodba_AccessModify();
 
 		/**
-		 * The meta object literal for the '<em><b>Retorno</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Retorno</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -27,10 +27,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getIsContainment <em>Is Containment</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getIsGeneralization <em>Is Generalization</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getIsAssociation <em>Is Association</em>}</li>
+ *   <li>{@link abstracta.impl.RelationshipbaImpl#getIsImplementation <em>Is Implementation</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getMultS <em>Mult S</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getMultT <em>Mult T</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getRolS <em>Rol S</em>}</li>
- *   <li>{@link abstracta.impl.RelationshipbaImpl#getRolTS <em>Rol TS</em>}</li>
+ *   <li>{@link abstracta.impl.RelationshipbaImpl#getRolT <em>Rol T</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getSource <em>Source</em>}</li>
  *   <li>{@link abstracta.impl.RelationshipbaImpl#getTarget <em>Target</em>}</li>
  * </ul>
@@ -139,6 +140,26 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 	protected Boolean isAssociation = IS_ASSOCIATION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getIsImplementation() <em>Is Implementation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsImplementation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean IS_IMPLEMENTATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIsImplementation() <em>Is Implementation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsImplementation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean isImplementation = IS_IMPLEMENTATION_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getMultS() <em>Mult S</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,24 +220,24 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 	protected String rolS = ROL_S_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRolTS() <em>Rol TS</em>}' attribute.
+	 * The default value of the '{@link #getRolT() <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRolTS()
+	 * @see #getRolT()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROL_TS_EDEFAULT = null;
+	protected static final String ROL_T_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRolTS() <em>Rol TS</em>}' attribute.
+	 * The cached value of the '{@link #getRolT() <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRolTS()
+	 * @see #getRolT()
 	 * @generated
 	 * @ordered
 	 */
-	protected String rolTS = ROL_TS_EDEFAULT;
+	protected String rolT = ROL_T_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
@@ -367,6 +388,27 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getIsImplementation() {
+		return isImplementation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsImplementation(Boolean newIsImplementation) {
+		Boolean oldIsImplementation = isImplementation;
+		isImplementation = newIsImplementation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION, oldIsImplementation, isImplementation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getMultS() {
 		return multS;
 	}
@@ -430,8 +472,8 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRolTS() {
-		return rolTS;
+	public String getRolT() {
+		return rolT;
 	}
 
 	/**
@@ -439,11 +481,11 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRolTS(String newRolTS) {
-		String oldRolTS = rolTS;
-		rolTS = newRolTS;
+	public void setRolT(String newRolT) {
+		String oldRolT = rolT;
+		rolT = newRolT;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.RELATIONSHIPBA__ROL_TS, oldRolTS, rolTS));
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.RELATIONSHIPBA__ROL_T, oldRolT, rolT));
 	}
 
 	/**
@@ -540,14 +582,16 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 				return getIsGeneralization();
 			case AbstractaPackage.RELATIONSHIPBA__IS_ASSOCIATION:
 				return getIsAssociation();
+			case AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION:
+				return getIsImplementation();
 			case AbstractaPackage.RELATIONSHIPBA__MULT_S:
 				return getMultS();
 			case AbstractaPackage.RELATIONSHIPBA__MULT_T:
 				return getMultT();
 			case AbstractaPackage.RELATIONSHIPBA__ROL_S:
 				return getRolS();
-			case AbstractaPackage.RELATIONSHIPBA__ROL_TS:
-				return getRolTS();
+			case AbstractaPackage.RELATIONSHIPBA__ROL_T:
+				return getRolT();
 			case AbstractaPackage.RELATIONSHIPBA__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -581,6 +625,9 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 			case AbstractaPackage.RELATIONSHIPBA__IS_ASSOCIATION:
 				setIsAssociation((Boolean)newValue);
 				return;
+			case AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION:
+				setIsImplementation((Boolean)newValue);
+				return;
 			case AbstractaPackage.RELATIONSHIPBA__MULT_S:
 				setMultS((String)newValue);
 				return;
@@ -590,8 +637,8 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 			case AbstractaPackage.RELATIONSHIPBA__ROL_S:
 				setRolS((String)newValue);
 				return;
-			case AbstractaPackage.RELATIONSHIPBA__ROL_TS:
-				setRolTS((String)newValue);
+			case AbstractaPackage.RELATIONSHIPBA__ROL_T:
+				setRolT((String)newValue);
 				return;
 			case AbstractaPackage.RELATIONSHIPBA__SOURCE:
 				setSource((Classba)newValue);
@@ -626,6 +673,9 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 			case AbstractaPackage.RELATIONSHIPBA__IS_ASSOCIATION:
 				setIsAssociation(IS_ASSOCIATION_EDEFAULT);
 				return;
+			case AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION:
+				setIsImplementation(IS_IMPLEMENTATION_EDEFAULT);
+				return;
 			case AbstractaPackage.RELATIONSHIPBA__MULT_S:
 				setMultS(MULT_S_EDEFAULT);
 				return;
@@ -635,8 +685,8 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 			case AbstractaPackage.RELATIONSHIPBA__ROL_S:
 				setRolS(ROL_S_EDEFAULT);
 				return;
-			case AbstractaPackage.RELATIONSHIPBA__ROL_TS:
-				setRolTS(ROL_TS_EDEFAULT);
+			case AbstractaPackage.RELATIONSHIPBA__ROL_T:
+				setRolT(ROL_T_EDEFAULT);
 				return;
 			case AbstractaPackage.RELATIONSHIPBA__SOURCE:
 				setSource((Classba)null);
@@ -666,14 +716,16 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 				return IS_GENERALIZATION_EDEFAULT == null ? isGeneralization != null : !IS_GENERALIZATION_EDEFAULT.equals(isGeneralization);
 			case AbstractaPackage.RELATIONSHIPBA__IS_ASSOCIATION:
 				return IS_ASSOCIATION_EDEFAULT == null ? isAssociation != null : !IS_ASSOCIATION_EDEFAULT.equals(isAssociation);
+			case AbstractaPackage.RELATIONSHIPBA__IS_IMPLEMENTATION:
+				return IS_IMPLEMENTATION_EDEFAULT == null ? isImplementation != null : !IS_IMPLEMENTATION_EDEFAULT.equals(isImplementation);
 			case AbstractaPackage.RELATIONSHIPBA__MULT_S:
 				return MULT_S_EDEFAULT == null ? multS != null : !MULT_S_EDEFAULT.equals(multS);
 			case AbstractaPackage.RELATIONSHIPBA__MULT_T:
 				return MULT_T_EDEFAULT == null ? multT != null : !MULT_T_EDEFAULT.equals(multT);
 			case AbstractaPackage.RELATIONSHIPBA__ROL_S:
 				return ROL_S_EDEFAULT == null ? rolS != null : !ROL_S_EDEFAULT.equals(rolS);
-			case AbstractaPackage.RELATIONSHIPBA__ROL_TS:
-				return ROL_TS_EDEFAULT == null ? rolTS != null : !ROL_TS_EDEFAULT.equals(rolTS);
+			case AbstractaPackage.RELATIONSHIPBA__ROL_T:
+				return ROL_T_EDEFAULT == null ? rolT != null : !ROL_T_EDEFAULT.equals(rolT);
 			case AbstractaPackage.RELATIONSHIPBA__SOURCE:
 				return source != null;
 			case AbstractaPackage.RELATIONSHIPBA__TARGET:
@@ -702,14 +754,16 @@ public class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
 		result.append(isGeneralization);
 		result.append(", isAssociation: ");
 		result.append(isAssociation);
+		result.append(", isImplementation: ");
+		result.append(isImplementation);
 		result.append(", multS: ");
 		result.append(multS);
 		result.append(", multT: ");
 		result.append(multT);
 		result.append(", rolS: ");
 		result.append(rolS);
-		result.append(", rolTS: ");
-		result.append(rolTS);
+		result.append(", rolT: ");
+		result.append(rolT);
 		result.append(')');
 		return result.toString();
 	}

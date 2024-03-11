@@ -22,10 +22,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link concreta.impl.RelationshipbaImpl#getIde <em>Ide</em>}</li>
  *   <li>{@link concreta.impl.RelationshipbaImpl#getMultS <em>Mult S</em>}</li>
  *   <li>{@link concreta.impl.RelationshipbaImpl#getMultT <em>Mult T</em>}</li>
  *   <li>{@link concreta.impl.RelationshipbaImpl#getRolS <em>Rol S</em>}</li>
- *   <li>{@link concreta.impl.RelationshipbaImpl#getRolTS <em>Rol TS</em>}</li>
+ *   <li>{@link concreta.impl.RelationshipbaImpl#getRolT <em>Rol T</em>}</li>
  *   <li>{@link concreta.impl.RelationshipbaImpl#getSource <em>Source</em>}</li>
  *   <li>{@link concreta.impl.RelationshipbaImpl#getTarget <em>Target</em>}</li>
  * </ul>
@@ -33,6 +34,26 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * @generated
  */
 public abstract class RelationshipbaImpl extends EObjectImpl implements Relationshipba {
+	/**
+	 * The default value of the '{@link #getIde() <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIde()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IDE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIde() <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIde()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ide = IDE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getMultS() <em>Mult S</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -94,24 +115,24 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	protected String rolS = ROL_S_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRolTS() <em>Rol TS</em>}' attribute.
+	 * The default value of the '{@link #getRolT() <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRolTS()
+	 * @see #getRolT()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ROL_TS_EDEFAULT = null;
+	protected static final String ROL_T_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getRolTS() <em>Rol TS</em>}' attribute.
+	 * The cached value of the '{@link #getRolT() <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRolTS()
+	 * @see #getRolT()
 	 * @generated
 	 * @ordered
 	 */
-	protected String rolTS = ROL_TS_EDEFAULT;
+	protected String rolT = ROL_T_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
@@ -150,6 +171,27 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	@Override
 	protected EClass eStaticClass() {
 		return ConcretaPackage.Literals.RELATIONSHIPBA;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getIde() {
+		return ide;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIde(String newIde) {
+		String oldIde = ide;
+		ide = newIde;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.RELATIONSHIPBA__IDE, oldIde, ide));
 	}
 
 	/**
@@ -220,8 +262,8 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRolTS() {
-		return rolTS;
+	public String getRolT() {
+		return rolT;
 	}
 
 	/**
@@ -229,11 +271,11 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRolTS(String newRolTS) {
-		String oldRolTS = rolTS;
-		rolTS = newRolTS;
+	public void setRolT(String newRolT) {
+		String oldRolT = rolT;
+		rolT = newRolT;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.RELATIONSHIPBA__ROL_TS, oldRolTS, rolTS));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.RELATIONSHIPBA__ROL_T, oldRolT, rolT));
 	}
 
 	/**
@@ -320,14 +362,16 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ConcretaPackage.RELATIONSHIPBA__IDE:
+				return getIde();
 			case ConcretaPackage.RELATIONSHIPBA__MULT_S:
 				return getMultS();
 			case ConcretaPackage.RELATIONSHIPBA__MULT_T:
 				return getMultT();
 			case ConcretaPackage.RELATIONSHIPBA__ROL_S:
 				return getRolS();
-			case ConcretaPackage.RELATIONSHIPBA__ROL_TS:
-				return getRolTS();
+			case ConcretaPackage.RELATIONSHIPBA__ROL_T:
+				return getRolT();
 			case ConcretaPackage.RELATIONSHIPBA__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -346,6 +390,9 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ConcretaPackage.RELATIONSHIPBA__IDE:
+				setIde((String)newValue);
+				return;
 			case ConcretaPackage.RELATIONSHIPBA__MULT_S:
 				setMultS((String)newValue);
 				return;
@@ -355,8 +402,8 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 			case ConcretaPackage.RELATIONSHIPBA__ROL_S:
 				setRolS((String)newValue);
 				return;
-			case ConcretaPackage.RELATIONSHIPBA__ROL_TS:
-				setRolTS((String)newValue);
+			case ConcretaPackage.RELATIONSHIPBA__ROL_T:
+				setRolT((String)newValue);
 				return;
 			case ConcretaPackage.RELATIONSHIPBA__SOURCE:
 				setSource((Classba)newValue);
@@ -376,6 +423,9 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ConcretaPackage.RELATIONSHIPBA__IDE:
+				setIde(IDE_EDEFAULT);
+				return;
 			case ConcretaPackage.RELATIONSHIPBA__MULT_S:
 				setMultS(MULT_S_EDEFAULT);
 				return;
@@ -385,8 +435,8 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 			case ConcretaPackage.RELATIONSHIPBA__ROL_S:
 				setRolS(ROL_S_EDEFAULT);
 				return;
-			case ConcretaPackage.RELATIONSHIPBA__ROL_TS:
-				setRolTS(ROL_TS_EDEFAULT);
+			case ConcretaPackage.RELATIONSHIPBA__ROL_T:
+				setRolT(ROL_T_EDEFAULT);
 				return;
 			case ConcretaPackage.RELATIONSHIPBA__SOURCE:
 				setSource((Classba)null);
@@ -406,14 +456,16 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ConcretaPackage.RELATIONSHIPBA__IDE:
+				return IDE_EDEFAULT == null ? ide != null : !IDE_EDEFAULT.equals(ide);
 			case ConcretaPackage.RELATIONSHIPBA__MULT_S:
 				return MULT_S_EDEFAULT == null ? multS != null : !MULT_S_EDEFAULT.equals(multS);
 			case ConcretaPackage.RELATIONSHIPBA__MULT_T:
 				return MULT_T_EDEFAULT == null ? multT != null : !MULT_T_EDEFAULT.equals(multT);
 			case ConcretaPackage.RELATIONSHIPBA__ROL_S:
 				return ROL_S_EDEFAULT == null ? rolS != null : !ROL_S_EDEFAULT.equals(rolS);
-			case ConcretaPackage.RELATIONSHIPBA__ROL_TS:
-				return ROL_TS_EDEFAULT == null ? rolTS != null : !ROL_TS_EDEFAULT.equals(rolTS);
+			case ConcretaPackage.RELATIONSHIPBA__ROL_T:
+				return ROL_T_EDEFAULT == null ? rolT != null : !ROL_T_EDEFAULT.equals(rolT);
 			case ConcretaPackage.RELATIONSHIPBA__SOURCE:
 				return source != null;
 			case ConcretaPackage.RELATIONSHIPBA__TARGET:
@@ -432,14 +484,16 @@ public abstract class RelationshipbaImpl extends EObjectImpl implements Relation
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (multS: ");
+		result.append(" (ide: ");
+		result.append(ide);
+		result.append(", multS: ");
 		result.append(multS);
 		result.append(", multT: ");
 		result.append(multT);
 		result.append(", rolS: ");
 		result.append(rolS);
-		result.append(", rolTS: ");
-		result.append(rolTS);
+		result.append(", rolT: ");
+		result.append(rolT);
 		result.append(')');
 		return result.toString();
 	}

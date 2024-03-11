@@ -41,6 +41,7 @@ import concreta.Classba;
 import concreta.Containment;
 import concreta.DiagramClassba;
 import concreta.Generalization;
+import concreta.Implementation;
 import concreta.diagram.part.ConcretaDiagramEditorPlugin;
 import concreta.diagram.part.ConcretaVisualIDRegistry;
 import concreta.diagram.providers.ConcretaElementTypes;
@@ -341,8 +342,15 @@ public class ConcretaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-					* @generated
-					*/
+		* @generated
+		*/
+		public boolean canCreateImplementation_4005(DiagramClassba container, Classba source, Classba target) {
+			return canExistImplementation_4005(container, null, source, target);
+		}
+
+		/**
+						* @generated
+						*/
 		public boolean canExistContainment_4001(DiagramClassba container, Containment linkInstance, Classba source,
 				Classba target) {
 			return true;
@@ -368,6 +376,14 @@ public class ConcretaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		* @generated
 		*/
 		public boolean canExistGeneralization_4004(DiagramClassba container, Generalization linkInstance,
+				Classba source, Classba target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistImplementation_4005(DiagramClassba container, Implementation linkInstance,
 				Classba source, Classba target) {
 			return true;
 		}

@@ -60,14 +60,37 @@ public class RelationshipbaItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdePropertyDescriptor(object);
 			addMultSPropertyDescriptor(object);
 			addMultTPropertyDescriptor(object);
 			addRolSPropertyDescriptor(object);
-			addRolTSPropertyDescriptor(object);
+			addRolTPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Ide feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Relationshipba_ide_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_ide_feature", "_UI_Relationshipba_type"),
+				 ConcretaPackage.Literals.RELATIONSHIPBA__IDE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -137,19 +160,19 @@ public class RelationshipbaItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Rol TS feature.
+	 * This adds a property descriptor for the Rol T feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRolTSPropertyDescriptor(Object object) {
+	protected void addRolTPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Relationshipba_rolTS_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_rolTS_feature", "_UI_Relationshipba_type"),
-				 ConcretaPackage.Literals.RELATIONSHIPBA__ROL_TS,
+				 getString("_UI_Relationshipba_rolT_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationshipba_rolT_feature", "_UI_Relationshipba_type"),
+				 ConcretaPackage.Literals.RELATIONSHIPBA__ROL_T,
 				 true,
 				 false,
 				 false,
@@ -210,7 +233,7 @@ public class RelationshipbaItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Relationshipba)object).getMultS();
+		String label = ((Relationshipba)object).getIde();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Relationshipba_type") :
 			getString("_UI_Relationshipba_type") + " " + label;
@@ -229,10 +252,11 @@ public class RelationshipbaItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Relationshipba.class)) {
+			case ConcretaPackage.RELATIONSHIPBA__IDE:
 			case ConcretaPackage.RELATIONSHIPBA__MULT_S:
 			case ConcretaPackage.RELATIONSHIPBA__MULT_T:
 			case ConcretaPackage.RELATIONSHIPBA__ROL_S:
-			case ConcretaPackage.RELATIONSHIPBA__ROL_TS:
+			case ConcretaPackage.RELATIONSHIPBA__ROL_T:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

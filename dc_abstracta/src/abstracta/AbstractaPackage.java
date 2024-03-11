@@ -278,22 +278,13 @@ public interface AbstractaPackage extends EPackage {
 	int CLASSBA__IS_INTERFACE = CLASIFIER_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Is Final Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSBA__IS_FINAL_CLASS = CLASIFIER_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Modify Acces</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__MODIFY_ACCES = CLASIFIER_FEATURE_COUNT + 3;
+	int CLASSBA__MODIFY_ACCES = CLASIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -302,7 +293,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__PATH = CLASIFIER_FEATURE_COUNT + 4;
+	int CLASSBA__PATH = CLASIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Lst Relationship Sourceba</b></em>' containment reference list.
@@ -311,7 +302,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__LST_RELATIONSHIP_SOURCEBA = CLASIFIER_FEATURE_COUNT + 5;
+	int CLASSBA__LST_RELATIONSHIP_SOURCEBA = CLASIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Lst Attributesba</b></em>' containment reference list.
@@ -320,7 +311,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__LST_ATTRIBUTESBA = CLASIFIER_FEATURE_COUNT + 6;
+	int CLASSBA__LST_ATTRIBUTESBA = CLASIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Lst Relationship Targetba</b></em>' reference list.
@@ -329,7 +320,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__LST_RELATIONSHIP_TARGETBA = CLASIFIER_FEATURE_COUNT + 7;
+	int CLASSBA__LST_RELATIONSHIP_TARGETBA = CLASIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Lst Methodba</b></em>' containment reference list.
@@ -338,7 +329,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA__LST_METHODBA = CLASIFIER_FEATURE_COUNT + 8;
+	int CLASSBA__LST_METHODBA = CLASIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Classba</em>' class.
@@ -347,7 +338,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSBA_FEATURE_COUNT = CLASIFIER_FEATURE_COUNT + 9;
+	int CLASSBA_FEATURE_COUNT = CLASIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link abstracta.impl.RelationshipbaImpl <em>Relationshipba</em>}' class.
@@ -405,13 +396,22 @@ public interface AbstractaPackage extends EPackage {
 	int RELATIONSHIPBA__IS_ASSOCIATION = 4;
 
 	/**
+	 * The feature id for the '<em><b>Is Implementation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIPBA__IS_IMPLEMENTATION = 5;
+
+	/**
 	 * The feature id for the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__MULT_S = 5;
+	int RELATIONSHIPBA__MULT_S = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mult T</b></em>' attribute.
@@ -420,7 +420,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__MULT_T = 6;
+	int RELATIONSHIPBA__MULT_T = 7;
 
 	/**
 	 * The feature id for the '<em><b>Rol S</b></em>' attribute.
@@ -429,16 +429,16 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__ROL_S = 7;
+	int RELATIONSHIPBA__ROL_S = 8;
 
 	/**
-	 * The feature id for the '<em><b>Rol TS</b></em>' attribute.
+	 * The feature id for the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__ROL_TS = 8;
+	int RELATIONSHIPBA__ROL_T = 9;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -447,7 +447,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__SOURCE = 9;
+	int RELATIONSHIPBA__SOURCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -456,7 +456,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA__TARGET = 10;
+	int RELATIONSHIPBA__TARGET = 11;
 
 	/**
 	 * The number of structural features of the '<em>Relationshipba</em>' class.
@@ -465,7 +465,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIPBA_FEATURE_COUNT = 11;
+	int RELATIONSHIPBA_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link abstracta.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
@@ -588,7 +588,7 @@ public interface AbstractaPackage extends EPackage {
 	int METHODBA__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Retorno</b></em>' containment reference.
+	 * The feature id for the '<em><b>Retorno</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -851,17 +851,6 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getClassba_IsInterface();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracta.Classba#getIsFinalClass <em>Is Final Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Final Class</em>'.
-	 * @see abstracta.Classba#getIsFinalClass()
-	 * @see #getClassba()
-	 * @generated
-	 */
-	EAttribute getClassba_IsFinalClass();
-
-	/**
 	 * Returns the meta object for the attribute '{@link abstracta.Classba#getModifyAcces <em>Modify Acces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,6 +982,17 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getRelationshipba_IsAssociation();
 
 	/**
+	 * Returns the meta object for the attribute '{@link abstracta.Relationshipba#getIsImplementation <em>Is Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Implementation</em>'.
+	 * @see abstracta.Relationshipba#getIsImplementation()
+	 * @see #getRelationshipba()
+	 * @generated
+	 */
+	EAttribute getRelationshipba_IsImplementation();
+
+	/**
 	 * Returns the meta object for the attribute '{@link abstracta.Relationshipba#getMultS <em>Mult S</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,15 +1026,15 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getRelationshipba_RolS();
 
 	/**
-	 * Returns the meta object for the attribute '{@link abstracta.Relationshipba#getRolTS <em>Rol TS</em>}'.
+	 * Returns the meta object for the attribute '{@link abstracta.Relationshipba#getRolT <em>Rol T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rol TS</em>'.
-	 * @see abstracta.Relationshipba#getRolTS()
+	 * @return the meta object for the attribute '<em>Rol T</em>'.
+	 * @see abstracta.Relationshipba#getRolT()
 	 * @see #getRelationshipba()
 	 * @generated
 	 */
-	EAttribute getRelationshipba_RolTS();
+	EAttribute getRelationshipba_RolT();
 
 	/**
 	 * Returns the meta object for the reference '{@link abstracta.Relationshipba#getSource <em>Source</em>}'.
@@ -1187,10 +1187,10 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getMethodba_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link abstracta.Methodba#getRetorno <em>Retorno</em>}'.
+	 * Returns the meta object for the reference '{@link abstracta.Methodba#getRetorno <em>Retorno</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Retorno</em>'.
+	 * @return the meta object for the reference '<em>Retorno</em>'.
 	 * @see abstracta.Methodba#getRetorno()
 	 * @see #getMethodba()
 	 * @generated
@@ -1434,14 +1434,6 @@ public interface AbstractaPackage extends EPackage {
 		EAttribute CLASSBA__IS_INTERFACE = eINSTANCE.getClassba_IsInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Final Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASSBA__IS_FINAL_CLASS = eINSTANCE.getClassba_IsFinalClass();
-
-		/**
 		 * The meta object literal for the '<em><b>Modify Acces</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1540,6 +1532,14 @@ public interface AbstractaPackage extends EPackage {
 		EAttribute RELATIONSHIPBA__IS_ASSOCIATION = eINSTANCE.getRelationshipba_IsAssociation();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Implementation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONSHIPBA__IS_IMPLEMENTATION = eINSTANCE.getRelationshipba_IsImplementation();
+
+		/**
 		 * The meta object literal for the '<em><b>Mult S</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1564,12 +1564,12 @@ public interface AbstractaPackage extends EPackage {
 		EAttribute RELATIONSHIPBA__ROL_S = eINSTANCE.getRelationshipba_RolS();
 
 		/**
-		 * The meta object literal for the '<em><b>Rol TS</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rol T</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RELATIONSHIPBA__ROL_TS = eINSTANCE.getRelationshipba_RolTS();
+		EAttribute RELATIONSHIPBA__ROL_T = eINSTANCE.getRelationshipba_RolT();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1692,7 +1692,7 @@ public interface AbstractaPackage extends EPackage {
 		EAttribute METHODBA__NAME = eINSTANCE.getMethodba_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Retorno</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Retorno</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

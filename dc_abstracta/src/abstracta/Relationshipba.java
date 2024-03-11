@@ -18,10 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link abstracta.Relationshipba#getIsContainment <em>Is Containment</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getIsGeneralization <em>Is Generalization</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getIsAssociation <em>Is Association</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getIsImplementation <em>Is Implementation</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getMultS <em>Mult S</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getMultT <em>Mult T</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getRolS <em>Rol S</em>}</li>
- *   <li>{@link abstracta.Relationshipba#getRolTS <em>Rol TS</em>}</li>
+ *   <li>{@link abstracta.Relationshipba#getRolT <em>Rol T</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getSource <em>Source</em>}</li>
  *   <li>{@link abstracta.Relationshipba#getTarget <em>Target</em>}</li>
  * </ul>
@@ -162,6 +163,32 @@ public interface Relationshipba extends EObject {
 	void setIsAssociation(Boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Is Implementation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Implementation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Implementation</em>' attribute.
+	 * @see #setIsImplementation(Boolean)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_IsImplementation()
+	 * @model
+	 * @generated
+	 */
+	Boolean getIsImplementation();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Relationshipba#getIsImplementation <em>Is Implementation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Implementation</em>' attribute.
+	 * @see #getIsImplementation()
+	 * @generated
+	 */
+	void setIsImplementation(Boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -240,30 +267,30 @@ public interface Relationshipba extends EObject {
 	void setRolS(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Rol TS</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rol TS</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Rol T</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rol TS</em>' attribute.
-	 * @see #setRolTS(String)
-	 * @see abstracta.AbstractaPackage#getRelationshipba_RolTS()
+	 * @return the value of the '<em>Rol T</em>' attribute.
+	 * @see #setRolT(String)
+	 * @see abstracta.AbstractaPackage#getRelationshipba_RolT()
 	 * @model
 	 * @generated
 	 */
-	String getRolTS();
+	String getRolT();
 
 	/**
-	 * Sets the value of the '{@link abstracta.Relationshipba#getRolTS <em>Rol TS</em>}' attribute.
+	 * Sets the value of the '{@link abstracta.Relationshipba#getRolT <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rol TS</em>' attribute.
-	 * @see #getRolTS()
+	 * @param value the new value of the '<em>Rol T</em>' attribute.
+	 * @see #getRolT()
 	 * @generated
 	 */
-	void setRolTS(String value);
+	void setRolT(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.

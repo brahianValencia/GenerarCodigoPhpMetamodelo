@@ -18,8 +18,20 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import concreta.ConcretaPackage;
 import concreta.diagram.edit.parts.AbstractNameEditPart;
+import concreta.diagram.edit.parts.AggregationMultSEditPart;
+import concreta.diagram.edit.parts.AggregationMultTEditPart;
+import concreta.diagram.edit.parts.AggregationRolSEditPart;
+import concreta.diagram.edit.parts.AggregationRolTEditPart;
+import concreta.diagram.edit.parts.AssociationMultSEditPart;
+import concreta.diagram.edit.parts.AssociationMultTEditPart;
+import concreta.diagram.edit.parts.AssociationRolSEditPart;
+import concreta.diagram.edit.parts.AssociationRolTEditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaNameEditPart;
+import concreta.diagram.edit.parts.ContainmentMultSEditPart;
+import concreta.diagram.edit.parts.ContainmentMultTEditPart;
+import concreta.diagram.edit.parts.ContainmentRolSEditPart;
+import concreta.diagram.edit.parts.ContainmentRolTEditPart;
 import concreta.diagram.edit.parts.InterfaceNameEditPart;
 import concreta.diagram.edit.parts.MethodbaNameEditPart;
 import concreta.diagram.edit.parts.PackagebaNameEditPart;
@@ -136,6 +148,210 @@ public class ConcretaParserProvider extends AbstractProvider implements IParserP
 	/**
 	* @generated
 	*/
+	private IParser containmentRolS_6001Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContainmentRolS_6001Parser() {
+		if (containmentRolS_6001Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			containmentRolS_6001Parser = parser;
+		}
+		return containmentRolS_6001Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser containmentMultS_6002Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContainmentMultS_6002Parser() {
+		if (containmentMultS_6002Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			containmentMultS_6002Parser = parser;
+		}
+		return containmentMultS_6002Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser containmentRolT_6003Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContainmentRolT_6003Parser() {
+		if (containmentRolT_6003Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			containmentRolT_6003Parser = parser;
+		}
+		return containmentRolT_6003Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser containmentMultT_6004Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getContainmentMultT_6004Parser() {
+		if (containmentMultT_6004Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			containmentMultT_6004Parser = parser;
+		}
+		return containmentMultT_6004Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser aggregationRolS_6005Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAggregationRolS_6005Parser() {
+		if (aggregationRolS_6005Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			aggregationRolS_6005Parser = parser;
+		}
+		return aggregationRolS_6005Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser aggregationMultS_6006Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAggregationMultS_6006Parser() {
+		if (aggregationMultS_6006Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			aggregationMultS_6006Parser = parser;
+		}
+		return aggregationMultS_6006Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser aggregationRolT_6007Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAggregationRolT_6007Parser() {
+		if (aggregationRolT_6007Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			aggregationRolT_6007Parser = parser;
+		}
+		return aggregationRolT_6007Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser aggregationMultT_6008Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAggregationMultT_6008Parser() {
+		if (aggregationMultT_6008Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			aggregationMultT_6008Parser = parser;
+		}
+		return aggregationMultT_6008Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser associationRolS_6009Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAssociationRolS_6009Parser() {
+		if (associationRolS_6009Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			associationRolS_6009Parser = parser;
+		}
+		return associationRolS_6009Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser associationMultS_6010Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAssociationMultS_6010Parser() {
+		if (associationMultS_6010Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultS() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			associationMultS_6010Parser = parser;
+		}
+		return associationMultS_6010Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser associationRolT_6011Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAssociationRolT_6011Parser() {
+		if (associationRolT_6011Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_RolT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			associationRolT_6011Parser = parser;
+		}
+		return associationRolT_6011Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser associationMultT_6012Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getAssociationMultT_6012Parser() {
+		if (associationMultT_6012Parser == null) {
+			EAttribute[] features = new EAttribute[] { ConcretaPackage.eINSTANCE.getRelationshipba_MultT() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			associationMultT_6012Parser = parser;
+		}
+		return associationMultT_6012Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case InterfaceNameEditPart.VISUAL_ID:
@@ -150,6 +366,30 @@ public class ConcretaParserProvider extends AbstractProvider implements IParserP
 			return getAttributebaName_5001Parser();
 		case MethodbaNameEditPart.VISUAL_ID:
 			return getMethodbaName_5002Parser();
+		case ContainmentRolSEditPart.VISUAL_ID:
+			return getContainmentRolS_6001Parser();
+		case ContainmentMultSEditPart.VISUAL_ID:
+			return getContainmentMultS_6002Parser();
+		case ContainmentRolTEditPart.VISUAL_ID:
+			return getContainmentRolT_6003Parser();
+		case ContainmentMultTEditPart.VISUAL_ID:
+			return getContainmentMultT_6004Parser();
+		case AggregationRolSEditPart.VISUAL_ID:
+			return getAggregationRolS_6005Parser();
+		case AggregationMultSEditPart.VISUAL_ID:
+			return getAggregationMultS_6006Parser();
+		case AggregationRolTEditPart.VISUAL_ID:
+			return getAggregationRolT_6007Parser();
+		case AggregationMultTEditPart.VISUAL_ID:
+			return getAggregationMultT_6008Parser();
+		case AssociationRolSEditPart.VISUAL_ID:
+			return getAssociationRolS_6009Parser();
+		case AssociationMultSEditPart.VISUAL_ID:
+			return getAssociationMultS_6010Parser();
+		case AssociationRolTEditPart.VISUAL_ID:
+			return getAssociationRolT_6011Parser();
+		case AssociationMultTEditPart.VISUAL_ID:
+			return getAssociationMultT_6012Parser();
 		}
 		return null;
 	}

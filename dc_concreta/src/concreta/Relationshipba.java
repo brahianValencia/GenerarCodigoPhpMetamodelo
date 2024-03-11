@@ -13,10 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link concreta.Relationshipba#getIde <em>Ide</em>}</li>
  *   <li>{@link concreta.Relationshipba#getMultS <em>Mult S</em>}</li>
  *   <li>{@link concreta.Relationshipba#getMultT <em>Mult T</em>}</li>
  *   <li>{@link concreta.Relationshipba#getRolS <em>Rol S</em>}</li>
- *   <li>{@link concreta.Relationshipba#getRolTS <em>Rol TS</em>}</li>
+ *   <li>{@link concreta.Relationshipba#getRolT <em>Rol T</em>}</li>
  *   <li>{@link concreta.Relationshipba#getSource <em>Source</em>}</li>
  *   <li>{@link concreta.Relationshipba#getTarget <em>Target</em>}</li>
  * </ul>
@@ -26,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Relationshipba extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ide</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ide</em>' attribute.
+	 * @see #setIde(String)
+	 * @see concreta.ConcretaPackage#getRelationshipba_Ide()
+	 * @model
+	 * @generated
+	 */
+	String getIde();
+
+	/**
+	 * Sets the value of the '{@link concreta.Relationshipba#getIde <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ide</em>' attribute.
+	 * @see #getIde()
+	 * @generated
+	 */
+	void setIde(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Mult S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,30 +132,30 @@ public interface Relationshipba extends EObject {
 	void setRolS(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Rol TS</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rol T</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rol TS</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Rol T</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rol TS</em>' attribute.
-	 * @see #setRolTS(String)
-	 * @see concreta.ConcretaPackage#getRelationshipba_RolTS()
+	 * @return the value of the '<em>Rol T</em>' attribute.
+	 * @see #setRolT(String)
+	 * @see concreta.ConcretaPackage#getRelationshipba_RolT()
 	 * @model
 	 * @generated
 	 */
-	String getRolTS();
+	String getRolT();
 
 	/**
-	 * Sets the value of the '{@link concreta.Relationshipba#getRolTS <em>Rol TS</em>}' attribute.
+	 * Sets the value of the '{@link concreta.Relationshipba#getRolT <em>Rol T</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rol TS</em>' attribute.
-	 * @see #getRolTS()
+	 * @param value the new value of the '<em>Rol T</em>' attribute.
+	 * @see #getRolT()
 	 * @generated
 	 */
-	void setRolTS(String value);
+	void setRolT(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.

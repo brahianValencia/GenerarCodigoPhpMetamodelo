@@ -26,6 +26,8 @@ import concreta.diagram.edit.commands.ContainmentCreateCommand;
 import concreta.diagram.edit.commands.ContainmentReorientCommand;
 import concreta.diagram.edit.commands.GeneralizationCreateCommand;
 import concreta.diagram.edit.commands.GeneralizationReorientCommand;
+import concreta.diagram.edit.commands.ImplementationCreateCommand;
+import concreta.diagram.edit.commands.ImplementationReorientCommand;
 import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
@@ -33,6 +35,7 @@ import concreta.diagram.edit.parts.AssociationEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
 import concreta.diagram.part.ConcretaVisualIDRegistry;
 import concreta.diagram.providers.ConcretaElementTypes;
@@ -82,6 +85,12 @@ public class AbstractItemSemanticEditPolicy extends ConcretaBaseItemSemanticEdit
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (ConcretaVisualIDRegistry.getVisualID(incomingLink) == ImplementationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
@@ -104,6 +113,12 @@ public class AbstractItemSemanticEditPolicy extends ConcretaBaseItemSemanticEdit
 				continue;
 			}
 			if (ConcretaVisualIDRegistry.getVisualID(outgoingLink) == GeneralizationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ConcretaVisualIDRegistry.getVisualID(outgoingLink) == ImplementationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -186,6 +201,9 @@ public class AbstractItemSemanticEditPolicy extends ConcretaBaseItemSemanticEdit
 		if (ConcretaElementTypes.Generalization_4004 == req.getElementType()) {
 			return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (ConcretaElementTypes.Implementation_4005 == req.getElementType()) {
+			return getGEFWrapper(new ImplementationCreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -204,6 +222,9 @@ public class AbstractItemSemanticEditPolicy extends ConcretaBaseItemSemanticEdit
 		}
 		if (ConcretaElementTypes.Generalization_4004 == req.getElementType()) {
 			return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (ConcretaElementTypes.Implementation_4005 == req.getElementType()) {
+			return getGEFWrapper(new ImplementationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -224,6 +245,8 @@ public class AbstractItemSemanticEditPolicy extends ConcretaBaseItemSemanticEdit
 			return getGEFWrapper(new AssociationReorientCommand(req));
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGEFWrapper(new GeneralizationReorientCommand(req));
+		case ImplementationEditPart.VISUAL_ID:
+			return getGEFWrapper(new ImplementationReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

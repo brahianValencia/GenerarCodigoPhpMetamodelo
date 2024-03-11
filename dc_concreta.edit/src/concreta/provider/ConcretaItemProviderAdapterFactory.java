@@ -325,6 +325,29 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link concreta.Implementation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImplementationItemProvider implementationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concreta.Implementation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImplementationAdapter() {
+		if (implementationItemProvider == null) {
+			implementationItemProvider = new ImplementationItemProvider(this);
+		}
+
+		return implementationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link concreta.Clasifier} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -549,6 +572,7 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 		if (aggregationItemProvider != null) aggregationItemProvider.dispose();
 		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (generalizationItemProvider != null) generalizationItemProvider.dispose();
+		if (implementationItemProvider != null) implementationItemProvider.dispose();
 		if (clasifierItemProvider != null) clasifierItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (attributebaItemProvider != null) attributebaItemProvider.dispose();

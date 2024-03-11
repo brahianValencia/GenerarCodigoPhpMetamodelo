@@ -83,26 +83,26 @@ public interface Methodba extends EObject {
 	void setAccessModify(AccessModifyba value);
 
 	/**
-	 * Returns the value of the '<em><b>Retorno</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Retorno</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Retorno</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Retorno</em>' containment reference.
+	 * @return the value of the '<em>Retorno</em>' reference.
 	 * @see #setRetorno(Clasifier)
 	 * @see concreta.ConcretaPackage#getMethodba_Retorno()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	Clasifier getRetorno();
 
 	/**
-	 * Sets the value of the '{@link concreta.Methodba#getRetorno <em>Retorno</em>}' containment reference.
+	 * Sets the value of the '{@link concreta.Methodba#getRetorno <em>Retorno</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Retorno</em>' containment reference.
+	 * @param value the new value of the '<em>Retorno</em>' reference.
 	 * @see #getRetorno()
 	 * @generated
 	 */

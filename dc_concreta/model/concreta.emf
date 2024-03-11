@@ -50,10 +50,11 @@ class Abstract extends Classba{
 }
 
 abstract class Relationshipba {
+	attr String ide;
 	attr String multS;
 	attr String multT;
 	attr String rolS;
-	attr String rolTS;
+	attr String rolT;
 	ref Classba source;
 	ref Classba target;
 }
@@ -75,6 +76,11 @@ class Association extends Relationshipba{
 
 @gmf.link(source="source", target="target", source.decoration ="none", target.decoration="closedarrow", width="2", color="0,0,0")
 class Generalization extends Relationshipba{
+	
+}
+
+@gmf.link(source="source", target="target", source.decoration ="none", target.decoration="closedarrow", width="2", color="0,0,0", style="dash")
+class Implementation extends Relationshipba{
 	
 }
 
@@ -103,7 +109,7 @@ class Methodba {
 	
 	attr String name;
 	attr AccessModifyba accessModify;
-	val Clasifier retorno;
+	ref Clasifier retorno;
 	ref Classba classba;
 	val Parameter[*] lstParametersba;
 }

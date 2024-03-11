@@ -84,7 +84,7 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	protected AccessModifyba accessModify = ACCESS_MODIFY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRetorno() <em>Retorno</em>}' containment reference.
+	 * The cached value of the '{@link #getRetorno() <em>Retorno</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRetorno()
@@ -180,6 +180,14 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	 * @generated
 	 */
 	public Clasifier getRetorno() {
+		if (retorno != null && retorno.eIsProxy()) {
+			InternalEObject oldRetorno = (InternalEObject)retorno;
+			retorno = (Clasifier)eResolveProxy(oldRetorno);
+			if (retorno != oldRetorno) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConcretaPackage.METHODBA__RETORNO, oldRetorno, retorno));
+			}
+		}
 		return retorno;
 	}
 
@@ -188,14 +196,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRetorno(Clasifier newRetorno, NotificationChain msgs) {
-		Clasifier oldRetorno = retorno;
-		retorno = newRetorno;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConcretaPackage.METHODBA__RETORNO, oldRetorno, newRetorno);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Clasifier basicGetRetorno() {
+		return retorno;
 	}
 
 	/**
@@ -204,17 +206,10 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	 * @generated
 	 */
 	public void setRetorno(Clasifier newRetorno) {
-		if (newRetorno != retorno) {
-			NotificationChain msgs = null;
-			if (retorno != null)
-				msgs = ((InternalEObject)retorno).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConcretaPackage.METHODBA__RETORNO, null, msgs);
-			if (newRetorno != null)
-				msgs = ((InternalEObject)newRetorno).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConcretaPackage.METHODBA__RETORNO, null, msgs);
-			msgs = basicSetRetorno(newRetorno, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METHODBA__RETORNO, newRetorno, newRetorno));
+		Clasifier oldRetorno = retorno;
+		retorno = newRetorno;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METHODBA__RETORNO, oldRetorno, retorno));
 	}
 
 	/**
@@ -275,8 +270,6 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConcretaPackage.METHODBA__RETORNO:
-				return basicSetRetorno(null, msgs);
 			case ConcretaPackage.METHODBA__LST_PARAMETERSBA:
 				return ((InternalEList<?>)getLstParametersba()).basicRemove(otherEnd, msgs);
 		}
@@ -296,7 +289,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				return getAccessModify();
 			case ConcretaPackage.METHODBA__RETORNO:
-				return getRetorno();
+				if (resolve) return getRetorno();
+				return basicGetRetorno();
 			case ConcretaPackage.METHODBA__CLASSBA:
 				if (resolve) return getClassba();
 				return basicGetClassba();

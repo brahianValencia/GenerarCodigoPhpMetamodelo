@@ -68,6 +68,7 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 			case ConcretaPackage.AGGREGATION: return createAggregation();
 			case ConcretaPackage.ASSOCIATION: return createAssociation();
 			case ConcretaPackage.GENERALIZATION: return createGeneralization();
+			case ConcretaPackage.IMPLEMENTATION: return createImplementation();
 			case ConcretaPackage.CLASIFIER: return createClasifier();
 			case ConcretaPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case ConcretaPackage.ATTRIBUTEBA: return createAttributeba();
@@ -216,6 +217,16 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 	public Generalization createGeneralization() {
 		GeneralizationImpl generalization = new GeneralizationImpl();
 		return generalization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Implementation createImplementation() {
+		ImplementationImpl implementation = new ImplementationImpl();
+		return implementation;
 	}
 
 	/**

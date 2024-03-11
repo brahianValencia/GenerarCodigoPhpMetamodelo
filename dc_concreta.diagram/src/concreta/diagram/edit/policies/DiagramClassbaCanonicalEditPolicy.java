@@ -43,6 +43,7 @@ import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
@@ -346,6 +347,13 @@ public class DiagramClassbaCanonicalEditPolicy extends CanonicalEditPolicy {
 		case GeneralizationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ConcretaDiagramUpdater.getGeneralization_4004ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ImplementationEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getImplementation_4005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

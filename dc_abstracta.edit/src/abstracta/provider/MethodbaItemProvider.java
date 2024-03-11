@@ -64,6 +64,7 @@ public class MethodbaItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRetornoPropertyDescriptor(object);
 			addClassbaPropertyDescriptor(object);
 			addModifyAccesPropertyDescriptor(object);
 		}
@@ -88,6 +89,28 @@ public class MethodbaItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Retorno feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRetornoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Methodba_retorno_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Methodba_retorno_feature", "_UI_Methodba_type"),
+				 AbstractaPackage.Literals.METHODBA__RETORNO,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -148,7 +171,6 @@ public class MethodbaItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AbstractaPackage.Literals.METHODBA__RETORNO);
 			childrenFeatures.add(AbstractaPackage.Literals.METHODBA__LST_PARAMETERSBA);
 		}
 		return childrenFeatures;
@@ -209,7 +231,6 @@ public class MethodbaItemProvider
 			case AbstractaPackage.METHODBA__MODIFY_ACCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case AbstractaPackage.METHODBA__RETORNO:
 			case AbstractaPackage.METHODBA__LST_PARAMETERSBA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -227,21 +248,6 @@ public class MethodbaItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AbstractaPackage.Literals.METHODBA__RETORNO,
-				 AbstractaFactory.eINSTANCE.createClasifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AbstractaPackage.Literals.METHODBA__RETORNO,
-				 AbstractaFactory.eINSTANCE.createClassba()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AbstractaPackage.Literals.METHODBA__RETORNO,
-				 AbstractaFactory.eINSTANCE.createPrimitiveDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -50,7 +50,6 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 
 			addIsAbstractPropertyDescriptor(object);
 			addIsInterfacePropertyDescriptor(object);
-			addIsFinalClassPropertyDescriptor(object);
 			addModifyAccesPropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
 			addLstRelationshipTargetbaPropertyDescriptor(object);
@@ -94,28 +93,6 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 				 getString("_UI_Classba_isInterface_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Classba_isInterface_feature", "_UI_Classba_type"),
 				 AbstractaPackage.Literals.CLASSBA__IS_INTERFACE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Final Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsFinalClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Classba_isFinalClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Classba_isFinalClass_feature", "_UI_Classba_type"),
-				 AbstractaPackage.Literals.CLASSBA__IS_FINAL_CLASS,
 				 true,
 				 false,
 				 false,
@@ -262,7 +239,6 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 		switch (notification.getFeatureID(Classba.class)) {
 			case AbstractaPackage.CLASSBA__IS_ABSTRACT:
 			case AbstractaPackage.CLASSBA__IS_INTERFACE:
-			case AbstractaPackage.CLASSBA__IS_FINAL_CLASS:
 			case AbstractaPackage.CLASSBA__MODIFY_ACCES:
 			case AbstractaPackage.CLASSBA__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

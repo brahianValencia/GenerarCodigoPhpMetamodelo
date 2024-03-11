@@ -309,7 +309,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassba_IsFinalClass() {
+	public EAttribute getClassba_ModifyAcces() {
 		return (EAttribute)classbaEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -318,7 +318,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassba_ModifyAcces() {
+	public EAttribute getClassba_Path() {
 		return (EAttribute)classbaEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -327,17 +327,8 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassba_Path() {
-		return (EAttribute)classbaEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getClassba_LstRelationshipSourceba() {
-		return (EReference)classbaEClass.getEStructuralFeatures().get(5);
+		return (EReference)classbaEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -346,7 +337,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * @generated
 	 */
 	public EReference getClassba_LstAttributesba() {
-		return (EReference)classbaEClass.getEStructuralFeatures().get(6);
+		return (EReference)classbaEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -355,7 +346,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * @generated
 	 */
 	public EReference getClassba_LstRelationshipTargetba() {
-		return (EReference)classbaEClass.getEStructuralFeatures().get(7);
+		return (EReference)classbaEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -364,7 +355,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * @generated
 	 */
 	public EReference getClassba_LstMethodba() {
-		return (EReference)classbaEClass.getEStructuralFeatures().get(8);
+		return (EReference)classbaEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -426,7 +417,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_MultS() {
+	public EAttribute getRelationshipba_IsImplementation() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -435,7 +426,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_MultT() {
+	public EAttribute getRelationshipba_MultS() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -444,7 +435,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_RolS() {
+	public EAttribute getRelationshipba_MultT() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -453,7 +444,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_RolTS() {
+	public EAttribute getRelationshipba_RolS() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -462,8 +453,17 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRelationshipba_RolT() {
+		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getRelationshipba_Source() {
-		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(9);
+		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -472,7 +472,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * @generated
 	 */
 	public EReference getRelationshipba_Target() {
-		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(10);
+		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -710,7 +710,6 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		classbaEClass = createEClass(CLASSBA);
 		createEAttribute(classbaEClass, CLASSBA__IS_ABSTRACT);
 		createEAttribute(classbaEClass, CLASSBA__IS_INTERFACE);
-		createEAttribute(classbaEClass, CLASSBA__IS_FINAL_CLASS);
 		createEAttribute(classbaEClass, CLASSBA__MODIFY_ACCES);
 		createEAttribute(classbaEClass, CLASSBA__PATH);
 		createEReference(classbaEClass, CLASSBA__LST_RELATIONSHIP_SOURCEBA);
@@ -724,10 +723,11 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IS_CONTAINMENT);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IS_GENERALIZATION);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IS_ASSOCIATION);
+		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IS_IMPLEMENTATION);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__MULT_S);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__MULT_T);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_S);
-		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_TS);
+		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_T);
 		createEReference(relationshipbaEClass, RELATIONSHIPBA__SOURCE);
 		createEReference(relationshipbaEClass, RELATIONSHIPBA__TARGET);
 
@@ -810,7 +810,6 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		initEClass(classbaEClass, Classba.class, "Classba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClassba_IsAbstract(), ecorePackage.getEBooleanObject(), "isAbstract", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClassba_IsInterface(), ecorePackage.getEBooleanObject(), "isInterface", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClassba_IsFinalClass(), ecorePackage.getEBooleanObject(), "isFinalClass", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClassba_ModifyAcces(), this.getAccessModifyba(), "modifyAcces", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClassba_Path(), ecorePackage.getEString(), "path", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassba_LstRelationshipSourceba(), this.getRelationshipba(), null, "lstRelationshipSourceba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -824,10 +823,11 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		initEAttribute(getRelationshipba_IsContainment(), ecorePackage.getEBooleanObject(), "isContainment", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_IsGeneralization(), ecorePackage.getEBooleanObject(), "isGeneralization", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_IsAssociation(), ecorePackage.getEBooleanObject(), "isAssociation", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationshipba_IsImplementation(), ecorePackage.getEBooleanObject(), "isImplementation", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_MultS(), ecorePackage.getEString(), "multS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_MultT(), ecorePackage.getEString(), "multT", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_RolS(), ecorePackage.getEString(), "rolS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationshipba_RolTS(), ecorePackage.getEString(), "rolTS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationshipba_RolT(), ecorePackage.getEString(), "rolT", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationshipba_Source(), this.getClassba(), null, "source", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationshipba_Target(), this.getClassba(), null, "target", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -846,7 +846,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 
 		initEClass(methodbaEClass, Methodba.class, "Methodba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethodba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Classba(), this.getClassba(), null, "classba", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_LstParametersba(), this.getParameter(), null, "lstParametersba", null, 0, -1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMethodba_ModifyAcces(), this.getAccessModifyba(), "modifyAcces", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

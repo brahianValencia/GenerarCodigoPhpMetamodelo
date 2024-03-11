@@ -64,7 +64,7 @@ public class AggregationItemProvider extends RelationshipbaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Aggregation)object).getMultS();
+		String label = ((Aggregation)object).getIde();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Aggregation_type") :
 			getString("_UI_Aggregation_type") + " " + label;

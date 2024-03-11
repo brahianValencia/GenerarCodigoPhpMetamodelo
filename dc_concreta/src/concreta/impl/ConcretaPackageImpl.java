@@ -14,6 +14,7 @@ import concreta.ConcretaPackage;
 import concreta.Containment;
 import concreta.DiagramClassba;
 import concreta.Generalization;
+import concreta.Implementation;
 import concreta.Interface;
 import concreta.Methodba;
 import concreta.ModelFactoryConcreta;
@@ -121,6 +122,13 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * @generated
 	 */
 	private EClass generalizationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass implementationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -464,7 +472,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_MultS() {
+	public EAttribute getRelationshipba_Ide() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -473,7 +481,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_MultT() {
+	public EAttribute getRelationshipba_MultS() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -482,7 +490,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_RolS() {
+	public EAttribute getRelationshipba_MultT() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -491,7 +499,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRelationshipba_RolTS() {
+	public EAttribute getRelationshipba_RolS() {
 		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -500,8 +508,17 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRelationshipba_RolT() {
+		return (EAttribute)relationshipbaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getRelationshipba_Source() {
-		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(4);
+		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -510,7 +527,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * @generated
 	 */
 	public EReference getRelationshipba_Target() {
-		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(5);
+		return (EReference)relationshipbaEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -547,6 +564,15 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 */
 	public EClass getGeneralization() {
 		return generalizationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImplementation() {
+		return implementationEClass;
 	}
 
 	/**
@@ -799,10 +825,11 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		abstractEClass = createEClass(ABSTRACT);
 
 		relationshipbaEClass = createEClass(RELATIONSHIPBA);
+		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IDE);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__MULT_S);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__MULT_T);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_S);
-		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_TS);
+		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__ROL_T);
 		createEReference(relationshipbaEClass, RELATIONSHIPBA__SOURCE);
 		createEReference(relationshipbaEClass, RELATIONSHIPBA__TARGET);
 
@@ -813,6 +840,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		associationEClass = createEClass(ASSOCIATION);
 
 		generalizationEClass = createEClass(GENERALIZATION);
+
+		implementationEClass = createEClass(IMPLEMENTATION);
 
 		clasifierEClass = createEClass(CLASIFIER);
 		createEAttribute(clasifierEClass, CLASIFIER__NAME);
@@ -878,6 +907,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		aggregationEClass.getESuperTypes().add(this.getRelationshipba());
 		associationEClass.getESuperTypes().add(this.getRelationshipba());
 		generalizationEClass.getESuperTypes().add(this.getRelationshipba());
+		implementationEClass.getESuperTypes().add(this.getRelationshipba());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getClasifier());
 
 		// Initialize classes and features; add operations and parameters
@@ -914,10 +944,11 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		initEClass(abstractEClass, Abstract.class, "Abstract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(relationshipbaEClass, Relationshipba.class, "Relationshipba", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRelationshipba_Ide(), ecorePackage.getEString(), "ide", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_MultS(), ecorePackage.getEString(), "multS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_MultT(), ecorePackage.getEString(), "multT", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelationshipba_RolS(), ecorePackage.getEString(), "rolS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationshipba_RolTS(), ecorePackage.getEString(), "rolTS", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationshipba_RolT(), ecorePackage.getEString(), "rolT", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationshipba_Source(), this.getClassba(), null, "source", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationshipba_Target(), this.getClassba(), null, "target", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -928,6 +959,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(generalizationEClass, Generalization.class, "Generalization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(implementationEClass, Implementation.class, "Implementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(clasifierEClass, Clasifier.class, "Clasifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClasifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clasifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -945,7 +978,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		initEClass(methodbaEClass, Methodba.class, "Methodba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethodba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMethodba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Classba(), this.getClassba(), null, "classba", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_LstParametersba(), this.getParameter(), null, "lstParametersba", null, 0, -1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1092,8 +1125,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 			 "source.decoration", "filledrhomb",
 			 "target.decoration", "none",
 			 "width", "2",
-			 "color", "0,0,0",
-			 "style", "solid"
+			 "color", "0,0,0"
 		   });	
 		addAnnotation
 		  (aggregationEClass, 
@@ -1125,6 +1157,18 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 			 "target.decoration", "closedarrow",
 			 "width", "2",
 			 "color", "0,0,0"
+		   });	
+		addAnnotation
+		  (implementationEClass, 
+		   source, 
+		   new String[] {
+			 "source", "source",
+			 "target", "target",
+			 "source.decoration", "none",
+			 "target.decoration", "closedarrow",
+			 "width", "2",
+			 "color", "0,0,0",
+			 "style", "dash"
 		   });
 	}
 

@@ -121,6 +121,15 @@ public interface ConcretaFactory extends EFactory {
 	Generalization createGeneralization();
 
 	/**
+	 * Returns a new object of class '<em>Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Implementation</em>'.
+	 * @generated
+	 */
+	Implementation createImplementation();
+
+	/**
 	 * Returns a new object of class '<em>Clasifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

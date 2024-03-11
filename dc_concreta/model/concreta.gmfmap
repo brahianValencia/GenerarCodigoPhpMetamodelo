@@ -188,6 +188,34 @@
   <links>
     <domainMetaElement
         href="concreta.ecore#//Containment"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#ContainmentrolSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#ContainmentmultSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#ContainmentrolTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolT"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#ContainmentmultTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multT"/>
+    </labelMappings>
     <containmentFeature
         href="concreta.ecore#//DiagramClassba/lstRelationshipba"/>
     <tool
@@ -205,6 +233,34 @@
   <links>
     <domainMetaElement
         href="concreta.ecore#//Aggregation"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AggregationrolSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AggregationmultSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AggregationrolTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolT"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AggregationmultTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multT"/>
+    </labelMappings>
     <containmentFeature
         href="concreta.ecore#//DiagramClassba/lstRelationshipba"/>
     <tool
@@ -222,6 +278,34 @@
   <links>
     <domainMetaElement
         href="concreta.ecore#//Association"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AssociationrolSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AssociationmultSLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multS"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AssociationrolTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/rolT"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="concreta.gmfgraph#AssociationmultTLabel"/>
+      <features
+          href="concreta.ecore#//Relationshipba/multT"/>
+    </labelMappings>
     <containmentFeature
         href="concreta.ecore#//DiagramClassba/lstRelationshipba"/>
     <tool
@@ -246,6 +330,23 @@
         href="concreta.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
         href="concreta.gmfgraph#Generalization"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="concreta.ecore#//Relationshipba/source"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="concreta.ecore#//Relationshipba/target"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="concreta.ecore#//Implementation"/>
+    <containmentFeature
+        href="concreta.ecore#//DiagramClassba/lstRelationshipba"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="concreta.gmftool#//@palette/@tools.1/@tools.4"/>
+    <diagramLink
+        href="concreta.gmfgraph#Implementation"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="concreta.ecore#//Relationshipba/source"/>

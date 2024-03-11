@@ -25,6 +25,7 @@ import concreta.ConcretaPackage;
 import concreta.Containment;
 import concreta.DiagramClassba;
 import concreta.Generalization;
+import concreta.Implementation;
 import concreta.Interface;
 import concreta.Methodba;
 import concreta.Packageba;
@@ -40,6 +41,7 @@ import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
@@ -294,6 +296,8 @@ public class ConcretaDiagramUpdater {
 			return getAssociation_4003ContainedLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4004ContainedLinks(view);
+		case ImplementationEditPart.VISUAL_ID:
+			return getImplementation_4005ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -323,6 +327,8 @@ public class ConcretaDiagramUpdater {
 			return getAssociation_4003IncomingLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4004IncomingLinks(view);
+		case ImplementationEditPart.VISUAL_ID:
+			return getImplementation_4005IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -352,6 +358,8 @@ public class ConcretaDiagramUpdater {
 			return getAssociation_4003OutgoingLinks(view);
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGeneralization_4004OutgoingLinks(view);
+		case ImplementationEditPart.VISUAL_ID:
+			return getImplementation_4005OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -366,6 +374,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Aggregation_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4003(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4004(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Implementation_4005(modelElement));
 		return result;
 	}
 
@@ -442,6 +451,13 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaLinkDescriptor> getImplementation_4005ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
 	public static List<ConcretaLinkDescriptor> getInterface_2002IncomingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
@@ -451,6 +467,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Aggregation_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Association_4003(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Implementation_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -466,6 +483,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Aggregation_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Association_4003(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Implementation_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -481,6 +499,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_Aggregation_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Association_4003(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Implementation_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -536,6 +555,13 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaLinkDescriptor> getImplementation_4005IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
 	public static List<ConcretaLinkDescriptor> getInterface_2002OutgoingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -543,6 +569,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Aggregation_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4003(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Implementation_4005(modelElement));
 		return result;
 	}
 
@@ -556,6 +583,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Aggregation_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4003(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Implementation_4005(modelElement));
 		return result;
 	}
 
@@ -569,6 +597,7 @@ public class ConcretaDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Aggregation_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4003(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Implementation_4005(modelElement));
 		return result;
 	}
 
@@ -618,6 +647,13 @@ public class ConcretaDiagramUpdater {
 	* @generated
 	*/
 	public static List<ConcretaLinkDescriptor> getGeneralization_4004OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getImplementation_4005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -716,6 +752,29 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	private static Collection<ConcretaLinkDescriptor> getContainedTypeModelFacetLinks_Implementation_4005(
+			DiagramClassba container) {
+		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
+		for (Iterator<?> links = container.getLstRelationshipba().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Implementation) {
+				continue;
+			}
+			Implementation link = (Implementation) linkObject;
+			if (ImplementationEditPart.VISUAL_ID != ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Classba dst = link.getTarget();
+			Classba src = link.getSource();
+			result.add(new ConcretaLinkDescriptor(src, dst, link, ConcretaElementTypes.Implementation_4005,
+					ImplementationEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Containment_4001(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -801,6 +860,29 @@ public class ConcretaDiagramUpdater {
 			Classba src = link.getSource();
 			result.add(new ConcretaLinkDescriptor(src, target, link, ConcretaElementTypes.Generalization_4004,
 					GeneralizationEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Implementation_4005(Classba target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != ConcretaPackage.eINSTANCE.getRelationshipba_Target()
+					|| false == setting.getEObject() instanceof Implementation) {
+				continue;
+			}
+			Implementation link = (Implementation) setting.getEObject();
+			if (ImplementationEditPart.VISUAL_ID != ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Classba src = link.getSource();
+			result.add(new ConcretaLinkDescriptor(src, target, link, ConcretaElementTypes.Implementation_4005,
+					ImplementationEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -950,6 +1032,44 @@ public class ConcretaDiagramUpdater {
 			}
 			result.add(new ConcretaLinkDescriptor(src, dst, link, ConcretaElementTypes.Generalization_4004,
 					GeneralizationEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	private static Collection<ConcretaLinkDescriptor> getOutgoingTypeModelFacetLinks_Implementation_4005(
+			Classba source) {
+		DiagramClassba container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+			if (element instanceof DiagramClassba) {
+				container = (DiagramClassba) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
+		for (Iterator<?> links = container.getLstRelationshipba().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Implementation) {
+				continue;
+			}
+			Implementation link = (Implementation) linkObject;
+			if (ImplementationEditPart.VISUAL_ID != ConcretaVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Classba dst = link.getTarget();
+			Classba src = link.getSource();
+			if (src != source) {
+				continue;
+			}
+			result.add(new ConcretaLinkDescriptor(src, dst, link, ConcretaElementTypes.Implementation_4005,
+					ImplementationEditPart.VISUAL_ID));
 		}
 		return result;
 	}

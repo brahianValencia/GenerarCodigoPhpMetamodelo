@@ -64,7 +64,7 @@ public class AssociationItemProvider extends RelationshipbaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Association)object).getMultS();
+		String label = ((Association)object).getIde();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Association_type") :
 			getString("_UI_Association_type") + " " + label;

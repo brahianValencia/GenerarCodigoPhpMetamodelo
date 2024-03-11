@@ -64,7 +64,7 @@ public class ContainmentItemProvider extends RelationshipbaItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Containment)object).getMultS();
+		String label = ((Containment)object).getIde();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Containment_type") :
 			getString("_UI_Containment_type") + " " + label;

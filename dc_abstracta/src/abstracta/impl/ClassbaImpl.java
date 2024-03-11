@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link abstracta.impl.ClassbaImpl#getIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link abstracta.impl.ClassbaImpl#getIsInterface <em>Is Interface</em>}</li>
- *   <li>{@link abstracta.impl.ClassbaImpl#getIsFinalClass <em>Is Final Class</em>}</li>
  *   <li>{@link abstracta.impl.ClassbaImpl#getModifyAcces <em>Modify Acces</em>}</li>
  *   <li>{@link abstracta.impl.ClassbaImpl#getPath <em>Path</em>}</li>
  *   <li>{@link abstracta.impl.ClassbaImpl#getLstRelationshipSourceba <em>Lst Relationship Sourceba</em>}</li>
@@ -86,26 +85,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 	 * @ordered
 	 */
 	protected Boolean isInterface = IS_INTERFACE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIsFinalClass() <em>Is Final Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIsFinalClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Boolean IS_FINAL_CLASS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIsFinalClass() <em>Is Final Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIsFinalClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected Boolean isFinalClass = IS_FINAL_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getModifyAcces() <em>Modify Acces</em>}' attribute.
@@ -253,27 +232,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getIsFinalClass() {
-		return isFinalClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsFinalClass(Boolean newIsFinalClass) {
-		Boolean oldIsFinalClass = isFinalClass;
-		isFinalClass = newIsFinalClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.CLASSBA__IS_FINAL_CLASS, oldIsFinalClass, isFinalClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AccessModifyba getModifyAcces() {
 		return modifyAcces;
 	}
@@ -389,8 +347,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 				return getIsAbstract();
 			case AbstractaPackage.CLASSBA__IS_INTERFACE:
 				return getIsInterface();
-			case AbstractaPackage.CLASSBA__IS_FINAL_CLASS:
-				return getIsFinalClass();
 			case AbstractaPackage.CLASSBA__MODIFY_ACCES:
 				return getModifyAcces();
 			case AbstractaPackage.CLASSBA__PATH:
@@ -421,9 +377,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 				return;
 			case AbstractaPackage.CLASSBA__IS_INTERFACE:
 				setIsInterface((Boolean)newValue);
-				return;
-			case AbstractaPackage.CLASSBA__IS_FINAL_CLASS:
-				setIsFinalClass((Boolean)newValue);
 				return;
 			case AbstractaPackage.CLASSBA__MODIFY_ACCES:
 				setModifyAcces((AccessModifyba)newValue);
@@ -465,9 +418,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 			case AbstractaPackage.CLASSBA__IS_INTERFACE:
 				setIsInterface(IS_INTERFACE_EDEFAULT);
 				return;
-			case AbstractaPackage.CLASSBA__IS_FINAL_CLASS:
-				setIsFinalClass(IS_FINAL_CLASS_EDEFAULT);
-				return;
 			case AbstractaPackage.CLASSBA__MODIFY_ACCES:
 				setModifyAcces(MODIFY_ACCES_EDEFAULT);
 				return;
@@ -502,8 +452,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 				return IS_ABSTRACT_EDEFAULT == null ? isAbstract != null : !IS_ABSTRACT_EDEFAULT.equals(isAbstract);
 			case AbstractaPackage.CLASSBA__IS_INTERFACE:
 				return IS_INTERFACE_EDEFAULT == null ? isInterface != null : !IS_INTERFACE_EDEFAULT.equals(isInterface);
-			case AbstractaPackage.CLASSBA__IS_FINAL_CLASS:
-				return IS_FINAL_CLASS_EDEFAULT == null ? isFinalClass != null : !IS_FINAL_CLASS_EDEFAULT.equals(isFinalClass);
 			case AbstractaPackage.CLASSBA__MODIFY_ACCES:
 				return modifyAcces != MODIFY_ACCES_EDEFAULT;
 			case AbstractaPackage.CLASSBA__PATH:
@@ -534,8 +482,6 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 		result.append(isAbstract);
 		result.append(", isInterface: ");
 		result.append(isInterface);
-		result.append(", isFinalClass: ");
-		result.append(isFinalClass);
 		result.append(", modifyAcces: ");
 		result.append(modifyAcces);
 		result.append(", path: ");

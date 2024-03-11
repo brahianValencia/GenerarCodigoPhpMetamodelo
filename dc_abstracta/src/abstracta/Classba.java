@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link abstracta.Classba#getIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link abstracta.Classba#getIsInterface <em>Is Interface</em>}</li>
- *   <li>{@link abstracta.Classba#getIsFinalClass <em>Is Final Class</em>}</li>
  *   <li>{@link abstracta.Classba#getModifyAcces <em>Modify Acces</em>}</li>
  *   <li>{@link abstracta.Classba#getPath <em>Path</em>}</li>
  *   <li>{@link abstracta.Classba#getLstRelationshipSourceba <em>Lst Relationship Sourceba</em>}</li>
@@ -80,32 +79,6 @@ public interface Classba extends Clasifier {
 	 * @generated
 	 */
 	void setIsInterface(Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Final Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Final Class</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Final Class</em>' attribute.
-	 * @see #setIsFinalClass(Boolean)
-	 * @see abstracta.AbstractaPackage#getClassba_IsFinalClass()
-	 * @model
-	 * @generated
-	 */
-	Boolean getIsFinalClass();
-
-	/**
-	 * Sets the value of the '{@link abstracta.Classba#getIsFinalClass <em>Is Final Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Final Class</em>' attribute.
-	 * @see #getIsFinalClass()
-	 * @generated
-	 */
-	void setIsFinalClass(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Modify Acces</b></em>' attribute.

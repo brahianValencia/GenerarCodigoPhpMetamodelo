@@ -17,7 +17,15 @@ import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPar
 import concreta.diagram.edit.parts.AbstractEditPart;
 import concreta.diagram.edit.parts.AbstractNameEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
+import concreta.diagram.edit.parts.AggregationMultSEditPart;
+import concreta.diagram.edit.parts.AggregationMultTEditPart;
+import concreta.diagram.edit.parts.AggregationRolSEditPart;
+import concreta.diagram.edit.parts.AggregationRolTEditPart;
 import concreta.diagram.edit.parts.AssociationEditPart;
+import concreta.diagram.edit.parts.AssociationMultSEditPart;
+import concreta.diagram.edit.parts.AssociationMultTEditPart;
+import concreta.diagram.edit.parts.AssociationRolSEditPart;
+import concreta.diagram.edit.parts.AssociationRolTEditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
@@ -25,8 +33,13 @@ import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ClassbaNameEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
+import concreta.diagram.edit.parts.ContainmentMultSEditPart;
+import concreta.diagram.edit.parts.ContainmentMultTEditPart;
+import concreta.diagram.edit.parts.ContainmentRolSEditPart;
+import concreta.diagram.edit.parts.ContainmentRolTEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
@@ -296,6 +309,48 @@ public class ConcretaVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ContainmentEditPart.VISUAL_ID:
+			if (ContainmentRolSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContainmentMultSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContainmentRolTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContainmentMultTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AggregationEditPart.VISUAL_ID:
+			if (AggregationRolSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AggregationMultSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AggregationRolTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AggregationMultTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AssociationEditPart.VISUAL_ID:
+			if (AssociationRolSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationMultSEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationRolTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationMultTEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -318,6 +373,9 @@ public class ConcretaVisualIDRegistry {
 		}
 		if (ConcretaPackage.eINSTANCE.getGeneralization().isSuperTypeOf(domainElement.eClass())) {
 			return GeneralizationEditPart.VISUAL_ID;
+		}
+		if (ConcretaPackage.eINSTANCE.getImplementation().isSuperTypeOf(domainElement.eClass())) {
+			return ImplementationEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

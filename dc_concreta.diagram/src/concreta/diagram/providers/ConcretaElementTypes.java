@@ -26,6 +26,7 @@ import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
+import concreta.diagram.edit.parts.ImplementationEditPart;
 import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
@@ -113,6 +114,11 @@ public class ConcretaElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType Implementation_4005 = getElementType("dc_concreta.diagram.Implementation_4005"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -169,6 +175,8 @@ public class ConcretaElementTypes {
 			elements.put(Association_4003, ConcretaPackage.eINSTANCE.getAssociation());
 
 			elements.put(Generalization_4004, ConcretaPackage.eINSTANCE.getGeneralization());
+
+			elements.put(Implementation_4005, ConcretaPackage.eINSTANCE.getImplementation());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -197,6 +205,7 @@ public class ConcretaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Aggregation_4002);
 			KNOWN_ELEMENT_TYPES.add(Association_4003);
 			KNOWN_ELEMENT_TYPES.add(Generalization_4004);
+			KNOWN_ELEMENT_TYPES.add(Implementation_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -228,6 +237,8 @@ public class ConcretaElementTypes {
 			return Association_4003;
 		case GeneralizationEditPart.VISUAL_ID:
 			return Generalization_4004;
+		case ImplementationEditPart.VISUAL_ID:
+			return Implementation_4005;
 		}
 		return null;
 	}
