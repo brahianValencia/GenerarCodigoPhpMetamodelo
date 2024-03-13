@@ -1,0 +1,29 @@
+	/*
+ * 
+ */
+package concreta.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentItemSemanticEditPolicy extends concreta.diagram.edit.policies.ConcretaBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentItemSemanticEditPolicy() {
+				super(concreta.diagram.providers.ConcretaElementTypes.InterfaceClassba_2003);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (concreta.diagram.providers.ConcretaElementTypes.Operationba_3006 == req.getElementType()) {
+	return getGEFWrapper(new concreta.diagram.edit.commands.Operationba2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

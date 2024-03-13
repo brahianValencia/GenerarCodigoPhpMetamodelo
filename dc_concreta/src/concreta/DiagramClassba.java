@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link concreta.DiagramClassba#getName <em>Name</em>}</li>
  *   <li>{@link concreta.DiagramClassba#getPath <em>Path</em>}</li>
  *   <li>{@link concreta.DiagramClassba#getLstClass <em>Lst Class</em>}</li>
+ *   <li>{@link concreta.DiagramClassba#getLstAbstractaClassba <em>Lst Abstracta Classba</em>}</li>
+ *   <li>{@link concreta.DiagramClassba#getLstInterfaceClassba <em>Lst Interface Classba</em>}</li>
  *   <li>{@link concreta.DiagramClassba#getLstPackageba <em>Lst Packageba</em>}</li>
  *   <li>{@link concreta.DiagramClassba#getLstRelationshipba <em>Lst Relationshipba</em>}</li>
  * </ul>
@@ -94,6 +96,38 @@ public interface DiagramClassba extends EObject {
 	 * @generated
 	 */
 	EList<Classba> getLstClass();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Abstracta Classba</b></em>' containment reference list.
+	 * The list contents are of type {@link concreta.AbsctractClassba}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Abstracta Classba</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Abstracta Classba</em>' containment reference list.
+	 * @see concreta.ConcretaPackage#getDiagramClassba_LstAbstractaClassba()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AbsctractClassba> getLstAbstractaClassba();
+
+	/**
+	 * Returns the value of the '<em><b>Lst Interface Classba</b></em>' containment reference list.
+	 * The list contents are of type {@link concreta.InterfaceClassba}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lst Interface Classba</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lst Interface Classba</em>' containment reference list.
+	 * @see concreta.ConcretaPackage#getDiagramClassba_LstInterfaceClassba()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<InterfaceClassba> getLstInterfaceClassba();
 
 	/**
 	 * Returns the value of the '<em><b>Lst Packageba</b></em>' containment reference list.

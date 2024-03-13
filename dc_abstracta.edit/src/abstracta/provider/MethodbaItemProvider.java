@@ -64,6 +64,7 @@ public class MethodbaItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addBodyPropertyDescriptor(object);
 			addRetornoPropertyDescriptor(object);
 			addClassbaPropertyDescriptor(object);
 			addModifyAccesPropertyDescriptor(object);
@@ -85,6 +86,28 @@ public class MethodbaItemProvider
 				 getString("_UI_Methodba_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Methodba_name_feature", "_UI_Methodba_type"),
 				 AbstractaPackage.Literals.METHODBA__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Body feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBodyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Methodba_body_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Methodba_body_feature", "_UI_Methodba_type"),
+				 AbstractaPackage.Literals.METHODBA__BODY,
 				 true,
 				 false,
 				 false,
@@ -228,6 +251,7 @@ public class MethodbaItemProvider
 
 		switch (notification.getFeatureID(Methodba.class)) {
 			case AbstractaPackage.METHODBA__NAME:
+			case AbstractaPackage.METHODBA__BODY:
 			case AbstractaPackage.METHODBA__MODIFY_ACCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

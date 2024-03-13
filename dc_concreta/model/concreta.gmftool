@@ -12,8 +12,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Abstract"
-          description="Create new Abstract">
+          title="AbsctractClassba"
+          description="Create new AbsctractClassba">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -39,8 +39,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Interface"
-          description="Create new Interface">
+          title="InterfaceClassba"
+          description="Create new InterfaceClassba">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -57,8 +57,26 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Operationba"
+          description="Create new Operationba">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Packageba"
           description="Create new Packageba">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Parameter"
+          description="Create new Parameter">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

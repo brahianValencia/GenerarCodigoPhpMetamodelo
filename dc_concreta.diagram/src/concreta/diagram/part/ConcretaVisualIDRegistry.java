@@ -12,10 +12,10 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import concreta.ConcretaPackage;
 import concreta.DiagramClassba;
-import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractEditPart;
-import concreta.diagram.edit.parts.AbstractNameEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaNameEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
 import concreta.diagram.edit.parts.AggregationMultSEditPart;
 import concreta.diagram.edit.parts.AggregationMultTEditPart;
@@ -26,7 +26,11 @@ import concreta.diagram.edit.parts.AssociationMultSEditPart;
 import concreta.diagram.edit.parts.AssociationMultTEditPart;
 import concreta.diagram.edit.parts.AssociationRolSEditPart;
 import concreta.diagram.edit.parts.AssociationRolTEditPart;
+import concreta.diagram.edit.parts.Attributeba2EditPart;
+import concreta.diagram.edit.parts.Attributeba3EditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
+import concreta.diagram.edit.parts.AttributebaName2EditPart;
+import concreta.diagram.edit.parts.AttributebaName3EditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
@@ -40,14 +44,27 @@ import concreta.diagram.edit.parts.ContainmentRolTEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.ImplementationEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceNameEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaNameEditPart;
+import concreta.diagram.edit.parts.Methodba2EditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartment2EditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartmentEditPart;
+import concreta.diagram.edit.parts.MethodbaName2EditPart;
 import concreta.diagram.edit.parts.MethodbaNameEditPart;
+import concreta.diagram.edit.parts.Operationba2EditPart;
+import concreta.diagram.edit.parts.OperationbaEditPart;
+import concreta.diagram.edit.parts.OperationbaName2EditPart;
+import concreta.diagram.edit.parts.OperationbaNameEditPart;
+import concreta.diagram.edit.parts.OperationbaOperationbaLstParametersbaCompartmentEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
 import concreta.diagram.edit.parts.PackagebaNameEditPart;
+import concreta.diagram.edit.parts.Parameter2EditPart;
+import concreta.diagram.edit.parts.ParameterEditPart;
+import concreta.diagram.edit.parts.ParameterName2EditPart;
+import concreta.diagram.edit.parts.ParameterNameEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -151,37 +168,17 @@ public class ConcretaVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case DiagramClassbaEditPart.VISUAL_ID:
-			if (ConcretaPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
-				return InterfaceEditPart.VISUAL_ID;
-			}
-			if (ConcretaPackage.eINSTANCE.getAbstract().isSuperTypeOf(domainElement.eClass())) {
-				return AbstractEditPart.VISUAL_ID;
-			}
 			if (ConcretaPackage.eINSTANCE.getClassba().isSuperTypeOf(domainElement.eClass())) {
 				return ClassbaEditPart.VISUAL_ID;
 			}
+			if (ConcretaPackage.eINSTANCE.getAbsctractClassba().isSuperTypeOf(domainElement.eClass())) {
+				return AbsctractClassbaEditPart.VISUAL_ID;
+			}
+			if (ConcretaPackage.eINSTANCE.getInterfaceClassba().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceClassbaEditPart.VISUAL_ID;
+			}
 			if (ConcretaPackage.eINSTANCE.getPackageba().isSuperTypeOf(domainElement.eClass())) {
 				return PackagebaEditPart.VISUAL_ID;
-			}
-			break;
-		case InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			if (ConcretaPackage.eINSTANCE.getAttributeba().isSuperTypeOf(domainElement.eClass())) {
-				return AttributebaEditPart.VISUAL_ID;
-			}
-			break;
-		case InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID:
-			if (ConcretaPackage.eINSTANCE.getMethodba().isSuperTypeOf(domainElement.eClass())) {
-				return MethodbaEditPart.VISUAL_ID;
-			}
-			break;
-		case AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			if (ConcretaPackage.eINSTANCE.getAttributeba().isSuperTypeOf(domainElement.eClass())) {
-				return AttributebaEditPart.VISUAL_ID;
-			}
-			break;
-		case AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID:
-			if (ConcretaPackage.eINSTANCE.getMethodba().isSuperTypeOf(domainElement.eClass())) {
-				return MethodbaEditPart.VISUAL_ID;
 			}
 			break;
 		case ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
@@ -192,6 +189,41 @@ public class ConcretaVisualIDRegistry {
 		case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
 			if (ConcretaPackage.eINSTANCE.getMethodba().isSuperTypeOf(domainElement.eClass())) {
 				return MethodbaEditPart.VISUAL_ID;
+			}
+			break;
+		case MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
+				return ParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getAttributeba().isSuperTypeOf(domainElement.eClass())) {
+				return Attributeba2EditPart.VISUAL_ID;
+			}
+			break;
+		case AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getMethodba().isSuperTypeOf(domainElement.eClass())) {
+				return Methodba2EditPart.VISUAL_ID;
+			}
+			break;
+		case MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
+				return ParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getAttributeba().isSuperTypeOf(domainElement.eClass())) {
+				return Attributeba3EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getOperationba().isSuperTypeOf(domainElement.eClass())) {
+				return OperationbaEditPart.VISUAL_ID;
+			}
+			break;
+		case OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			if (ConcretaPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
+				return Parameter2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -218,38 +250,16 @@ public class ConcretaVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case DiagramClassbaEditPart.VISUAL_ID:
-			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AbstractEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ClassbaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AbsctractClassbaEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceClassbaEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (PackagebaEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case InterfaceEditPart.VISUAL_ID:
-			if (InterfaceNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AbstractEditPart.VISUAL_ID:
-			if (AbstractNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -261,6 +271,28 @@ public class ConcretaVisualIDRegistry {
 				return true;
 			}
 			if (ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AbsctractClassbaEditPart.VISUAL_ID:
+			if (AbsctractClassbaNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceClassbaEditPart.VISUAL_ID:
+			if (InterfaceClassbaNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -278,24 +310,43 @@ public class ConcretaVisualIDRegistry {
 			if (MethodbaNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			if (AttributebaEditPart.VISUAL_ID == nodeVisualID) {
+			if (MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID:
-			if (MethodbaEditPart.VISUAL_ID == nodeVisualID) {
+		case ParameterEditPart.VISUAL_ID:
+			if (ParameterNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			if (AttributebaEditPart.VISUAL_ID == nodeVisualID) {
+		case Attributeba2EditPart.VISUAL_ID:
+			if (AttributebaName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID:
-			if (MethodbaEditPart.VISUAL_ID == nodeVisualID) {
+		case Methodba2EditPart.VISUAL_ID:
+			if (MethodbaName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Attributeba3EditPart.VISUAL_ID:
+			if (AttributebaName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OperationbaEditPart.VISUAL_ID:
+			if (OperationbaNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Parameter2EditPart.VISUAL_ID:
+			if (ParameterName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -306,6 +357,41 @@ public class ConcretaVisualIDRegistry {
 			break;
 		case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
 			if (MethodbaEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			if (Attributeba2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			if (Methodba2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID:
+			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			if (Attributeba3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			if (OperationbaEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			if (Parameter2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -407,12 +493,15 @@ public class ConcretaVisualIDRegistry {
 	*/
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID:
-		case InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID:
-		case AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID:
-		case AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID:
 		case ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
 		case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		case MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+		case AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+		case AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		case MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID:
+		case InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+		case InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		case OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -429,7 +518,10 @@ public class ConcretaVisualIDRegistry {
 			return false;
 		case PackagebaEditPart.VISUAL_ID:
 		case AttributebaEditPart.VISUAL_ID:
-		case MethodbaEditPart.VISUAL_ID:
+		case Attributeba2EditPart.VISUAL_ID:
+		case Attributeba3EditPart.VISUAL_ID:
+		case ParameterEditPart.VISUAL_ID:
+		case Parameter2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -24,9 +24,9 @@ public class ConcretaModelingAssistantProviderOfDiagramClassbaEditPart extends C
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(4);
-		types.add(ConcretaElementTypes.Interface_2002);
-		types.add(ConcretaElementTypes.Abstract_2003);
 		types.add(ConcretaElementTypes.Classba_2001);
+		types.add(ConcretaElementTypes.AbsctractClassba_2002);
+		types.add(ConcretaElementTypes.InterfaceClassba_2003);
 		types.add(ConcretaElementTypes.Packageba_2004);
 		return types;
 	}

@@ -6,10 +6,8 @@ package concreta.diagram.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.gef.EditPart;
@@ -305,8 +303,8 @@ public class PackagebaEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static final Color THIS_BACK = new Color(null, 201, 209, 113);
 
 }

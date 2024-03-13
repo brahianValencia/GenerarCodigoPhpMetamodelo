@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link concreta.Methodba#getName <em>Name</em>}</li>
+ *   <li>{@link concreta.Methodba#getBody <em>Body</em>}</li>
  *   <li>{@link concreta.Methodba#getAccessModify <em>Access Modify</em>}</li>
  *   <li>{@link concreta.Methodba#getRetorno <em>Retorno</em>}</li>
  *   <li>{@link concreta.Methodba#getClassba <em>Classba</em>}</li>
@@ -23,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see concreta.ConcretaPackage#getMethodba()
- * @model annotation="gmf.node label='name'"
+ * @model annotation="gmf.node label='name' border.style='solid' figure='rectangle' color='201,209,113'"
  * @generated
  */
 public interface Methodba extends EObject {
@@ -52,6 +53,32 @@ public interface Methodba extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Body</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Body</em>' attribute.
+	 * @see #setBody(String)
+	 * @see concreta.ConcretaPackage#getMethodba_Body()
+	 * @model
+	 * @generated
+	 */
+	String getBody();
+
+	/**
+	 * Sets the value of the '{@link concreta.Methodba#getBody <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Body</em>' attribute.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Access Modify</b></em>' attribute.
@@ -86,7 +113,7 @@ public interface Methodba extends EObject {
 	 * Returns the value of the '<em><b>Retorno</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Retorno</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Retorno</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -146,6 +173,7 @@ public interface Methodba extends EObject {
 	 * @return the value of the '<em>Lst Parametersba</em>' containment reference list.
 	 * @see concreta.ConcretaPackage#getMethodba_LstParametersba()
 	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list' collapsible='true'"
 	 * @generated
 	 */
 	EList<Parameter> getLstParametersba();

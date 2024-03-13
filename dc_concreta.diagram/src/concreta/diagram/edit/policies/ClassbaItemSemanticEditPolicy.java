@@ -177,8 +177,8 @@ public class ClassbaItemSemanticEditPolicy extends ConcretaBaseItemSemanticEditP
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
@@ -186,8 +186,8 @@ public class ClassbaItemSemanticEditPolicy extends ConcretaBaseItemSemanticEditP
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (ConcretaElementTypes.Containment_4001 == req.getElementType()) {
 			return getGEFWrapper(new ContainmentCreateCommand(req, req.getSource(), req.getTarget()));
@@ -208,8 +208,8 @@ public class ClassbaItemSemanticEditPolicy extends ConcretaBaseItemSemanticEditP
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (ConcretaElementTypes.Containment_4001 == req.getElementType()) {
 			return getGEFWrapper(new ContainmentCreateCommand(req, req.getSource(), req.getTarget()));
@@ -230,11 +230,11 @@ public class ClassbaItemSemanticEditPolicy extends ConcretaBaseItemSemanticEditP
 	}
 
 	/**
-	* Returns command to reorient EClass based link. New link target or source
-	* should be the domain model element associated with this node.
-	* 
-	* @generated
-	*/
+	 * Returns command to reorient EClass based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ContainmentEditPart.VISUAL_ID:

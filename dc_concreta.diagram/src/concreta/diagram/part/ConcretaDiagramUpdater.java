@@ -8,15 +8,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import concreta.Abstract;
+import concreta.AbsctractClassba;
 import concreta.Aggregation;
 import concreta.Association;
 import concreta.Attributeba;
@@ -26,14 +26,18 @@ import concreta.Containment;
 import concreta.DiagramClassba;
 import concreta.Generalization;
 import concreta.Implementation;
-import concreta.Interface;
+import concreta.InterfaceClassba;
 import concreta.Methodba;
+import concreta.Operationba;
 import concreta.Packageba;
-import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractEditPart;
+import concreta.Parameter;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
 import concreta.diagram.edit.parts.AssociationEditPart;
+import concreta.diagram.edit.parts.Attributeba2EditPart;
+import concreta.diagram.edit.parts.Attributeba3EditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
@@ -42,11 +46,19 @@ import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.ImplementationEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.Methodba2EditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartment2EditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartmentEditPart;
+import concreta.diagram.edit.parts.Operationba2EditPart;
+import concreta.diagram.edit.parts.OperationbaEditPart;
+import concreta.diagram.edit.parts.OperationbaOperationbaLstParametersbaCompartmentEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
+import concreta.diagram.edit.parts.Parameter2EditPart;
+import concreta.diagram.edit.parts.ParameterEditPart;
 import concreta.diagram.providers.ConcretaElementTypes;
 
 /**
@@ -68,18 +80,24 @@ public class ConcretaDiagramUpdater {
 		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
 		case DiagramClassbaEditPart.VISUAL_ID:
 			return getDiagramClassba_1000SemanticChildren(view);
-		case InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			return getInterfaceInterfaceLstAttributesbaCompartment_7003SemanticChildren(view);
-		case InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID:
-			return getInterfaceInterfaceLstMethodbaCompartment_7004SemanticChildren(view);
-		case AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID:
-			return getAbstractAbstractLstAttributesbaCompartment_7005SemanticChildren(view);
-		case AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID:
-			return getAbstractAbstractLstMethodbaCompartment_7006SemanticChildren(view);
 		case ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
 			return getClassbaClassbaLstAttributesbaCompartment_7001SemanticChildren(view);
 		case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
 			return getClassbaClassbaLstMethodbaCompartment_7002SemanticChildren(view);
+		case MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			return getMethodbaMethodbaLstParametersbaCompartment_7007SemanticChildren(view);
+		case AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			return getAbsctractClassbaAbsctractClassbaLstAttributesbaCompartment_7003SemanticChildren(view);
+		case AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			return getAbsctractClassbaAbsctractClassbaLstMethodbaCompartment_7004SemanticChildren(view);
+		case MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID:
+			return getMethodbaMethodbaLstParametersbaCompartment_7008SemanticChildren(view);
+		case InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+			return getInterfaceClassbaInterfaceClassbaLstAttributesbaCompartment_7005SemanticChildren(view);
+		case InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+			return getInterfaceClassbaInterfaceClassbaLstMethodbaCompartment_7006SemanticChildren(view);
+		case OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+			return getOperationbaOperationbaLstParametersbaCompartment_7009SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -96,15 +114,23 @@ public class ConcretaDiagramUpdater {
 		for (Iterator<?> it = modelElement.getLstClass().iterator(); it.hasNext();) {
 			Classba childElement = (Classba) it.next();
 			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InterfaceEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
-			if (visualID == AbstractEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
 			if (visualID == ClassbaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getLstAbstractaClassba().iterator(); it.hasNext();) {
+			AbsctractClassba childElement = (AbsctractClassba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == AbsctractClassbaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getLstInterfaceClassba().iterator(); it.hasNext();) {
+			InterfaceClassba childElement = (InterfaceClassba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == InterfaceClassbaEditPart.VISUAL_ID) {
 				result.add(new ConcretaNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -113,106 +139,6 @@ public class ConcretaDiagramUpdater {
 			Packageba childElement = (Packageba) it.next();
 			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PackagebaEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaNodeDescriptor> getInterfaceInterfaceLstAttributesbaCompartment_7003SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		Interface modelElement = (Interface) containerView.getElement();
-		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getLstAttributesba().iterator(); it.hasNext();) {
-			Attributeba childElement = (Attributeba) it.next();
-			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == AttributebaEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaNodeDescriptor> getInterfaceInterfaceLstMethodbaCompartment_7004SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		Interface modelElement = (Interface) containerView.getElement();
-		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getLstMethodba().iterator(); it.hasNext();) {
-			Methodba childElement = (Methodba) it.next();
-			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == MethodbaEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaNodeDescriptor> getAbstractAbstractLstAttributesbaCompartment_7005SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		Abstract modelElement = (Abstract) containerView.getElement();
-		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getLstAttributesba().iterator(); it.hasNext();) {
-			Attributeba childElement = (Attributeba) it.next();
-			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == AttributebaEditPart.VISUAL_ID) {
-				result.add(new ConcretaNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaNodeDescriptor> getAbstractAbstractLstMethodbaCompartment_7006SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		Abstract modelElement = (Abstract) containerView.getElement();
-		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getLstMethodba().iterator(); it.hasNext();) {
-			Methodba childElement = (Methodba) it.next();
-			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == MethodbaEditPart.VISUAL_ID) {
 				result.add(new ConcretaNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -272,22 +198,209 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaNodeDescriptor> getMethodbaMethodbaLstParametersbaCompartment_7007SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Methodba modelElement = (Methodba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstParametersba().iterator(); it.hasNext();) {
+			Parameter childElement = (Parameter) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ParameterEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getAbsctractClassbaAbsctractClassbaLstAttributesbaCompartment_7003SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		AbsctractClassba modelElement = (AbsctractClassba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstAttributesba().iterator(); it.hasNext();) {
+			Attributeba childElement = (Attributeba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Attributeba2EditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getAbsctractClassbaAbsctractClassbaLstMethodbaCompartment_7004SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		AbsctractClassba modelElement = (AbsctractClassba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstMethodba().iterator(); it.hasNext();) {
+			Methodba childElement = (Methodba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Methodba2EditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getMethodbaMethodbaLstParametersbaCompartment_7008SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Methodba modelElement = (Methodba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstParametersba().iterator(); it.hasNext();) {
+			Parameter childElement = (Parameter) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ParameterEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getInterfaceClassbaInterfaceClassbaLstAttributesbaCompartment_7005SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		InterfaceClassba modelElement = (InterfaceClassba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstAttributesba().iterator(); it.hasNext();) {
+			Attributeba childElement = (Attributeba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Attributeba3EditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getInterfaceClassbaInterfaceClassbaLstMethodbaCompartment_7006SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		InterfaceClassba modelElement = (InterfaceClassba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstMethodba().iterator(); it.hasNext();) {
+			Operationba childElement = (Operationba) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == OperationbaEditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaNodeDescriptor> getOperationbaOperationbaLstParametersbaCompartment_7009SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Operationba modelElement = (Operationba) containerView.getElement();
+		LinkedList<ConcretaNodeDescriptor> result = new LinkedList<ConcretaNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getLstParametersba().iterator(); it.hasNext();) {
+			Parameter childElement = (Parameter) it.next();
+			int visualID = ConcretaVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Parameter2EditPart.VISUAL_ID) {
+				result.add(new ConcretaNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
 	public static List<ConcretaLinkDescriptor> getContainedLinks(View view) {
 		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
 		case DiagramClassbaEditPart.VISUAL_ID:
 			return getDiagramClassba_1000ContainedLinks(view);
-		case InterfaceEditPart.VISUAL_ID:
-			return getInterface_2002ContainedLinks(view);
-		case AbstractEditPart.VISUAL_ID:
-			return getAbstract_2003ContainedLinks(view);
 		case ClassbaEditPart.VISUAL_ID:
 			return getClassba_2001ContainedLinks(view);
+		case AbsctractClassbaEditPart.VISUAL_ID:
+			return getAbsctractClassba_2002ContainedLinks(view);
+		case InterfaceClassbaEditPart.VISUAL_ID:
+			return getInterfaceClassba_2003ContainedLinks(view);
 		case PackagebaEditPart.VISUAL_ID:
 			return getPackageba_2004ContainedLinks(view);
 		case AttributebaEditPart.VISUAL_ID:
 			return getAttributeba_3001ContainedLinks(view);
 		case MethodbaEditPart.VISUAL_ID:
 			return getMethodba_3002ContainedLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3008ContainedLinks(view);
+		case Attributeba2EditPart.VISUAL_ID:
+			return getAttributeba_3003ContainedLinks(view);
+		case Methodba2EditPart.VISUAL_ID:
+			return getMethodba_3007ContainedLinks(view);
+		case Attributeba3EditPart.VISUAL_ID:
+			return getAttributeba_3005ContainedLinks(view);
+		case OperationbaEditPart.VISUAL_ID:
+			return getOperationba_3006ContainedLinks(view);
+		case Parameter2EditPart.VISUAL_ID:
+			return getParameter_3009ContainedLinks(view);
 		case ContainmentEditPart.VISUAL_ID:
 			return getContainment_4001ContainedLinks(view);
 		case AggregationEditPart.VISUAL_ID:
@@ -307,18 +420,30 @@ public class ConcretaDiagramUpdater {
 	*/
 	public static List<ConcretaLinkDescriptor> getIncomingLinks(View view) {
 		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
-		case InterfaceEditPart.VISUAL_ID:
-			return getInterface_2002IncomingLinks(view);
-		case AbstractEditPart.VISUAL_ID:
-			return getAbstract_2003IncomingLinks(view);
 		case ClassbaEditPart.VISUAL_ID:
 			return getClassba_2001IncomingLinks(view);
+		case AbsctractClassbaEditPart.VISUAL_ID:
+			return getAbsctractClassba_2002IncomingLinks(view);
+		case InterfaceClassbaEditPart.VISUAL_ID:
+			return getInterfaceClassba_2003IncomingLinks(view);
 		case PackagebaEditPart.VISUAL_ID:
 			return getPackageba_2004IncomingLinks(view);
 		case AttributebaEditPart.VISUAL_ID:
 			return getAttributeba_3001IncomingLinks(view);
 		case MethodbaEditPart.VISUAL_ID:
 			return getMethodba_3002IncomingLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3008IncomingLinks(view);
+		case Attributeba2EditPart.VISUAL_ID:
+			return getAttributeba_3003IncomingLinks(view);
+		case Methodba2EditPart.VISUAL_ID:
+			return getMethodba_3007IncomingLinks(view);
+		case Attributeba3EditPart.VISUAL_ID:
+			return getAttributeba_3005IncomingLinks(view);
+		case OperationbaEditPart.VISUAL_ID:
+			return getOperationba_3006IncomingLinks(view);
+		case Parameter2EditPart.VISUAL_ID:
+			return getParameter_3009IncomingLinks(view);
 		case ContainmentEditPart.VISUAL_ID:
 			return getContainment_4001IncomingLinks(view);
 		case AggregationEditPart.VISUAL_ID:
@@ -338,18 +463,30 @@ public class ConcretaDiagramUpdater {
 	*/
 	public static List<ConcretaLinkDescriptor> getOutgoingLinks(View view) {
 		switch (ConcretaVisualIDRegistry.getVisualID(view)) {
-		case InterfaceEditPart.VISUAL_ID:
-			return getInterface_2002OutgoingLinks(view);
-		case AbstractEditPart.VISUAL_ID:
-			return getAbstract_2003OutgoingLinks(view);
 		case ClassbaEditPart.VISUAL_ID:
 			return getClassba_2001OutgoingLinks(view);
+		case AbsctractClassbaEditPart.VISUAL_ID:
+			return getAbsctractClassba_2002OutgoingLinks(view);
+		case InterfaceClassbaEditPart.VISUAL_ID:
+			return getInterfaceClassba_2003OutgoingLinks(view);
 		case PackagebaEditPart.VISUAL_ID:
 			return getPackageba_2004OutgoingLinks(view);
 		case AttributebaEditPart.VISUAL_ID:
 			return getAttributeba_3001OutgoingLinks(view);
 		case MethodbaEditPart.VISUAL_ID:
 			return getMethodba_3002OutgoingLinks(view);
+		case ParameterEditPart.VISUAL_ID:
+			return getParameter_3008OutgoingLinks(view);
+		case Attributeba2EditPart.VISUAL_ID:
+			return getAttributeba_3003OutgoingLinks(view);
+		case Methodba2EditPart.VISUAL_ID:
+			return getMethodba_3007OutgoingLinks(view);
+		case Attributeba3EditPart.VISUAL_ID:
+			return getAttributeba_3005OutgoingLinks(view);
+		case OperationbaEditPart.VISUAL_ID:
+			return getOperationba_3006OutgoingLinks(view);
+		case Parameter2EditPart.VISUAL_ID:
+			return getParameter_3009OutgoingLinks(view);
 		case ContainmentEditPart.VISUAL_ID:
 			return getContainment_4001OutgoingLinks(view);
 		case AggregationEditPart.VISUAL_ID:
@@ -379,20 +516,6 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getInterface_2002ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getAbstract_2003ContainedLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
 	 * @generated
 	 */
 	public static List<ConcretaLinkDescriptor> getClassba_2001ContainedLinks(View view) {
@@ -400,8 +523,22 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAbsctractClassba_2002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getInterfaceClassba_2003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getPackageba_2004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -423,68 +560,78 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3008ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getMethodba_3007ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3005ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getOperationba_3006ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3009ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getContainment_4001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAggregation_4002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAssociation_4003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getGeneralization_4004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getImplementation_4005ContainedLinks(View view) {
 		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getInterface_2002IncomingLinks(View view) {
-		Interface modelElement = (Interface) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Containment_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Aggregation_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4003(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Implementation_4005(modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getAbstract_2003IncomingLinks(View view) {
-		Abstract modelElement = (Abstract) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Containment_4001(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Aggregation_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Association_4003(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4004(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Implementation_4005(modelElement, crossReferences));
-		return result;
 	}
 
 	/**
@@ -504,8 +651,22 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAbsctractClassba_2002IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getInterfaceClassba_2003IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getPackageba_2004IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -527,64 +688,78 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3008IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3003IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getMethodba_3007IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3005IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getOperationba_3006IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3009IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getContainment_4001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAggregation_4002IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAssociation_4003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getGeneralization_4004IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getImplementation_4005IncomingLinks(View view) {
 		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getInterface_2002OutgoingLinks(View view) {
-		Interface modelElement = (Interface) view.getElement();
-		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Containment_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Aggregation_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4004(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Implementation_4005(modelElement));
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	public static List<ConcretaLinkDescriptor> getAbstract_2003OutgoingLinks(View view) {
-		Abstract modelElement = (Abstract) view.getElement();
-		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Containment_4001(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Aggregation_4002(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Association_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4004(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Implementation_4005(modelElement));
-		return result;
 	}
 
 	/**
@@ -602,8 +777,22 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAbsctractClassba_2002OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getInterfaceClassba_2003OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getPackageba_2004OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -625,34 +814,76 @@ public class ConcretaDiagramUpdater {
 	/**
 	* @generated
 	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3008OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3003OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getMethodba_3007OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getAttributeba_3005OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<ConcretaLinkDescriptor> getOperationba_3006OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ConcretaLinkDescriptor> getParameter_3009OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getContainment_4001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAggregation_4002OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getAssociation_4003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getGeneralization_4004OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ConcretaLinkDescriptor> getImplementation_4005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
@@ -773,8 +1004,8 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Containment_4001(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -796,8 +1027,8 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Aggregation_4002(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -819,8 +1050,8 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Association_4003(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -842,8 +1073,8 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4004(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();
@@ -865,8 +1096,8 @@ public class ConcretaDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ConcretaLinkDescriptor> getIncomingTypeModelFacetLinks_Implementation_4005(Classba target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ConcretaLinkDescriptor> result = new LinkedList<ConcretaLinkDescriptor>();

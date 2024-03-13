@@ -62,8 +62,8 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 			case ConcretaPackage.DIAGRAM_CLASSBA: return createDiagramClassba();
 			case ConcretaPackage.PACKAGEBA: return createPackageba();
 			case ConcretaPackage.CLASSBA: return createClassba();
-			case ConcretaPackage.INTERFACE: return createInterface();
-			case ConcretaPackage.ABSTRACT: return createAbstract();
+			case ConcretaPackage.INTERFACE_CLASSBA: return createInterfaceClassba();
+			case ConcretaPackage.ABSCTRACT_CLASSBA: return createAbsctractClassba();
 			case ConcretaPackage.CONTAINMENT: return createContainment();
 			case ConcretaPackage.AGGREGATION: return createAggregation();
 			case ConcretaPackage.ASSOCIATION: return createAssociation();
@@ -73,6 +73,7 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 			case ConcretaPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case ConcretaPackage.ATTRIBUTEBA: return createAttributeba();
 			case ConcretaPackage.METHODBA: return createMethodba();
+			case ConcretaPackage.OPERATIONBA: return createOperationba();
 			case ConcretaPackage.PARAMETER: return createParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -164,9 +165,9 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Interface createInterface() {
-		InterfaceImpl interface_ = new InterfaceImpl();
-		return interface_;
+	public InterfaceClassba createInterfaceClassba() {
+		InterfaceClassbaImpl interfaceClassba = new InterfaceClassbaImpl();
+		return interfaceClassba;
 	}
 
 	/**
@@ -174,9 +175,9 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Abstract createAbstract() {
-		AbstractImpl abstract_ = new AbstractImpl();
-		return abstract_;
+	public AbsctractClassba createAbsctractClassba() {
+		AbsctractClassbaImpl absctractClassba = new AbsctractClassbaImpl();
+		return absctractClassba;
 	}
 
 	/**
@@ -267,6 +268,16 @@ public class ConcretaFactoryImpl extends EFactoryImpl implements ConcretaFactory
 	public Methodba createMethodba() {
 		MethodbaImpl methodba = new MethodbaImpl();
 		return methodba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operationba createOperationba() {
+		OperationbaImpl operationba = new OperationbaImpl();
+		return operationba;
 	}
 
 	/**

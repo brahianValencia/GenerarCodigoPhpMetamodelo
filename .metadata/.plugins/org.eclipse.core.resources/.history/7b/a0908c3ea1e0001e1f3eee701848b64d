@@ -1,0 +1,140 @@
+/*
+ * 
+ */
+package concreta.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class ConcretaEditPartFactory implements org.eclipse.gef.EditPartFactory {
+
+		/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart createEditPart(org.eclipse.gef.EditPart context, Object model) {
+		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
+			switch (concreta.diagram.part.ConcretaVisualIDRegistry.getVisualID(view)) {
+				
+	case concreta.diagram.edit.parts.DiagramClassbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.DiagramClassbaEditPart(view);
+									
+	case concreta.diagram.edit.parts.ClassbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClassbaEditPart(view);
+					
+	case concreta.diagram.edit.parts.ClassbaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClassbaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.AbsctractClassbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AbsctractClassbaEditPart(view);
+					
+	case concreta.diagram.edit.parts.AbsctractClassbaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AbsctractClassbaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.InterfaceClassbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.InterfaceClassbaEditPart(view);
+					
+	case concreta.diagram.edit.parts.InterfaceClassbaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.InterfaceClassbaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.PackagebaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.PackagebaEditPart(view);
+					
+	case concreta.diagram.edit.parts.PackagebaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.PackagebaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.AttributebaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AttributebaEditPart(view);
+					
+	case concreta.diagram.edit.parts.AttributebaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AttributebaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.MethodbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.MethodbaEditPart(view);
+					
+	case concreta.diagram.edit.parts.MethodbaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.MethodbaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.Attributeba2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.Attributeba2EditPart(view);
+					
+	case concreta.diagram.edit.parts.AttributebaName2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AttributebaName2EditPart(view);
+									
+	case concreta.diagram.edit.parts.OperationbaEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.OperationbaEditPart(view);
+					
+	case concreta.diagram.edit.parts.OperationbaNameEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.OperationbaNameEditPart(view);
+									
+	case concreta.diagram.edit.parts.Attributeba3EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.Attributeba3EditPart(view);
+					
+	case concreta.diagram.edit.parts.AttributebaName3EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AttributebaName3EditPart(view);
+									
+	case concreta.diagram.edit.parts.Operationba2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.Operationba2EditPart(view);
+					
+	case concreta.diagram.edit.parts.OperationbaName2EditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.OperationbaName2EditPart(view);
+								
+	case concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart(view);
+
+	case concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart(view);
+									
+	case concreta.diagram.edit.parts.ContainmentEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ContainmentEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AggregationEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.AssociationEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.AssociationEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.GeneralizationEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.GeneralizationEditPart(view);
+					
+									
+	case concreta.diagram.edit.parts.ImplementationEditPart.VISUAL_ID:
+		return new concreta.diagram.edit.parts.ImplementationEditPart(view);
+					
+							}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+	
+		/**
+ * @generated
+ */
+	 private org.eclipse.gef.EditPart createUnrecognizedEditPart(org.eclipse.gef.EditPart context, Object model) {
+	 	// Handle creation of unrecognized child node EditParts here
+	 	return null;
+	 }
+	
+		/**
+ * @generated
+ */
+	public static org.eclipse.gef.tools.CellEditorLocator getTextCellEditorLocator(
+			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
+		return org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	}
+	
+	}

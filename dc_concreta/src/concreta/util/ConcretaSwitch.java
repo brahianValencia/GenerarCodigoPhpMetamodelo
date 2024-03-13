@@ -97,19 +97,17 @@ public class ConcretaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConcretaPackage.INTERFACE: {
-				Interface interface_ = (Interface)theEObject;
-				T result = caseInterface(interface_);
-				if (result == null) result = caseClassba(interface_);
-				if (result == null) result = caseClasifier(interface_);
+			case ConcretaPackage.INTERFACE_CLASSBA: {
+				InterfaceClassba interfaceClassba = (InterfaceClassba)theEObject;
+				T result = caseInterfaceClassba(interfaceClassba);
+				if (result == null) result = caseClasifier(interfaceClassba);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConcretaPackage.ABSTRACT: {
-				Abstract abstract_ = (Abstract)theEObject;
-				T result = caseAbstract(abstract_);
-				if (result == null) result = caseClassba(abstract_);
-				if (result == null) result = caseClasifier(abstract_);
+			case ConcretaPackage.ABSCTRACT_CLASSBA: {
+				AbsctractClassba absctractClassba = (AbsctractClassba)theEObject;
+				T result = caseAbsctractClassba(absctractClassba);
+				if (result == null) result = caseClasifier(absctractClassba);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +174,12 @@ public class ConcretaSwitch<T> extends Switch<T> {
 			case ConcretaPackage.METHODBA: {
 				Methodba methodba = (Methodba)theEObject;
 				T result = caseMethodba(methodba);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConcretaPackage.OPERATIONBA: {
+				Operationba operationba = (Operationba)theEObject;
+				T result = caseOperationba(operationba);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -265,32 +269,32 @@ public class ConcretaSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Interface</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Interface Classba</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Interface</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Interface Classba</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInterface(Interface object) {
+	public T caseInterfaceClassba(InterfaceClassba object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Absctract Classba</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Absctract Classba</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAbstract(Abstract object) {
+	public T caseAbsctractClassba(AbsctractClassba object) {
 		return null;
 	}
 
@@ -441,6 +445,21 @@ public class ConcretaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMethodba(Methodba object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operationba</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operationba</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperationba(Operationba object) {
 		return null;
 	}
 

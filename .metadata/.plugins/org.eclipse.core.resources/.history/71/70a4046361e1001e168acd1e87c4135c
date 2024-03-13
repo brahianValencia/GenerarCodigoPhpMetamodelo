@@ -1,0 +1,19 @@
+	/*
+ * 
+ */
+package concreta.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class OperationbaOperationbaLstParametersbaCompartmentItemSemanticEditPolicy extends concreta.diagram.edit.policies.ConcretaBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public OperationbaOperationbaLstParametersbaCompartmentItemSemanticEditPolicy() {
+				super(concreta.diagram.providers.ConcretaElementTypes.Operationba_3006);
+	}
+
+		
+	}

@@ -19,6 +19,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstClass" upperBound="-1"
         eType="#//Classba" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstAbstractaClassba" upperBound="-1"
+        eType="#//AbsctractClassba" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstInterfaceClassba" upperBound="-1"
+        eType="#//InterfaceClassba" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackageba" upperBound="-1"
         eType="#//Packageba" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipba" upperBound="-1"
@@ -62,21 +66,53 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModify" eType="#//AccessModifyba"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Classba">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="border.style" value="solid"/>
-      <details key="figure" value="rectangle"/>
-      <details key="color" value="119,104,71"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Abstract" eSuperTypes="#//Classba">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceClassba" eSuperTypes="#//Clasifier">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="border.style" value="solid"/>
       <details key="figure" value="rectangle"/>
       <details key="color" value="106,112,230"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributesba" upperBound="-1"
+        eType="#//Attributeba" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethodba" upperBound="-1"
+        eType="#//Operationba" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModify" eType="#//AccessModifyba"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbsctractClassba" eSuperTypes="#//Clasifier">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="border.style" value="solid"/>
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="106,112,230"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributesba" upperBound="-1"
+        eType="#//Attributeba" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethodba" upperBound="-1"
+        eType="#//Methodba" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModify" eType="#//AccessModifyba"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationshipba" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -158,15 +194,49 @@
   <eClassifiers xsi:type="ecore:EClass" name="Methodba">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
+      <details key="border.style" value="solid"/>
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="201,209,113"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModify" eType="#//AccessModifyba"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="retorno" eType="#//Clasifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classba" eType="#//Classba"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lstParametersba" upperBound="-1"
+        eType="#//Parameter" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operationba">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="border.style" value="solid"/>
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="106,112,230"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessModify" eType="#//AccessModifyba"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="retorno" eType="#//Clasifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classba" eType="#//Classba"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstParametersba" upperBound="-1"
-        eType="#//Parameter" containment="true"/>
+        eType="#//Parameter" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="border.style" value="solid"/>
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="201,209,113"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methodba" eType="#//Methodba"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Clasifier"/>

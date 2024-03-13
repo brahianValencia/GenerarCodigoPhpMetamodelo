@@ -177,13 +177,31 @@ public interface ConcretaPackage extends EPackage {
 	int DIAGRAM_CLASSBA__LST_CLASS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Lst Abstracta Classba</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Lst Interface Classba</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA = 4;
+
+	/**
 	 * The feature id for the '<em><b>Lst Packageba</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CLASSBA__LST_PACKAGEBA = 3;
+	int DIAGRAM_CLASSBA__LST_PACKAGEBA = 5;
 
 	/**
 	 * The feature id for the '<em><b>Lst Relationshipba</b></em>' containment reference list.
@@ -192,7 +210,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CLASSBA__LST_RELATIONSHIPBA = 4;
+	int DIAGRAM_CLASSBA__LST_RELATIONSHIPBA = 6;
 
 	/**
 	 * The number of structural features of the '<em>Diagram Classba</em>' class.
@@ -201,7 +219,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CLASSBA_FEATURE_COUNT = 5;
+	int DIAGRAM_CLASSBA_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link concreta.impl.PackagebaImpl <em>Packageba</em>}' class.
@@ -369,14 +387,14 @@ public interface ConcretaPackage extends EPackage {
 	int CLASSBA_FEATURE_COUNT = CLASIFIER_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link concreta.impl.InterfaceImpl <em>Interface</em>}' class.
+	 * The meta object id for the '{@link concreta.impl.InterfaceClassbaImpl <em>Interface Classba</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see concreta.impl.InterfaceImpl
-	 * @see concreta.impl.ConcretaPackageImpl#getInterface()
+	 * @see concreta.impl.InterfaceClassbaImpl
+	 * @see concreta.impl.ConcretaPackageImpl#getInterfaceClassba()
 	 * @generated
 	 */
-	int INTERFACE = 5;
+	int INTERFACE_CLASSBA = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -385,7 +403,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__NAME = CLASSBA__NAME;
+	int INTERFACE_CLASSBA__NAME = CLASIFIER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Lst Attributeba C</b></em>' reference list.
@@ -394,7 +412,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__LST_ATTRIBUTEBA_C = CLASSBA__LST_ATTRIBUTEBA_C;
+	int INTERFACE_CLASSBA__LST_ATTRIBUTEBA_C = CLASIFIER__LST_ATTRIBUTEBA_C;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -403,7 +421,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__PATH = CLASSBA__PATH;
+	int INTERFACE_CLASSBA__PATH = CLASIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lst Attributesba</b></em>' containment reference list.
@@ -412,7 +430,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__LST_ATTRIBUTESBA = CLASSBA__LST_ATTRIBUTESBA;
+	int INTERFACE_CLASSBA__LST_ATTRIBUTESBA = CLASIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Lst Methodba</b></em>' containment reference list.
@@ -421,7 +439,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__LST_METHODBA = CLASSBA__LST_METHODBA;
+	int INTERFACE_CLASSBA__LST_METHODBA = CLASIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Access Modify</b></em>' attribute.
@@ -430,26 +448,26 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__ACCESS_MODIFY = CLASSBA__ACCESS_MODIFY;
+	int INTERFACE_CLASSBA__ACCESS_MODIFY = CLASIFIER_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Interface</em>' class.
+	 * The number of structural features of the '<em>Interface Classba</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FEATURE_COUNT = CLASSBA_FEATURE_COUNT + 0;
+	int INTERFACE_CLASSBA_FEATURE_COUNT = CLASIFIER_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link concreta.impl.AbstractImpl <em>Abstract</em>}' class.
+	 * The meta object id for the '{@link concreta.impl.AbsctractClassbaImpl <em>Absctract Classba</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see concreta.impl.AbstractImpl
-	 * @see concreta.impl.ConcretaPackageImpl#getAbstract()
+	 * @see concreta.impl.AbsctractClassbaImpl
+	 * @see concreta.impl.ConcretaPackageImpl#getAbsctractClassba()
 	 * @generated
 	 */
-	int ABSTRACT = 6;
+	int ABSCTRACT_CLASSBA = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -458,7 +476,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__NAME = CLASSBA__NAME;
+	int ABSCTRACT_CLASSBA__NAME = CLASIFIER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Lst Attributeba C</b></em>' reference list.
@@ -467,7 +485,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__LST_ATTRIBUTEBA_C = CLASSBA__LST_ATTRIBUTEBA_C;
+	int ABSCTRACT_CLASSBA__LST_ATTRIBUTEBA_C = CLASIFIER__LST_ATTRIBUTEBA_C;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' attribute.
@@ -476,7 +494,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__PATH = CLASSBA__PATH;
+	int ABSCTRACT_CLASSBA__PATH = CLASIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lst Attributesba</b></em>' containment reference list.
@@ -485,7 +503,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__LST_ATTRIBUTESBA = CLASSBA__LST_ATTRIBUTESBA;
+	int ABSCTRACT_CLASSBA__LST_ATTRIBUTESBA = CLASIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Lst Methodba</b></em>' containment reference list.
@@ -494,7 +512,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__LST_METHODBA = CLASSBA__LST_METHODBA;
+	int ABSCTRACT_CLASSBA__LST_METHODBA = CLASIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Access Modify</b></em>' attribute.
@@ -503,16 +521,16 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT__ACCESS_MODIFY = CLASSBA__ACCESS_MODIFY;
+	int ABSCTRACT_CLASSBA__ACCESS_MODIFY = CLASIFIER_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Abstract</em>' class.
+	 * The number of structural features of the '<em>Absctract Classba</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_FEATURE_COUNT = CLASSBA_FEATURE_COUNT + 0;
+	int ABSCTRACT_CLASSBA_FEATURE_COUNT = CLASIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link concreta.impl.RelationshipbaImpl <em>Relationshipba</em>}' class.
@@ -1127,13 +1145,22 @@ public interface ConcretaPackage extends EPackage {
 	int METHODBA__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHODBA__BODY = 1;
+
+	/**
 	 * The feature id for the '<em><b>Access Modify</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__ACCESS_MODIFY = 1;
+	int METHODBA__ACCESS_MODIFY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Retorno</b></em>' reference.
@@ -1142,7 +1169,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__RETORNO = 2;
+	int METHODBA__RETORNO = 3;
 
 	/**
 	 * The feature id for the '<em><b>Classba</b></em>' reference.
@@ -1151,7 +1178,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__CLASSBA = 3;
+	int METHODBA__CLASSBA = 4;
 
 	/**
 	 * The feature id for the '<em><b>Lst Parametersba</b></em>' containment reference list.
@@ -1160,7 +1187,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__LST_PARAMETERSBA = 4;
+	int METHODBA__LST_PARAMETERSBA = 5;
 
 	/**
 	 * The number of structural features of the '<em>Methodba</em>' class.
@@ -1169,7 +1196,71 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA_FEATURE_COUNT = 5;
+	int METHODBA_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link concreta.impl.OperationbaImpl <em>Operationba</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see concreta.impl.OperationbaImpl
+	 * @see concreta.impl.ConcretaPackageImpl#getOperationba()
+	 * @generated
+	 */
+	int OPERATIONBA = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Access Modify</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA__ACCESS_MODIFY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Retorno</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA__RETORNO = 2;
+
+	/**
+	 * The feature id for the '<em><b>Classba</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA__CLASSBA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Lst Parametersba</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA__LST_PARAMETERSBA = 4;
+
+	/**
+	 * The number of structural features of the '<em>Operationba</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONBA_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link concreta.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1179,7 +1270,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 17;
+	int PARAMETER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1225,7 +1316,7 @@ public interface ConcretaPackage extends EPackage {
 	 * @see concreta.impl.ConcretaPackageImpl#getAccessModifyba()
 	 * @generated
 	 */
-	int ACCESS_MODIFYBA = 18;
+	int ACCESS_MODIFYBA = 19;
 
 
 	/**
@@ -1345,6 +1436,28 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagramClassba_LstClass();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.DiagramClassba#getLstAbstractaClassba <em>Lst Abstracta Classba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Abstracta Classba</em>'.
+	 * @see concreta.DiagramClassba#getLstAbstractaClassba()
+	 * @see #getDiagramClassba()
+	 * @generated
+	 */
+	EReference getDiagramClassba_LstAbstractaClassba();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.DiagramClassba#getLstInterfaceClassba <em>Lst Interface Classba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Interface Classba</em>'.
+	 * @see concreta.DiagramClassba#getLstInterfaceClassba()
+	 * @see #getDiagramClassba()
+	 * @generated
+	 */
+	EReference getDiagramClassba_LstInterfaceClassba();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link concreta.DiagramClassba#getLstPackageba <em>Lst Packageba</em>}'.
@@ -1477,24 +1590,112 @@ public interface ConcretaPackage extends EPackage {
 	EAttribute getClassba_AccessModify();
 
 	/**
-	 * Returns the meta object for class '{@link concreta.Interface <em>Interface</em>}'.
+	 * Returns the meta object for class '{@link concreta.InterfaceClassba <em>Interface Classba</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Interface</em>'.
-	 * @see concreta.Interface
+	 * @return the meta object for class '<em>Interface Classba</em>'.
+	 * @see concreta.InterfaceClassba
 	 * @generated
 	 */
-	EClass getInterface();
+	EClass getInterfaceClassba();
 
 	/**
-	 * Returns the meta object for class '{@link concreta.Abstract <em>Abstract</em>}'.
+	 * Returns the meta object for the attribute '{@link concreta.InterfaceClassba#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract</em>'.
-	 * @see concreta.Abstract
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see concreta.InterfaceClassba#getPath()
+	 * @see #getInterfaceClassba()
 	 * @generated
 	 */
-	EClass getAbstract();
+	EAttribute getInterfaceClassba_Path();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.InterfaceClassba#getLstAttributesba <em>Lst Attributesba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Attributesba</em>'.
+	 * @see concreta.InterfaceClassba#getLstAttributesba()
+	 * @see #getInterfaceClassba()
+	 * @generated
+	 */
+	EReference getInterfaceClassba_LstAttributesba();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.InterfaceClassba#getLstMethodba <em>Lst Methodba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Methodba</em>'.
+	 * @see concreta.InterfaceClassba#getLstMethodba()
+	 * @see #getInterfaceClassba()
+	 * @generated
+	 */
+	EReference getInterfaceClassba_LstMethodba();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concreta.InterfaceClassba#getAccessModify <em>Access Modify</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Modify</em>'.
+	 * @see concreta.InterfaceClassba#getAccessModify()
+	 * @see #getInterfaceClassba()
+	 * @generated
+	 */
+	EAttribute getInterfaceClassba_AccessModify();
+
+	/**
+	 * Returns the meta object for class '{@link concreta.AbsctractClassba <em>Absctract Classba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Absctract Classba</em>'.
+	 * @see concreta.AbsctractClassba
+	 * @generated
+	 */
+	EClass getAbsctractClassba();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concreta.AbsctractClassba#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see concreta.AbsctractClassba#getPath()
+	 * @see #getAbsctractClassba()
+	 * @generated
+	 */
+	EAttribute getAbsctractClassba_Path();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.AbsctractClassba#getLstAttributesba <em>Lst Attributesba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Attributesba</em>'.
+	 * @see concreta.AbsctractClassba#getLstAttributesba()
+	 * @see #getAbsctractClassba()
+	 * @generated
+	 */
+	EReference getAbsctractClassba_LstAttributesba();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.AbsctractClassba#getLstMethodba <em>Lst Methodba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Methodba</em>'.
+	 * @see concreta.AbsctractClassba#getLstMethodba()
+	 * @see #getAbsctractClassba()
+	 * @generated
+	 */
+	EReference getAbsctractClassba_LstMethodba();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concreta.AbsctractClassba#getAccessModify <em>Access Modify</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Modify</em>'.
+	 * @see concreta.AbsctractClassba#getAccessModify()
+	 * @see #getAbsctractClassba()
+	 * @generated
+	 */
+	EAttribute getAbsctractClassba_AccessModify();
 
 	/**
 	 * Returns the meta object for class '{@link concreta.Relationshipba <em>Relationshipba</em>}'.
@@ -1762,6 +1963,17 @@ public interface ConcretaPackage extends EPackage {
 	EAttribute getMethodba_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link concreta.Methodba#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see concreta.Methodba#getBody()
+	 * @see #getMethodba()
+	 * @generated
+	 */
+	EAttribute getMethodba_Body();
+
+	/**
 	 * Returns the meta object for the attribute '{@link concreta.Methodba#getAccessModify <em>Access Modify</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1804,6 +2016,71 @@ public interface ConcretaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMethodba_LstParametersba();
+
+	/**
+	 * Returns the meta object for class '{@link concreta.Operationba <em>Operationba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operationba</em>'.
+	 * @see concreta.Operationba
+	 * @generated
+	 */
+	EClass getOperationba();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concreta.Operationba#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see concreta.Operationba#getName()
+	 * @see #getOperationba()
+	 * @generated
+	 */
+	EAttribute getOperationba_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link concreta.Operationba#getAccessModify <em>Access Modify</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Modify</em>'.
+	 * @see concreta.Operationba#getAccessModify()
+	 * @see #getOperationba()
+	 * @generated
+	 */
+	EAttribute getOperationba_AccessModify();
+
+	/**
+	 * Returns the meta object for the reference '{@link concreta.Operationba#getRetorno <em>Retorno</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Retorno</em>'.
+	 * @see concreta.Operationba#getRetorno()
+	 * @see #getOperationba()
+	 * @generated
+	 */
+	EReference getOperationba_Retorno();
+
+	/**
+	 * Returns the meta object for the reference '{@link concreta.Operationba#getClassba <em>Classba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Classba</em>'.
+	 * @see concreta.Operationba#getClassba()
+	 * @see #getOperationba()
+	 * @generated
+	 */
+	EReference getOperationba_Classba();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link concreta.Operationba#getLstParametersba <em>Lst Parametersba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lst Parametersba</em>'.
+	 * @see concreta.Operationba#getLstParametersba()
+	 * @see #getOperationba()
+	 * @generated
+	 */
+	EReference getOperationba_LstParametersba();
 
 	/**
 	 * Returns the meta object for class '{@link concreta.Parameter <em>Parameter</em>}'.
@@ -1975,6 +2252,22 @@ public interface ConcretaPackage extends EPackage {
 		EReference DIAGRAM_CLASSBA__LST_CLASS = eINSTANCE.getDiagramClassba_LstClass();
 
 		/**
+		 * The meta object literal for the '<em><b>Lst Abstracta Classba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA = eINSTANCE.getDiagramClassba_LstAbstractaClassba();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Interface Classba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA = eINSTANCE.getDiagramClassba_LstInterfaceClassba();
+
+		/**
 		 * The meta object literal for the '<em><b>Lst Packageba</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2075,24 +2368,88 @@ public interface ConcretaPackage extends EPackage {
 		EAttribute CLASSBA__ACCESS_MODIFY = eINSTANCE.getClassba_AccessModify();
 
 		/**
-		 * The meta object literal for the '{@link concreta.impl.InterfaceImpl <em>Interface</em>}' class.
+		 * The meta object literal for the '{@link concreta.impl.InterfaceClassbaImpl <em>Interface Classba</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see concreta.impl.InterfaceImpl
-		 * @see concreta.impl.ConcretaPackageImpl#getInterface()
+		 * @see concreta.impl.InterfaceClassbaImpl
+		 * @see concreta.impl.ConcretaPackageImpl#getInterfaceClassba()
 		 * @generated
 		 */
-		EClass INTERFACE = eINSTANCE.getInterface();
+		EClass INTERFACE_CLASSBA = eINSTANCE.getInterfaceClassba();
 
 		/**
-		 * The meta object literal for the '{@link concreta.impl.AbstractImpl <em>Abstract</em>}' class.
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see concreta.impl.AbstractImpl
-		 * @see concreta.impl.ConcretaPackageImpl#getAbstract()
 		 * @generated
 		 */
-		EClass ABSTRACT = eINSTANCE.getAbstract();
+		EAttribute INTERFACE_CLASSBA__PATH = eINSTANCE.getInterfaceClassba_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Attributesba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERFACE_CLASSBA__LST_ATTRIBUTESBA = eINSTANCE.getInterfaceClassba_LstAttributesba();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Methodba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERFACE_CLASSBA__LST_METHODBA = eINSTANCE.getInterfaceClassba_LstMethodba();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Modify</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE_CLASSBA__ACCESS_MODIFY = eINSTANCE.getInterfaceClassba_AccessModify();
+
+		/**
+		 * The meta object literal for the '{@link concreta.impl.AbsctractClassbaImpl <em>Absctract Classba</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concreta.impl.AbsctractClassbaImpl
+		 * @see concreta.impl.ConcretaPackageImpl#getAbsctractClassba()
+		 * @generated
+		 */
+		EClass ABSCTRACT_CLASSBA = eINSTANCE.getAbsctractClassba();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSCTRACT_CLASSBA__PATH = eINSTANCE.getAbsctractClassba_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Attributesba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSCTRACT_CLASSBA__LST_ATTRIBUTESBA = eINSTANCE.getAbsctractClassba_LstAttributesba();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Methodba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSCTRACT_CLASSBA__LST_METHODBA = eINSTANCE.getAbsctractClassba_LstMethodba();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Modify</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSCTRACT_CLASSBA__ACCESS_MODIFY = eINSTANCE.getAbsctractClassba_AccessModify();
 
 		/**
 		 * The meta object literal for the '{@link concreta.impl.RelationshipbaImpl <em>Relationshipba</em>}' class.
@@ -2315,6 +2672,14 @@ public interface ConcretaPackage extends EPackage {
 		EAttribute METHODBA__NAME = eINSTANCE.getMethodba_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METHODBA__BODY = eINSTANCE.getMethodba_Body();
+
+		/**
 		 * The meta object literal for the '<em><b>Access Modify</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2345,6 +2710,56 @@ public interface ConcretaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference METHODBA__LST_PARAMETERSBA = eINSTANCE.getMethodba_LstParametersba();
+
+		/**
+		 * The meta object literal for the '{@link concreta.impl.OperationbaImpl <em>Operationba</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see concreta.impl.OperationbaImpl
+		 * @see concreta.impl.ConcretaPackageImpl#getOperationba()
+		 * @generated
+		 */
+		EClass OPERATIONBA = eINSTANCE.getOperationba();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATIONBA__NAME = eINSTANCE.getOperationba_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Modify</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATIONBA__ACCESS_MODIFY = eINSTANCE.getOperationba_AccessModify();
+
+		/**
+		 * The meta object literal for the '<em><b>Retorno</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATIONBA__RETORNO = eINSTANCE.getOperationba_Retorno();
+
+		/**
+		 * The meta object literal for the '<em><b>Classba</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATIONBA__CLASSBA = eINSTANCE.getOperationba_Classba();
+
+		/**
+		 * The meta object literal for the '<em><b>Lst Parametersba</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATIONBA__LST_PARAMETERSBA = eINSTANCE.getOperationba_LstParametersba();
 
 		/**
 		 * The meta object literal for the '{@link concreta.impl.ParameterImpl <em>Parameter</em>}' class.

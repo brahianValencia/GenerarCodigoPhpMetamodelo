@@ -256,12 +256,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Abstract1CreationTool_title;
+	public static String AbsctractClassba1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Abstract1CreationTool_desc;
+	public static String AbsctractClassba1CreationTool_desc;
 
 	/**
 	* @generated
@@ -286,12 +286,12 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Interface4CreationTool_title;
+	public static String InterfaceClassba4CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Interface4CreationTool_desc;
+	public static String InterfaceClassba4CreationTool_desc;
 
 	/**
 	* @generated
@@ -306,12 +306,32 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Packageba6CreationTool_title;
+	public static String Operationba6CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Packageba6CreationTool_desc;
+	public static String Operationba6CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Packageba7CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Packageba7CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Parameter8CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Parameter8CreationTool_desc;
 
 	/**
 	* @generated
@@ -366,32 +386,47 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String InterfaceInterfaceLstAttributesbaCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String InterfaceInterfaceLstMethodbaCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String AbstractAbstractLstAttributesbaCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
-	public static String AbstractAbstractLstMethodbaCompartmentEditPart_title;
-
-	/**
-	* @generated
-	*/
 	public static String ClassbaClassbaLstAttributesbaCompartmentEditPart_title;
 
 	/**
 	* @generated
 	*/
 	public static String ClassbaClassbaLstMethodbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String MethodbaMethodbaLstParametersbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String MethodbaMethodbaLstParametersbaCompartment2EditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String OperationbaOperationbaLstParametersbaCompartmentEditPart_title;
 
 	/**
 	* @generated
@@ -412,26 +447,6 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_Classba_2001_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Interface_2002_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Interface_2002_outgoinglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Abstract_2003_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_Abstract_2003_outgoinglinks;
 
 	/**
 	* @generated

@@ -2,7 +2,7 @@
  */
 package concreta.impl;
 
-import concreta.Abstract;
+import concreta.AbsctractClassba;
 import concreta.AccessModifyba;
 import concreta.Aggregation;
 import concreta.Association;
@@ -15,9 +15,10 @@ import concreta.Containment;
 import concreta.DiagramClassba;
 import concreta.Generalization;
 import concreta.Implementation;
-import concreta.Interface;
+import concreta.InterfaceClassba;
 import concreta.Methodba;
 import concreta.ModelFactoryConcreta;
+import concreta.Operationba;
 import concreta.Packageba;
 import concreta.Parameter;
 import concreta.PrimitiveDataType;
@@ -79,14 +80,14 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass interfaceEClass = null;
+	private EClass interfaceClassbaEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractEClass = null;
+	private EClass absctractClassbaEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,6 +158,13 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * @generated
 	 */
 	private EClass methodbaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationbaEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,7 +345,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiagramClassba_LstPackageba() {
+	public EReference getDiagramClassba_LstAbstractaClassba() {
 		return (EReference)diagramClassbaEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -346,8 +354,26 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiagramClassba_LstRelationshipba() {
+	public EReference getDiagramClassba_LstInterfaceClassba() {
 		return (EReference)diagramClassbaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiagramClassba_LstPackageba() {
+		return (EReference)diagramClassbaEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiagramClassba_LstRelationshipba() {
+		return (EReference)diagramClassbaEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -445,8 +471,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInterface() {
-		return interfaceEClass;
+	public EClass getInterfaceClassba() {
+		return interfaceClassbaEClass;
 	}
 
 	/**
@@ -454,8 +480,80 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstract() {
-		return abstractEClass;
+	public EAttribute getInterfaceClassba_Path() {
+		return (EAttribute)interfaceClassbaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInterfaceClassba_LstAttributesba() {
+		return (EReference)interfaceClassbaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInterfaceClassba_LstMethodba() {
+		return (EReference)interfaceClassbaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInterfaceClassba_AccessModify() {
+		return (EAttribute)interfaceClassbaEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbsctractClassba() {
+		return absctractClassbaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbsctractClassba_Path() {
+		return (EAttribute)absctractClassbaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbsctractClassba_LstAttributesba() {
+		return (EReference)absctractClassbaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbsctractClassba_LstMethodba() {
+		return (EReference)absctractClassbaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbsctractClassba_AccessModify() {
+		return (EAttribute)absctractClassbaEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -688,7 +786,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMethodba_AccessModify() {
+	public EAttribute getMethodba_Body() {
 		return (EAttribute)methodbaEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -697,8 +795,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_Retorno() {
-		return (EReference)methodbaEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMethodba_AccessModify() {
+		return (EAttribute)methodbaEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -706,7 +804,7 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_Classba() {
+	public EReference getMethodba_Retorno() {
 		return (EReference)methodbaEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -715,8 +813,71 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_LstParametersba() {
+	public EReference getMethodba_Classba() {
 		return (EReference)methodbaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMethodba_LstParametersba() {
+		return (EReference)methodbaEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperationba() {
+		return operationbaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOperationba_Name() {
+		return (EAttribute)operationbaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOperationba_AccessModify() {
+		return (EAttribute)operationbaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationba_Retorno() {
+		return (EReference)operationbaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationba_Classba() {
+		return (EReference)operationbaEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationba_LstParametersba() {
+		return (EReference)operationbaEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -805,6 +966,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		createEAttribute(diagramClassbaEClass, DIAGRAM_CLASSBA__NAME);
 		createEAttribute(diagramClassbaEClass, DIAGRAM_CLASSBA__PATH);
 		createEReference(diagramClassbaEClass, DIAGRAM_CLASSBA__LST_CLASS);
+		createEReference(diagramClassbaEClass, DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA);
+		createEReference(diagramClassbaEClass, DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA);
 		createEReference(diagramClassbaEClass, DIAGRAM_CLASSBA__LST_PACKAGEBA);
 		createEReference(diagramClassbaEClass, DIAGRAM_CLASSBA__LST_RELATIONSHIPBA);
 
@@ -820,9 +983,17 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		createEReference(classbaEClass, CLASSBA__LST_METHODBA);
 		createEAttribute(classbaEClass, CLASSBA__ACCESS_MODIFY);
 
-		interfaceEClass = createEClass(INTERFACE);
+		interfaceClassbaEClass = createEClass(INTERFACE_CLASSBA);
+		createEAttribute(interfaceClassbaEClass, INTERFACE_CLASSBA__PATH);
+		createEReference(interfaceClassbaEClass, INTERFACE_CLASSBA__LST_ATTRIBUTESBA);
+		createEReference(interfaceClassbaEClass, INTERFACE_CLASSBA__LST_METHODBA);
+		createEAttribute(interfaceClassbaEClass, INTERFACE_CLASSBA__ACCESS_MODIFY);
 
-		abstractEClass = createEClass(ABSTRACT);
+		absctractClassbaEClass = createEClass(ABSCTRACT_CLASSBA);
+		createEAttribute(absctractClassbaEClass, ABSCTRACT_CLASSBA__PATH);
+		createEReference(absctractClassbaEClass, ABSCTRACT_CLASSBA__LST_ATTRIBUTESBA);
+		createEReference(absctractClassbaEClass, ABSCTRACT_CLASSBA__LST_METHODBA);
+		createEAttribute(absctractClassbaEClass, ABSCTRACT_CLASSBA__ACCESS_MODIFY);
 
 		relationshipbaEClass = createEClass(RELATIONSHIPBA);
 		createEAttribute(relationshipbaEClass, RELATIONSHIPBA__IDE);
@@ -858,10 +1029,18 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 
 		methodbaEClass = createEClass(METHODBA);
 		createEAttribute(methodbaEClass, METHODBA__NAME);
+		createEAttribute(methodbaEClass, METHODBA__BODY);
 		createEAttribute(methodbaEClass, METHODBA__ACCESS_MODIFY);
 		createEReference(methodbaEClass, METHODBA__RETORNO);
 		createEReference(methodbaEClass, METHODBA__CLASSBA);
 		createEReference(methodbaEClass, METHODBA__LST_PARAMETERSBA);
+
+		operationbaEClass = createEClass(OPERATIONBA);
+		createEAttribute(operationbaEClass, OPERATIONBA__NAME);
+		createEAttribute(operationbaEClass, OPERATIONBA__ACCESS_MODIFY);
+		createEReference(operationbaEClass, OPERATIONBA__RETORNO);
+		createEReference(operationbaEClass, OPERATIONBA__CLASSBA);
+		createEReference(operationbaEClass, OPERATIONBA__LST_PARAMETERSBA);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -901,8 +1080,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 
 		// Add supertypes to classes
 		classbaEClass.getESuperTypes().add(this.getClasifier());
-		interfaceEClass.getESuperTypes().add(this.getClassba());
-		abstractEClass.getESuperTypes().add(this.getClassba());
+		interfaceClassbaEClass.getESuperTypes().add(this.getClasifier());
+		absctractClassbaEClass.getESuperTypes().add(this.getClasifier());
 		containmentEClass.getESuperTypes().add(this.getRelationshipba());
 		aggregationEClass.getESuperTypes().add(this.getRelationshipba());
 		associationEClass.getESuperTypes().add(this.getRelationshipba());
@@ -924,6 +1103,8 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		initEAttribute(getDiagramClassba_Name(), ecorePackage.getEString(), "name", null, 0, 1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDiagramClassba_Path(), ecorePackage.getEString(), "path", null, 0, 1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramClassba_LstClass(), this.getClassba(), null, "lstClass", null, 0, -1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramClassba_LstAbstractaClassba(), this.getAbsctractClassba(), null, "lstAbstractaClassba", null, 0, -1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramClassba_LstInterfaceClassba(), this.getInterfaceClassba(), null, "lstInterfaceClassba", null, 0, -1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramClassba_LstPackageba(), this.getPackageba(), null, "lstPackageba", null, 0, -1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramClassba_LstRelationshipba(), this.getRelationshipba(), null, "lstRelationshipba", null, 0, -1, DiagramClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -939,9 +1120,17 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		initEReference(getClassba_LstMethodba(), this.getMethodba(), null, "lstMethodba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClassba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(interfaceClassbaEClass, InterfaceClassba.class, "InterfaceClassba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInterfaceClassba_Path(), ecorePackage.getEString(), "path", null, 0, 1, InterfaceClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceClassba_LstAttributesba(), this.getAttributeba(), null, "lstAttributesba", null, 0, -1, InterfaceClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaceClassba_LstMethodba(), this.getOperationba(), null, "lstMethodba", null, 0, -1, InterfaceClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterfaceClassba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, InterfaceClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractEClass, Abstract.class, "Abstract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(absctractClassbaEClass, AbsctractClassba.class, "AbsctractClassba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbsctractClassba_Path(), ecorePackage.getEString(), "path", null, 0, 1, AbsctractClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbsctractClassba_LstAttributesba(), this.getAttributeba(), null, "lstAttributesba", null, 0, -1, AbsctractClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbsctractClassba_LstMethodba(), this.getMethodba(), null, "lstMethodba", null, 0, -1, AbsctractClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbsctractClassba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, AbsctractClassba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationshipbaEClass, Relationshipba.class, "Relationshipba", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRelationshipba_Ide(), ecorePackage.getEString(), "ide", null, 0, 1, Relationshipba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -977,10 +1166,18 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 
 		initEClass(methodbaEClass, Methodba.class, "Methodba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethodba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMethodba_Body(), ecorePackage.getEString(), "body", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMethodba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Classba(), this.getClassba(), null, "classba", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_LstParametersba(), this.getParameter(), null, "lstParametersba", null, 0, -1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationbaEClass, Operationba.class, "Operationba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operationba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationba_AccessModify(), this.getAccessModifyba(), "accessModify", null, 0, 1, Operationba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Operationba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationba_Classba(), this.getClassba(), null, "classba", null, 0, 1, Operationba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationba_LstParametersba(), this.getParameter(), null, "lstParametersba", null, 0, -1, Operationba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1050,16 +1247,16 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 			 "color", "201,209,113"
 		   });	
 		addAnnotation
-		  (interfaceEClass, 
+		  (interfaceClassbaEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name",
 			 "border.style", "solid",
 			 "figure", "rectangle",
-			 "color", "119,104,71"
+			 "color", "106,112,230"
 		   });	
 		addAnnotation
-		  (abstractEClass, 
+		  (absctractClassbaEClass, 
 		   source, 
 		   new String[] {
 			 "label", "name",
@@ -1080,7 +1277,28 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		  (methodbaEClass, 
 		   source, 
 		   new String[] {
-			 "label", "name"
+			 "label", "name",
+			 "border.style", "solid",
+			 "figure", "rectangle",
+			 "color", "201,209,113"
+		   });	
+		addAnnotation
+		  (operationbaEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "border.style", "solid",
+			 "figure", "rectangle",
+			 "color", "106,112,230"
+		   });	
+		addAnnotation
+		  (parameterEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "border.style", "solid",
+			 "figure", "rectangle",
+			 "color", "201,209,113"
 		   });
 	}
 
@@ -1101,6 +1319,48 @@ public class ConcretaPackageImpl extends EPackageImpl implements ConcretaPackage
 		   });	
 		addAnnotation
 		  (getClassba_LstMethodba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getInterfaceClassba_LstAttributesba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getInterfaceClassba_LstMethodba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getAbsctractClassba_LstAttributesba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getAbsctractClassba_LstMethodba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getMethodba_LstParametersba(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getOperationba_LstParametersba(), 
 		   source, 
 		   new String[] {
 			 "layout", "list",

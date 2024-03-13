@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link abstracta.Methodba#getName <em>Name</em>}</li>
+ *   <li>{@link abstracta.Methodba#getBody <em>Body</em>}</li>
  *   <li>{@link abstracta.Methodba#getRetorno <em>Retorno</em>}</li>
  *   <li>{@link abstracta.Methodba#getClassba <em>Classba</em>}</li>
  *   <li>{@link abstracta.Methodba#getLstParametersba <em>Lst Parametersba</em>}</li>
@@ -52,6 +53,32 @@ public interface Methodba extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Body</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Body</em>' attribute.
+	 * @see #setBody(String)
+	 * @see abstracta.AbstractaPackage#getMethodba_Body()
+	 * @model
+	 * @generated
+	 */
+	String getBody();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Methodba#getBody <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Body</em>' attribute.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Retorno</b></em>' reference.

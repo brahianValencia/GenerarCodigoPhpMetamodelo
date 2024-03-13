@@ -28,23 +28,23 @@ public class ConcretaEditPartFactory implements EditPartFactory {
 			case DiagramClassbaEditPart.VISUAL_ID:
 				return new DiagramClassbaEditPart(view);
 
-			case InterfaceEditPart.VISUAL_ID:
-				return new InterfaceEditPart(view);
-
-			case InterfaceNameEditPart.VISUAL_ID:
-				return new InterfaceNameEditPart(view);
-
-			case AbstractEditPart.VISUAL_ID:
-				return new AbstractEditPart(view);
-
-			case AbstractNameEditPart.VISUAL_ID:
-				return new AbstractNameEditPart(view);
-
 			case ClassbaEditPart.VISUAL_ID:
 				return new ClassbaEditPart(view);
 
 			case ClassbaNameEditPart.VISUAL_ID:
 				return new ClassbaNameEditPart(view);
+
+			case AbsctractClassbaEditPart.VISUAL_ID:
+				return new AbsctractClassbaEditPart(view);
+
+			case AbsctractClassbaNameEditPart.VISUAL_ID:
+				return new AbsctractClassbaNameEditPart(view);
+
+			case InterfaceClassbaEditPart.VISUAL_ID:
+				return new InterfaceClassbaEditPart(view);
+
+			case InterfaceClassbaNameEditPart.VISUAL_ID:
+				return new InterfaceClassbaNameEditPart(view);
 
 			case PackagebaEditPart.VISUAL_ID:
 				return new PackagebaEditPart(view);
@@ -64,23 +64,68 @@ public class ConcretaEditPartFactory implements EditPartFactory {
 			case MethodbaNameEditPart.VISUAL_ID:
 				return new MethodbaNameEditPart(view);
 
-			case InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID:
-				return new InterfaceInterfaceLstAttributesbaCompartmentEditPart(view);
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
 
-			case InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID:
-				return new InterfaceInterfaceLstMethodbaCompartmentEditPart(view);
+			case ParameterNameEditPart.VISUAL_ID:
+				return new ParameterNameEditPart(view);
 
-			case AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID:
-				return new AbstractAbstractLstAttributesbaCompartmentEditPart(view);
+			case Attributeba2EditPart.VISUAL_ID:
+				return new Attributeba2EditPart(view);
 
-			case AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID:
-				return new AbstractAbstractLstMethodbaCompartmentEditPart(view);
+			case AttributebaName2EditPart.VISUAL_ID:
+				return new AttributebaName2EditPart(view);
+
+			case Methodba2EditPart.VISUAL_ID:
+				return new Methodba2EditPart(view);
+
+			case MethodbaName2EditPart.VISUAL_ID:
+				return new MethodbaName2EditPart(view);
+
+			case Attributeba3EditPart.VISUAL_ID:
+				return new Attributeba3EditPart(view);
+
+			case AttributebaName3EditPart.VISUAL_ID:
+				return new AttributebaName3EditPart(view);
+
+			case OperationbaEditPart.VISUAL_ID:
+				return new OperationbaEditPart(view);
+
+			case OperationbaNameEditPart.VISUAL_ID:
+				return new OperationbaNameEditPart(view);
+
+			case Parameter2EditPart.VISUAL_ID:
+				return new Parameter2EditPart(view);
+
+			case ParameterName2EditPart.VISUAL_ID:
+				return new ParameterName2EditPart(view);
 
 			case ClassbaClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
 				return new ClassbaClassbaLstAttributesbaCompartmentEditPart(view);
 
 			case ClassbaClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
 				return new ClassbaClassbaLstMethodbaCompartmentEditPart(view);
+
+			case MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+				return new MethodbaMethodbaLstParametersbaCompartmentEditPart(view);
+
+			case AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+				return new AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart(view);
+
+			case AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+				return new AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart(view);
+
+			case MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID:
+				return new MethodbaMethodbaLstParametersbaCompartment2EditPart(view);
+
+			case InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID:
+				return new InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart(view);
+
+			case InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID:
+				return new InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart(view);
+
+			case OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID:
+				return new OperationbaOperationbaLstParametersbaCompartmentEditPart(view);
 
 			case ContainmentEditPart.VISUAL_ID:
 				return new ContainmentEditPart(view);

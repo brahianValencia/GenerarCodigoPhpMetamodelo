@@ -302,8 +302,8 @@ public class ConcretaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static class LinkConstraints {
 
 		/**
@@ -321,36 +321,36 @@ public class ConcretaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateAggregation_4002(DiagramClassba container, Classba source, Classba target) {
 			return canExistAggregation_4002(container, null, source, target);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateAssociation_4003(DiagramClassba container, Classba source, Classba target) {
 			return canExistAssociation_4003(container, null, source, target);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateGeneralization_4004(DiagramClassba container, Classba source, Classba target) {
 			return canExistGeneralization_4004(container, null, source, target);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean canCreateImplementation_4005(DiagramClassba container, Classba source, Classba target) {
 			return canExistImplementation_4005(container, null, source, target);
 		}
 
 		/**
-						* @generated
-						*/
+		* @generated
+		*/
 		public boolean canExistContainment_4001(DiagramClassba container, Containment linkInstance, Classba source,
 				Classba target) {
 			return true;

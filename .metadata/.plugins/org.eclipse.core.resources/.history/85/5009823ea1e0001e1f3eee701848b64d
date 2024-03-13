@@ -1,0 +1,26 @@
+/*
+ * 
+ */
+package concreta.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class ConcretaModelingAssistantProviderOfDiagramClassbaEditPart extends concreta.diagram.providers.ConcretaModelingAssistantProvider {
+
+				/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+					types.add(concreta.diagram.providers.ConcretaElementTypes.Classba_2001);
+					types.add(concreta.diagram.providers.ConcretaElementTypes.AbsctractClassba_2002);
+					types.add(concreta.diagram.providers.ConcretaElementTypes.InterfaceClassba_2003);
+					types.add(concreta.diagram.providers.ConcretaElementTypes.Packageba_2004);
+					return types;	
+	}
+			
+	
+	}

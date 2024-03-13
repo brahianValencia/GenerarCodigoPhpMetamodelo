@@ -187,49 +187,49 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link concreta.Interface} instances.
+	 * This keeps track of the one adapter used for all {@link concreta.InterfaceClassba} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InterfaceItemProvider interfaceItemProvider;
+	protected InterfaceClassbaItemProvider interfaceClassbaItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link concreta.Interface}.
+	 * This creates an adapter for a {@link concreta.InterfaceClassba}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createInterfaceAdapter() {
-		if (interfaceItemProvider == null) {
-			interfaceItemProvider = new InterfaceItemProvider(this);
+	public Adapter createInterfaceClassbaAdapter() {
+		if (interfaceClassbaItemProvider == null) {
+			interfaceClassbaItemProvider = new InterfaceClassbaItemProvider(this);
 		}
 
-		return interfaceItemProvider;
+		return interfaceClassbaItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link concreta.Abstract} instances.
+	 * This keeps track of the one adapter used for all {@link concreta.AbsctractClassba} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractItemProvider abstractItemProvider;
+	protected AbsctractClassbaItemProvider absctractClassbaItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link concreta.Abstract}.
+	 * This creates an adapter for a {@link concreta.AbsctractClassba}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAbstractAdapter() {
-		if (abstractItemProvider == null) {
-			abstractItemProvider = new AbstractItemProvider(this);
+	public Adapter createAbsctractClassbaAdapter() {
+		if (absctractClassbaItemProvider == null) {
+			absctractClassbaItemProvider = new AbsctractClassbaItemProvider(this);
 		}
 
-		return abstractItemProvider;
+		return absctractClassbaItemProvider;
 	}
 
 	/**
@@ -440,6 +440,29 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link concreta.Operationba} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationbaItemProvider operationbaItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link concreta.Operationba}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationbaAdapter() {
+		if (operationbaItemProvider == null) {
+			operationbaItemProvider = new OperationbaItemProvider(this);
+		}
+
+		return operationbaItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link concreta.Parameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,8 +589,8 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 		if (diagramClassbaItemProvider != null) diagramClassbaItemProvider.dispose();
 		if (packagebaItemProvider != null) packagebaItemProvider.dispose();
 		if (classbaItemProvider != null) classbaItemProvider.dispose();
-		if (interfaceItemProvider != null) interfaceItemProvider.dispose();
-		if (abstractItemProvider != null) abstractItemProvider.dispose();
+		if (interfaceClassbaItemProvider != null) interfaceClassbaItemProvider.dispose();
+		if (absctractClassbaItemProvider != null) absctractClassbaItemProvider.dispose();
 		if (containmentItemProvider != null) containmentItemProvider.dispose();
 		if (aggregationItemProvider != null) aggregationItemProvider.dispose();
 		if (associationItemProvider != null) associationItemProvider.dispose();
@@ -577,6 +600,7 @@ public class ConcretaItemProviderAdapterFactory extends ConcretaAdapterFactory i
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (attributebaItemProvider != null) attributebaItemProvider.dispose();
 		if (methodbaItemProvider != null) methodbaItemProvider.dispose();
+		if (operationbaItemProvider != null) operationbaItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 	}
 

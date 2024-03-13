@@ -1,0 +1,181 @@
+
+/*
+ * 
+ */
+package concreta.diagram.part;
+
+/**
+ * @generated
+ */
+public class ConcretaPaletteFactory {
+
+	/**
+ * @generated
+ */
+	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
+		paletteRoot.add(createObjects1Group());
+paletteRoot.add(createConnections2Group());
+	}
+
+	/**
+ * Creates "Objects" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createObjects1Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(concreta.diagram.part.Messages.Objects1Group_title);
+				 paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
+								paletteContainer.add(createAbsctractClassba1CreationTool());
+paletteContainer.add(createAttributeba2CreationTool());
+paletteContainer.add(createClassba3CreationTool());
+paletteContainer.add(createInterfaceClassba4CreationTool());
+paletteContainer.add(createMethodba5CreationTool());
+paletteContainer.add(createOperationba6CreationTool());
+paletteContainer.add(createPackageba7CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Connections" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createConnections2Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(concreta.diagram.part.Messages.Connections2Group_title);
+				 paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
+								paletteContainer.add(createAggregation1CreationTool());
+paletteContainer.add(createAssociation2CreationTool());
+paletteContainer.add(createContainment3CreationTool());
+paletteContainer.add(createGeneralization4CreationTool());
+paletteContainer.add(createImplementation5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAbsctractClassba1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.AbsctractClassba1CreationTool_title, concreta.diagram.part.Messages.AbsctractClassba1CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.AbsctractClassba_2002));
+				 entry.setId("createAbsctractClassba1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.AbsctractClassba_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAttributeba2CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
+types.add(concreta.diagram.providers.ConcretaElementTypes.Attributeba_3001);
+types.add(concreta.diagram.providers.ConcretaElementTypes.Attributeba_3003);
+types.add(concreta.diagram.providers.ConcretaElementTypes.Attributeba_3005);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.Attributeba2CreationTool_title, concreta.diagram.part.Messages.Attributeba2CreationTool_desc, types);
+				 entry.setId("createAttributeba2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Attributeba_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createClassba3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.Classba3CreationTool_title, concreta.diagram.part.Messages.Classba3CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Classba_2001));
+				 entry.setId("createClassba3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Classba_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createInterfaceClassba4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.InterfaceClassba4CreationTool_title, concreta.diagram.part.Messages.InterfaceClassba4CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.InterfaceClassba_2003));
+				 entry.setId("createInterfaceClassba4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.InterfaceClassba_2003));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createMethodba5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.Methodba5CreationTool_title, concreta.diagram.part.Messages.Methodba5CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Methodba_3002));
+				 entry.setId("createMethodba5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Methodba_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createOperationba6CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(2);
+types.add(concreta.diagram.providers.ConcretaElementTypes.Operationba_3004);
+types.add(concreta.diagram.providers.ConcretaElementTypes.Operationba_3006);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.Operationba6CreationTool_title, concreta.diagram.part.Messages.Operationba6CreationTool_desc, types);
+				 entry.setId("createOperationba6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Operationba_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createPackageba7CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(concreta.diagram.part.Messages.Packageba7CreationTool_title, concreta.diagram.part.Messages.Packageba7CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Packageba_2004));
+				 entry.setId("createPackageba7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Packageba_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAggregation1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(concreta.diagram.part.Messages.Aggregation1CreationTool_title, concreta.diagram.part.Messages.Aggregation1CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Aggregation_4002));
+				 entry.setId("createAggregation1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Aggregation_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAssociation2CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(concreta.diagram.part.Messages.Association2CreationTool_title, concreta.diagram.part.Messages.Association2CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Association_4003));
+				 entry.setId("createAssociation2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Association_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createContainment3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(concreta.diagram.part.Messages.Containment3CreationTool_title, concreta.diagram.part.Messages.Containment3CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Containment_4001));
+				 entry.setId("createContainment3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Containment_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createGeneralization4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(concreta.diagram.part.Messages.Generalization4CreationTool_title, concreta.diagram.part.Messages.Generalization4CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Generalization_4004));
+				 entry.setId("createGeneralization4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Generalization_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createImplementation5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(concreta.diagram.part.Messages.Implementation5CreationTool_title, concreta.diagram.part.Messages.Implementation5CreationTool_desc, java.util.Collections.singletonList(concreta.diagram.providers.ConcretaElementTypes.Implementation_4005));
+				 entry.setId("createImplementation5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(concreta.diagram.providers.ConcretaElementTypes.getImageDescriptor(concreta.diagram.providers.ConcretaElementTypes.Implementation_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+
+
+		
+}

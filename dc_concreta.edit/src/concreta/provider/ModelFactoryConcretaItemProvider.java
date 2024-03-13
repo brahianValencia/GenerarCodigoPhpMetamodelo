@@ -168,12 +168,12 @@ public class ModelFactoryConcretaItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ConcretaPackage.Literals.MODEL_FACTORY_CONCRETA__LST_CLASIFIERBA,
-				 ConcretaFactory.eINSTANCE.createInterface()));
+				 ConcretaFactory.eINSTANCE.createInterfaceClassba()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ConcretaPackage.Literals.MODEL_FACTORY_CONCRETA__LST_CLASIFIERBA,
-				 ConcretaFactory.eINSTANCE.createAbstract()));
+				 ConcretaFactory.eINSTANCE.createAbsctractClassba()));
 
 		newChildDescriptors.add
 			(createChildParameter

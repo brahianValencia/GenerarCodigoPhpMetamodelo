@@ -12,92 +12,6 @@
     <ownedChild
         relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="concreta.ecore#//Interface"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="concreta.gmfgraph#InterfaceLabel"/>
-        <features
-            href="concreta.ecore#//Clasifier/name"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="concreta.gmftool#//@palette/@tools.0/@tools.3"/>
-      <diagramNode
-          href="concreta.gmfgraph#Interface"/>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild">
-        <containmentFeature
-            href="concreta.ecore#//Classba/lstAttributesba"/>
-      </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1"
-          referencedChild="//@nodes.2/@ownedChild/@children.1/@ownedChild">
-        <containmentFeature
-            href="concreta.ecore#//Classba/lstMethodba"/>
-      </children>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
-        <compartment
-            href="concreta.gmfgraph#InterfaceLstAttributesbaCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.1">
-        <compartment
-            href="concreta.gmfgraph#InterfaceLstMethodbaCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="concreta.ecore#//DiagramClassba/lstClass"/>
-    <ownedChild
-        relatedDiagrams="//@diagram">
-      <domainMetaElement
-          href="concreta.ecore#//Abstract"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="concreta.gmfgraph#AbstractLabel"/>
-        <features
-            href="concreta.ecore#//Clasifier/name"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="concreta.gmftool#//@palette/@tools.0/@tools.0"/>
-      <diagramNode
-          href="concreta.gmfgraph#Abstract"/>
-      <children
-          compartment="//@nodes.1/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild">
-        <containmentFeature
-            href="concreta.ecore#//Classba/lstAttributesba"/>
-      </children>
-      <children
-          compartment="//@nodes.1/@ownedChild/@compartments.1"
-          referencedChild="//@nodes.2/@ownedChild/@children.1/@ownedChild">
-        <containmentFeature
-            href="concreta.ecore#//Classba/lstMethodba"/>
-      </children>
-      <compartments
-          children="//@nodes.1/@ownedChild/@children.0">
-        <compartment
-            href="concreta.gmfgraph#AbstractLstAttributesbaCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.1/@ownedChild/@children.1">
-        <compartment
-            href="concreta.gmfgraph#AbstractLstMethodbaCompartment"/>
-      </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="concreta.ecore#//DiagramClassba/lstClass"/>
-    <ownedChild
-        relatedDiagrams="//@diagram">
-      <domainMetaElement
           href="concreta.ecore#//Classba"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
@@ -112,7 +26,7 @@
       <diagramNode
           href="concreta.gmfgraph#Classba"/>
       <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="concreta.ecore#//Classba/lstAttributesba"/>
         <ownedChild>
@@ -133,10 +47,11 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.2/@ownedChild/@compartments.1">
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
         <containmentFeature
             href="concreta.ecore#//Classba/lstMethodba"/>
-        <ownedChild>
+        <ownedChild
+            relatedDiagrams="//@diagram">
           <domainMetaElement
               href="concreta.ecore#//Methodba"/>
           <labelMappings
@@ -151,17 +66,156 @@
               href="concreta.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="concreta.gmfgraph#Methodba"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="concreta.ecore#//Methodba/lstParametersba"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="concreta.ecore#//Parameter"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="concreta.gmfgraph#ParameterLabel"/>
+                <features
+                    href="concreta.ecore#//Parameter/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="concreta.gmftool#//@palette/@tools.0/@tools.7"/>
+              <diagramNode
+                  href="concreta.gmfgraph#Parameter"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0">
+            <compartment
+                href="concreta.gmfgraph#MethodbaLstParametersbaCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0">
+        <compartment
+            href="concreta.gmfgraph#ClassbaLstAttributesbaCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.1">
+        <compartment
+            href="concreta.gmfgraph#ClassbaLstMethodbaCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="concreta.ecore#//DiagramClassba/lstAbstractaClassba"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
+      <domainMetaElement
+          href="concreta.ecore#//AbsctractClassba"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="concreta.gmfgraph#AbsctractClassbaLabel"/>
+        <features
+            href="concreta.ecore#//Clasifier/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="concreta.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="concreta.gmfgraph#AbsctractClassba"/>
+      <children
+          compartment="//@nodes.1/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="concreta.ecore#//AbsctractClassba/lstAttributesba"/>
+      </children>
+      <children
+          compartment="//@nodes.1/@ownedChild/@compartments.1"
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="concreta.ecore#//AbsctractClassba/lstMethodba"/>
+      </children>
+      <compartments
+          children="//@nodes.1/@ownedChild/@children.0">
+        <compartment
+            href="concreta.gmfgraph#AbsctractClassbaLstAttributesbaCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.1/@ownedChild/@children.1">
+        <compartment
+            href="concreta.gmfgraph#AbsctractClassbaLstMethodbaCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="concreta.ecore#//DiagramClassba/lstInterfaceClassba"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
+      <domainMetaElement
+          href="concreta.ecore#//InterfaceClassba"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="concreta.gmfgraph#InterfaceClassbaLabel"/>
+        <features
+            href="concreta.ecore#//Clasifier/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="concreta.gmftool#//@palette/@tools.0/@tools.3"/>
+      <diagramNode
+          href="concreta.gmfgraph#InterfaceClassba"/>
+      <children
+          compartment="//@nodes.2/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="concreta.ecore#//InterfaceClassba/lstAttributesba"/>
+      </children>
+      <children
+          compartment="//@nodes.2/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="concreta.ecore#//InterfaceClassba/lstMethodba"/>
+        <ownedChild
+            relatedDiagrams="//@diagram">
+          <domainMetaElement
+              href="concreta.ecore#//Operationba"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="concreta.gmfgraph#OperationbaLabel"/>
+            <features
+                href="concreta.ecore#//Operationba/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="concreta.gmftool#//@palette/@tools.0/@tools.5"/>
+          <diagramNode
+              href="concreta.gmfgraph#Operationba"/>
+          <children
+              compartment="//@nodes.2/@ownedChild/@children.1/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
+            <containmentFeature
+                href="concreta.ecore#//Operationba/lstParametersba"/>
+          </children>
+          <compartments
+              children="//@nodes.2/@ownedChild/@children.1/@ownedChild/@children.0">
+            <compartment
+                href="concreta.gmfgraph#OperationbaLstParametersbaCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.2/@ownedChild/@children.0">
         <compartment
-            href="concreta.gmfgraph#ClassbaLstAttributesbaCompartment"/>
+            href="concreta.gmfgraph#InterfaceClassbaLstAttributesbaCompartment"/>
       </compartments>
       <compartments
           children="//@nodes.2/@ownedChild/@children.1">
         <compartment
-            href="concreta.gmfgraph#ClassbaLstMethodbaCompartment"/>
+            href="concreta.gmfgraph#InterfaceClassbaLstMethodbaCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -180,7 +234,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="concreta.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="concreta.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
           href="concreta.gmfgraph#Packageba"/>
     </ownedChild>

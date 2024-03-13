@@ -11,8 +11,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Set;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -32,21 +32,28 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+
 import concreta.ConcretaPackage;
-import concreta.diagram.edit.parts.AbstractEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
 import concreta.diagram.edit.parts.AssociationEditPart;
+import concreta.diagram.edit.parts.Attributeba2EditPart;
+import concreta.diagram.edit.parts.Attributeba3EditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.ClassbaEditPart;
 import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.ImplementationEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaEditPart;
+import concreta.diagram.edit.parts.Methodba2EditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
+import concreta.diagram.edit.parts.Operationba2EditPart;
+import concreta.diagram.edit.parts.OperationbaEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
+import concreta.diagram.edit.parts.Parameter2EditPart;
+import concreta.diagram.edit.parts.ParameterEditPart;
 import concreta.diagram.part.ConcretaDiagramUpdater;
 import concreta.diagram.part.ConcretaLinkDescriptor;
 import concreta.diagram.part.ConcretaNodeDescriptor;
@@ -81,6 +88,8 @@ public class DiagramClassbaCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(ConcretaPackage.eINSTANCE.getDiagramClassba_LstClass());
+			myFeaturesToSynchronize.add(ConcretaPackage.eINSTANCE.getDiagramClassba_LstAbstractaClassba());
+			myFeaturesToSynchronize.add(ConcretaPackage.eINSTANCE.getDiagramClassba_LstInterfaceClassba());
 			myFeaturesToSynchronize.add(ConcretaPackage.eINSTANCE.getDiagramClassba_LstPackageba());
 		}
 		return myFeaturesToSynchronize;
@@ -118,9 +127,9 @@ public class DiagramClassbaCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ConcretaVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case InterfaceEditPart.VISUAL_ID:
-		case AbstractEditPart.VISUAL_ID:
 		case ClassbaEditPart.VISUAL_ID:
+		case AbsctractClassbaEditPart.VISUAL_ID:
+		case InterfaceClassbaEditPart.VISUAL_ID:
 		case PackagebaEditPart.VISUAL_ID:
 			return true;
 		}
@@ -281,23 +290,23 @@ public class DiagramClassbaCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case InterfaceEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ConcretaDiagramUpdater.getInterface_2002ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AbstractEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ConcretaDiagramUpdater.getAbstract_2003ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
 		case ClassbaEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ConcretaDiagramUpdater.getClassba_2001ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case AbsctractClassbaEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getAbsctractClassba_2002ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case InterfaceClassbaEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getInterfaceClassba_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -319,6 +328,48 @@ public class DiagramClassbaCanonicalEditPolicy extends CanonicalEditPolicy {
 		case MethodbaEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ConcretaDiagramUpdater.getMethodba_3002ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ParameterEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getParameter_3008ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Attributeba2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getAttributeba_3003ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Methodba2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getMethodba_3007ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Attributeba3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getAttributeba_3005ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case OperationbaEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getOperationba_3006ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case Parameter2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ConcretaDiagramUpdater.getParameter_3009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

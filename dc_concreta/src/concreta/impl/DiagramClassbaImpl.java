@@ -2,9 +2,11 @@
  */
 package concreta.impl;
 
+import concreta.AbsctractClassba;
 import concreta.Classba;
 import concreta.ConcretaPackage;
 import concreta.DiagramClassba;
+import concreta.InterfaceClassba;
 import concreta.Packageba;
 import concreta.Relationshipba;
 
@@ -35,6 +37,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link concreta.impl.DiagramClassbaImpl#getName <em>Name</em>}</li>
  *   <li>{@link concreta.impl.DiagramClassbaImpl#getPath <em>Path</em>}</li>
  *   <li>{@link concreta.impl.DiagramClassbaImpl#getLstClass <em>Lst Class</em>}</li>
+ *   <li>{@link concreta.impl.DiagramClassbaImpl#getLstAbstractaClassba <em>Lst Abstracta Classba</em>}</li>
+ *   <li>{@link concreta.impl.DiagramClassbaImpl#getLstInterfaceClassba <em>Lst Interface Classba</em>}</li>
  *   <li>{@link concreta.impl.DiagramClassbaImpl#getLstPackageba <em>Lst Packageba</em>}</li>
  *   <li>{@link concreta.impl.DiagramClassbaImpl#getLstRelationshipba <em>Lst Relationshipba</em>}</li>
  * </ul>
@@ -91,6 +95,26 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 	 * @ordered
 	 */
 	protected EList<Classba> lstClass;
+
+	/**
+	 * The cached value of the '{@link #getLstAbstractaClassba() <em>Lst Abstracta Classba</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstAbstractaClassba()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AbsctractClassba> lstAbstractaClassba;
+
+	/**
+	 * The cached value of the '{@link #getLstInterfaceClassba() <em>Lst Interface Classba</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLstInterfaceClassba()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InterfaceClassba> lstInterfaceClassba;
 
 	/**
 	 * The cached value of the '{@link #getLstPackageba() <em>Lst Packageba</em>}' containment reference list.
@@ -190,6 +214,30 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AbsctractClassba> getLstAbstractaClassba() {
+		if (lstAbstractaClassba == null) {
+			lstAbstractaClassba = new EObjectContainmentEList<AbsctractClassba>(AbsctractClassba.class, this, ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA);
+		}
+		return lstAbstractaClassba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<InterfaceClassba> getLstInterfaceClassba() {
+		if (lstInterfaceClassba == null) {
+			lstInterfaceClassba = new EObjectContainmentEList<InterfaceClassba>(InterfaceClassba.class, this, ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA);
+		}
+		return lstInterfaceClassba;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Packageba> getLstPackageba() {
 		if (lstPackageba == null) {
 			lstPackageba = new EObjectContainmentEList<Packageba>(Packageba.class, this, ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA);
@@ -219,6 +267,10 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 		switch (featureID) {
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
 				return ((InternalEList<?>)getLstClass()).basicRemove(otherEnd, msgs);
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+				return ((InternalEList<?>)getLstAbstractaClassba()).basicRemove(otherEnd, msgs);
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
+				return ((InternalEList<?>)getLstInterfaceClassba()).basicRemove(otherEnd, msgs);
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 				return ((InternalEList<?>)getLstPackageba()).basicRemove(otherEnd, msgs);
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA:
@@ -241,6 +293,10 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 				return getPath();
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
 				return getLstClass();
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+				return getLstAbstractaClassba();
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
+				return getLstInterfaceClassba();
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 				return getLstPackageba();
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA:
@@ -267,6 +323,14 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
 				getLstClass().clear();
 				getLstClass().addAll((Collection<? extends Classba>)newValue);
+				return;
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+				getLstAbstractaClassba().clear();
+				getLstAbstractaClassba().addAll((Collection<? extends AbsctractClassba>)newValue);
+				return;
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
+				getLstInterfaceClassba().clear();
+				getLstInterfaceClassba().addAll((Collection<? extends InterfaceClassba>)newValue);
 				return;
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 				getLstPackageba().clear();
@@ -297,6 +361,12 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
 				getLstClass().clear();
 				return;
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+				getLstAbstractaClassba().clear();
+				return;
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
+				getLstInterfaceClassba().clear();
+				return;
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 				getLstPackageba().clear();
 				return;
@@ -321,6 +391,10 @@ public class DiagramClassbaImpl extends EObjectImpl implements DiagramClassba {
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
 				return lstClass != null && !lstClass.isEmpty();
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+				return lstAbstractaClassba != null && !lstAbstractaClassba.isEmpty();
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
+				return lstInterfaceClassba != null && !lstInterfaceClassba.isEmpty();
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 				return lstPackageba != null && !lstPackageba.isEmpty();
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA:

@@ -10,9 +10,9 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
-import concreta.diagram.edit.commands.AbstractCreateCommand;
+import concreta.diagram.edit.commands.AbsctractClassbaCreateCommand;
 import concreta.diagram.edit.commands.ClassbaCreateCommand;
-import concreta.diagram.edit.commands.InterfaceCreateCommand;
+import concreta.diagram.edit.commands.InterfaceClassbaCreateCommand;
 import concreta.diagram.edit.commands.PackagebaCreateCommand;
 import concreta.diagram.providers.ConcretaElementTypes;
 
@@ -32,14 +32,14 @@ public class DiagramClassbaItemSemanticEditPolicy extends ConcretaBaseItemSemant
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (ConcretaElementTypes.Interface_2002 == req.getElementType()) {
-			return getGEFWrapper(new InterfaceCreateCommand(req));
-		}
-		if (ConcretaElementTypes.Abstract_2003 == req.getElementType()) {
-			return getGEFWrapper(new AbstractCreateCommand(req));
-		}
 		if (ConcretaElementTypes.Classba_2001 == req.getElementType()) {
 			return getGEFWrapper(new ClassbaCreateCommand(req));
+		}
+		if (ConcretaElementTypes.AbsctractClassba_2002 == req.getElementType()) {
+			return getGEFWrapper(new AbsctractClassbaCreateCommand(req));
+		}
+		if (ConcretaElementTypes.InterfaceClassba_2003 == req.getElementType()) {
+			return getGEFWrapper(new InterfaceClassbaCreateCommand(req));
 		}
 		if (ConcretaElementTypes.Packageba_2004 == req.getElementType()) {
 			return getGEFWrapper(new PackagebaCreateCommand(req));

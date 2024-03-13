@@ -28,11 +28,13 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
-import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
 import concreta.diagram.edit.parts.AssociationEditPart;
+import concreta.diagram.edit.parts.Attributeba2EditPart;
+import concreta.diagram.edit.parts.Attributeba3EditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
@@ -41,11 +43,19 @@ import concreta.diagram.edit.parts.ContainmentEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.ImplementationEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.Methodba2EditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartment2EditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartmentEditPart;
+import concreta.diagram.edit.parts.Operationba2EditPart;
+import concreta.diagram.edit.parts.OperationbaEditPart;
+import concreta.diagram.edit.parts.OperationbaOperationbaLstParametersbaCompartmentEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
+import concreta.diagram.edit.parts.Parameter2EditPart;
+import concreta.diagram.edit.parts.ParameterEditPart;
 import concreta.diagram.part.ConcretaVisualIDRegistry;
 import concreta.diagram.part.Messages;
 
@@ -250,13 +260,13 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ConcretaVisualIDRegistry.getType(AbsctractClassbaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ConcretaVisualIDRegistry.getType(InterfaceClassbaEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(PackagebaEditPart.VISUAL_ID));
@@ -341,121 +351,73 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 			return result.toArray();
 		}
 
-		case InterfaceEditPart.VISUAL_ID: {
+		case AbsctractClassbaEditPart.VISUAL_ID: {
 			LinkedList<ConcretaAbstractNavigatorItem> result = new LinkedList<ConcretaAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			ConcretaNavigatorGroup incominglinks = new ConcretaNavigatorGroup(
-					Messages.NavigatorGroupName_Interface_2002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			ConcretaNavigatorGroup outgoinglinks = new ConcretaNavigatorGroup(
-					Messages.NavigatorGroupName_Interface_2002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), ConcretaVisualIDRegistry
+					.getType(AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					ConcretaVisualIDRegistry.getType(AttributebaEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(Attributeba2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(sv), ConcretaVisualIDRegistry
+					.getType(AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					ConcretaVisualIDRegistry.getType(MethodbaEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(Methodba2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ContainmentEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ContainmentEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AggregationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AggregationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ImplementationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ImplementationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
 			return result.toArray();
 		}
 
-		case AbstractEditPart.VISUAL_ID: {
+		case InterfaceClassbaEditPart.VISUAL_ID: {
 			LinkedList<ConcretaAbstractNavigatorItem> result = new LinkedList<ConcretaAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			ConcretaNavigatorGroup incominglinks = new ConcretaNavigatorGroup(
-					Messages.NavigatorGroupName_Abstract_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			ConcretaNavigatorGroup outgoinglinks = new ConcretaNavigatorGroup(
-					Messages.NavigatorGroupName_Abstract_2003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), ConcretaVisualIDRegistry
+					.getType(InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					ConcretaVisualIDRegistry.getType(Attributeba3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv), ConcretaVisualIDRegistry
+					.getType(InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					ConcretaVisualIDRegistry.getType(OperationbaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case MethodbaEditPart.VISUAL_ID: {
+			LinkedList<ConcretaAbstractNavigatorItem> result = new LinkedList<ConcretaAbstractNavigatorItem>();
+			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					ConcretaVisualIDRegistry.getType(AttributebaEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case OperationbaEditPart.VISUAL_ID: {
+			LinkedList<ConcretaAbstractNavigatorItem> result = new LinkedList<ConcretaAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv), ConcretaVisualIDRegistry
+					.getType(OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews,
+					ConcretaVisualIDRegistry.getType(Parameter2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			return result.toArray();
+		}
+
+		case Methodba2EditPart.VISUAL_ID: {
+			LinkedList<ConcretaAbstractNavigatorItem> result = new LinkedList<ConcretaAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					ConcretaVisualIDRegistry.getType(MethodbaEditPart.VISUAL_ID));
+					ConcretaVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ContainmentEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ContainmentEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AggregationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AggregationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AssociationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AssociationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ImplementationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(ImplementationEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
 			return result.toArray();
 		}
 
@@ -470,20 +432,8 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -507,20 +457,8 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -544,20 +482,8 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -581,20 +507,8 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -618,20 +532,8 @@ public class ConcretaNavigatorContentProvider implements ICommonContentProvider 
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					ConcretaVisualIDRegistry.getType(ClassbaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));

@@ -8,9 +8,23 @@
 <fullyQualifiedTypeName name="abstracta.Classba"/>
 <fullyQualifiedTypeName name="concreta.Projectba"/>
 <fullyQualifiedTypeName name="concreta.DiagramClassba"/>
-<fullyQualifiedTypeName name="abstracta.Packageba"/>
 <fullyQualifiedTypeName name="concreta.Relationshipba"/>
 <fullyQualifiedTypeName name="concreta.Abstract"/>
-<fullyQualifiedTypeName name="concreta.Classba"/>
 <fullyQualifiedTypeName name="abstracta.Attributeba"/>
+<fullyQualifiedTypeName name="concreta.Interface"/>
+<fullyQualifiedTypeName name="org.eclipse.gef.editparts.AbstractEditPart"/>
+<fullyQualifiedTypeName name="concreta.Methodba"/>
+<fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
+<fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="concreta.Classba"/>
+<fullyQualifiedTypeName name="abstracta.Packageba"/>
+<fullyQualifiedTypeName name="concreta.InterfaceClassba"/>
+<fullyQualifiedTypeName name="concreta.AbsctractClassba"/>
+<fullyQualifiedTypeName name="javax.lang.model.element.Modifier"/>
+<fullyQualifiedTypeName name="abstracta.AccessModifyba"/>
+<fullyQualifiedTypeName name="concreta.Parameter"/>
+<fullyQualifiedTypeName name="abstracta.Parameter"/>
+<fullyQualifiedTypeName name="abstracta.AbstractaFactory"/>
+<fullyQualifiedTypeName name="abstracta.Clasifier"/>
 </qualifiedTypeNameHistroy>

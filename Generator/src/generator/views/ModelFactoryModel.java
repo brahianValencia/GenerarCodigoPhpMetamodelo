@@ -6,19 +6,23 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.eclipse.emf.common.util.EList;
 import abstracta.AbstractaFactory;
 import abstracta.AbstractaPackage;
 import abstracta.Classba;
+import abstracta.Methodba;
 import abstracta.ModelFactoryAbstracta;
 import abstracta.Packageba;
 import abstracta.Projectba;
-import concreta.Abstract;
+import concreta.AbsctractClassba;
 import concreta.ConcretaFactory;
 import concreta.ConcretaPackage;
 import concreta.DiagramClassba;
+import concreta.InterfaceClassba;
 import concreta.ModelFactoryConcreta;
-import concreta.Relationshipba;
+import concreta.Operationba;
 
 public class ModelFactoryModel {
 
@@ -58,7 +62,7 @@ public class ModelFactoryModel {
 		ConcretaPackage whoownmePackage = ConcretaPackage.eINSTANCE;
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
-				.createURI("platform:/resource/test/src/model.concreta");
+				.createURI("platform:/resource/test/src/model/model.concreta");
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
 		try {
 			resource.load(null);
@@ -80,7 +84,7 @@ public class ModelFactoryModel {
 		AbstractaPackage whoownmePackage = AbstractaPackage.eINSTANCE;
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
-				.createURI("platform:/resource/test/src/model.abstracta");
+				.createURI("platform:/resource/test/src/model/model.abstracta");
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
 		try {
 			resource.load(null);
@@ -101,7 +105,7 @@ public class ModelFactoryModel {
 
 		// EXISTEN 2 FORMAS DE GUARDAR EL RECURSO
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
-				.createURI("platform:/resource/test/src/model.concreta");
+				.createURI("platform:/resource/test/src/model/model.concreta");
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
@@ -123,7 +127,7 @@ public class ModelFactoryModel {
 
 		// EXISTEN 2 FORMAS DE GUARDAR EL RECURSO
 		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI
-				.createURI("platform:/resource/test/src/model.abstracta");
+				.createURI("platform:/resource/test/src/model/model.abstracta");
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
 
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
@@ -138,7 +142,7 @@ public class ModelFactoryModel {
 
 
 
-	// ----------------------------------------- Tranformacion M2M de parte especifica a parte a abstracta -------------------------------------------
+	// ----------------------------------------- Tranformacion M2M de parte concreta a parte abstracta -------------------------------------------
 
 	/**
 	 * Este metodo realiza la transformacion del modelo especifico a el modelo
@@ -149,48 +153,471 @@ public class ModelFactoryModel {
 		modelFactoryConcreta = loadConcretaModel();// el modelo oigen
 		modelFactoryAbstracta = loadAbstractaModel();// el modelo destino
 		modelFactoryAbstracta.getLstProjectba().clear();
-		
-		
+
+
 		for (concreta.Projectba projectbaConcreta : modelFactoryConcreta.getLstProjectba()) {
 
-			// por un proyecto de la concrera se crea uno en la abstracta
+			// por un proyecto de la concreta se crea uno en la abstracta
 			Projectba proyectobaAbstracta = AbstractaFactory.eINSTANCE.createProjectba();
 			proyectobaAbstracta.setName(projectbaConcreta.getName());
 			proyectobaAbstracta.setPath(projectbaConcreta.getPath());
 			modelFactoryAbstracta.getLstProjectba().add(proyectobaAbstracta);
-			
+
 			abstracta.Packageba packageRaizba = AbstractaFactory.eINSTANCE.createPackageba();
 			packageRaizba.setName(projectbaConcreta.getName());
 			packageRaizba.setPath("");
 			proyectobaAbstracta.getLstPackages().add(packageRaizba);
-			
+
 			for (DiagramClassba diagrama : projectbaConcreta.getLstDiagramClassba()) {
-				for (concreta.Packageba packageConcreta : diagrama.getLstPackageba()) {
-					crearPaquete(packageConcreta,packageRaizba);
+
+				List<concreta.Packageba> paquetes = new ArrayList<>();
+				for (concreta.Packageba item : diagrama.getLstPackageba()) {
+					paquetes.add(item);
 				}
-				for (concreta.Classba classbaConcreta : diagrama.getLstClass()) {
-					crearClass(packageRaizba, classbaConcreta);
+
+				metodoPackage(packageRaizba, paquetes);
+
+				List<concreta.Classba> clases = new ArrayList<>();
+				for (concreta.Classba item : diagrama.getLstClass()) {
+					clases.add(item);
 				}
-				
+
+				organizarClases(packageRaizba, clases);
+
+				List<concreta.InterfaceClassba> interfaces = new ArrayList<>();
+				for (concreta.InterfaceClassba item : diagrama.getLstInterfaceClassba()) {
+					interfaces.add(item);
+				}
+
+				organizarInterfaces(packageRaizba, interfaces);
+
+				List<concreta.AbsctractClassba> abstractas = new ArrayList<>();
+				for (concreta.AbsctractClassba item : diagrama.getLstAbstractaClassba()) {
+					abstractas.add(item);
+				}
+
+				organizarAbstractas(packageRaizba, abstractas);
+
 				for (concreta.Relationshipba relationRam : diagrama.getLstRelationshipba()) {
 					crearRelacion(relationRam,packageRaizba);
 				}
 			}
-			
-			
+
+
 		}
 		saveAbstracta();
 	}
 
+	private void organizarAbstractas(Packageba packageRaizba, List<AbsctractClassba> abstractas) {
+		
+		ArrayList<concreta.AbsctractClassba> listaNoAgregados = new ArrayList<>();
+
+		//Agregar todos los paquetes que esten en la raiz relativa
+		for (concreta.AbsctractClassba abstractaConcreta : abstractas) {
+			String[] padres = abstractaConcreta.getPath().split("/");
+			String padreRaiz = padres[padres.length - 1];
+			if (packageRaizba.getName().equals(padreRaiz)) {
+				abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
+				classbaAbstracta.setName(abstractaConcreta.getName());
+				classbaAbstracta.setPath(abstractaConcreta.getPath());
+				
+				classbaAbstracta.setIsAbstract(false);
+				classbaAbstracta.setIsInterface(true);
+				classbaAbstracta.setModifyAcces(abstracta.AccessModifyba.get(abstractaConcreta.getAccessModify().getValue()));
+				
+				for (concreta.Attributeba attributebaConcreta : abstractaConcreta.getLstAttributesba()) {
+					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+					attributebaAbstracta.setName(attributebaConcreta.getName());
+					attributebaAbstracta.setDefaultValue(attributebaAbstracta.getDefaultValue());
+					attributebaAbstracta.setModifyAcces(abstracta.AccessModifyba.get(attributebaConcreta.getAccessModify().getValue()));
+					attributebaAbstracta.setType((abstracta.Clasifier) attributebaConcreta.getType());
+					classbaAbstracta.getLstAttributesba().add(attributebaAbstracta);
+				}
+				for (concreta.Methodba methodbaConcreta : abstractaConcreta.getLstMethodba()) {
+					abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+					methodba.setName(methodbaConcreta.getName());
+					methodba.setBody("");
+					methodba.setModifyAcces(abstracta.AccessModifyba.get(methodbaConcreta.getAccessModify().getValue()));
+					methodba.setRetorno((abstracta.Clasifier) methodbaConcreta.getRetorno());
+					
+					for (concreta.Parameter parameterConcreta : methodbaConcreta.getLstParametersba()) {
+						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
+						
+						parameterAbstracta.setName(parameterConcreta.getName());
+						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
+						
+						methodba.getLstParametersba().add(parameterAbstracta);
+					}
+					
+					classbaAbstracta.getLstMethodba().add(methodba);
+				}
+				
+
+				packageRaizba.getLstClass().add(classbaAbstracta);
+				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
+				System.out.println("Clase: " + classbaAbstracta.getName());
+				System.out.println("Path del clase: " + classbaAbstracta.getPath());
+				System.out.println("Agregado!");
+				System.out.println("");
+			} else {
+				//Los que no esten en la raiz quedan como copia
+				listaNoAgregados.add(abstractaConcreta);
+				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
+				System.out.println("Clase: " + abstractaConcreta.getName());
+				System.out.println("Path del clase: " + abstractaConcreta.getPath());
+				System.out.println("NOOO Agregado!, Sigue buscando");
+				System.out.println("");
+			}
+		}
+
+		/*
+	        Si hay no agregados significa que no pertenecen a dicha raiz relativa
+	        y hay que buscar en los hijos de la raiz relativa, siempre que esta
+	        tenga hijos, sino pertenecen a otra ruta diferente.
+		 */
+		if (!listaNoAgregados.isEmpty() && !packageRaizba.getListPackages().isEmpty()) {
+			for (abstracta.Packageba paquete : packageRaizba.getListPackages()) {
+				organizarAbstractas(paquete, listaNoAgregados);
+			}
+		}
+
+	}
+
+	private void organizarInterfaces(Packageba packageRaizba, List<InterfaceClassba> interfaces) {
+		ArrayList<concreta.InterfaceClassba> listaNoAgregados = new ArrayList<>();
+
+		//Agregar todos los paquetes que esten en la raiz relativa
+		for (concreta.InterfaceClassba interfaceConcreta : interfaces) {
+			String[] padres = interfaceConcreta.getPath().split("/");
+			String padreRaiz = padres[padres.length - 1];
+			if (packageRaizba.getName().equals(padreRaiz)) {
+				abstracta.Classba interfaceba = AbstractaFactory.eINSTANCE.createClassba();
+				interfaceba.setName(interfaceConcreta.getName());
+				interfaceba.setPath(interfaceConcreta.getPath());
+				interfaceba.setIsAbstract(false);
+				interfaceba.setIsInterface(true);
+				interfaceba.setModifyAcces(abstracta.AccessModifyba.get(interfaceConcreta.getAccessModify().getValue()));
+				
+				for (concreta.Attributeba attributebaConcreta : interfaceConcreta.getLstAttributesba()) {
+					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+					attributebaAbstracta.setName(attributebaConcreta.getName());
+					attributebaAbstracta.setDefaultValue(attributebaAbstracta.getDefaultValue());
+					attributebaAbstracta.setModifyAcces(abstracta.AccessModifyba.get(attributebaConcreta.getAccessModify().getValue()));
+					attributebaAbstracta.setType((abstracta.Clasifier) attributebaConcreta.getType());
+					interfaceba.getLstAttributesba().add(attributebaAbstracta);
+				}
+				for (concreta.Operationba operationbaConcreta : interfaceConcreta.getLstMethodba()) {
+					abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+					methodba.setName(operationbaConcreta.getName());
+					methodba.setBody("");
+					methodba.setModifyAcces(abstracta.AccessModifyba.get(operationbaConcreta.getAccessModify().getValue()));
+					methodba.setRetorno((abstracta.Clasifier) operationbaConcreta.getRetorno());
+					
+					for (concreta.Parameter parameterConcreta : operationbaConcreta.getLstParametersba()) {
+						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
+						
+						parameterAbstracta.setName(parameterConcreta.getName());
+						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
+						
+						methodba.getLstParametersba().add(parameterAbstracta);
+					}
+					
+					interfaceba.getLstMethodba().add(methodba);
+				}
+				
+				packageRaizba.getLstClass().add(interfaceba);
+				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
+				System.out.println("Clase: " + interfaceba.getName());
+				System.out.println("Path del clase: " + interfaceba.getPath());
+				System.out.println("Agregado!");
+				System.out.println("");
+			} else {
+				//Los que no esten en la raiz quedan como copia
+				listaNoAgregados.add(interfaceConcreta);
+				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
+				System.out.println("Clase: " + interfaceConcreta.getName());
+				System.out.println("Path del clase: " + interfaceConcreta.getPath());
+				System.out.println("NOOO Agregado!, Sigue buscando");
+				System.out.println("");
+			}
+		}
+
+		/*
+	        Si hay no agregados significa que no pertenecen a dicha raiz relativa
+	        y hay que buscar en los hijos de la raiz relativa, siempre que esta
+	        tenga hijos, sino pertenecen a otra ruta diferente.
+		 */
+		if (!listaNoAgregados.isEmpty() && !packageRaizba.getListPackages().isEmpty()) {
+			for (abstracta.Packageba paquete : packageRaizba.getListPackages()) {
+				organizarInterfaces(paquete, listaNoAgregados);
+			}
+		}
+	}
+
+
+	public void organizarClases(abstracta.Packageba raizRelativa, List<concreta.Classba> clases) {
+		//Crear una copia de la lista de paquetes que no estén en la raiz relativa
+		ArrayList<concreta.Classba> listaNoAgregados = new ArrayList<>();
+
+		//Agregar todos los paquetes que esten en la raiz relativa
+		for (concreta.Classba claseConcreta : clases) {
+			String[] padres = claseConcreta.getPath().split("/");
+			String padreRaiz = padres[padres.length - 1];
+			if (raizRelativa.getName().equals(padreRaiz)) {
+				abstracta.Classba classba = AbstractaFactory.eINSTANCE.createClassba();
+				classba.setName(claseConcreta.getName());
+				classba.setPath(claseConcreta.getPath());
+				classba.setIsAbstract(false);
+				classba.setIsInterface(false);
+				classba.setModifyAcces(abstracta.AccessModifyba.get(claseConcreta.getAccessModify().getValue()));
+				
+				for (concreta.Attributeba attributebaConcreta : claseConcreta.getLstAttributesba()) {
+					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+					attributebaAbstracta.setName(attributebaConcreta.getName());
+					attributebaAbstracta.setDefaultValue(attributebaAbstracta.getDefaultValue());
+					attributebaAbstracta.setModifyAcces(abstracta.AccessModifyba.get(attributebaConcreta.getAccessModify().getValue()));
+					attributebaAbstracta.setType((abstracta.Clasifier) attributebaConcreta.getType());
+					classba.getLstAttributesba().add(attributebaAbstracta);
+				}
+				for (concreta.Methodba methodbaConcreta : claseConcreta.getLstMethodba()) {
+					abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+					methodba.setName(methodbaConcreta.getName());
+					methodba.setBody(methodbaConcreta.getBody());
+					methodba.setModifyAcces(abstracta.AccessModifyba.get(methodbaConcreta.getAccessModify().getValue()));
+					methodba.setRetorno((abstracta.Clasifier) methodbaConcreta.getRetorno());
+					
+					for (concreta.Parameter parameterConcreta : methodbaConcreta.getLstParametersba()) {
+						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
+						
+						parameterAbstracta.setName(parameterConcreta.getName());
+						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
+						
+						methodba.getLstParametersba().add(parameterAbstracta);
+					}
+					
+					classba.getLstMethodba().add(methodba);
+				}
+				
+				
+				raizRelativa.getLstClass().add(classba);
+				System.out.println("Raiz relativa actual: " + raizRelativa.getName());
+				System.out.println("Clase: " + classba.getName());
+				System.out.println("Path del clase: " + classba.getPath());
+				System.out.println("Agregado!");
+				System.out.println("");
+			} else {
+				//Los que no esten en la raiz quedan como copia
+				listaNoAgregados.add(claseConcreta);
+				System.out.println("Raiz relativa actual: " + raizRelativa.getName());
+				System.out.println("Clase: " + claseConcreta.getName());
+				System.out.println("Path del clase: " + claseConcreta.getPath());
+				System.out.println("NOOO Agregado!, Sigue buscando");
+				System.out.println("");
+			}
+		}
+
+		/*
+        Si hay no agregados significa que no pertenecen a dicha raiz relativa
+        y hay que buscar en los hijos de la raiz relativa, siempre que esta
+        tenga hijos, sino pertenecen a otra ruta diferente.
+		 */
+		if (!listaNoAgregados.isEmpty() && !raizRelativa.getListPackages().isEmpty()) {
+			for (abstracta.Packageba paquete : raizRelativa.getListPackages()) {
+				organizarClases(paquete, listaNoAgregados);
+			}
+		}
+
+	}
+
+	public void metodoPackage(abstracta.Packageba raizRelativa, List<concreta.Packageba> arrayList){
+		//Crear una copia de la lista de paquetes que no estén en la raiz relativa
+		ArrayList<concreta.Packageba> listaNoAgregados = new ArrayList<>();
+
+		//Agregar todos los paquetes que esten en la raiz relativa
+		for (concreta.Packageba packageConcreta : arrayList) {
+			String[] padres = packageConcreta.getPath().split("/");
+			String padreRaiz = padres[padres.length-1];
+			if (raizRelativa.getName().equals(padreRaiz)) {
+				abstracta.Packageba newPaqueteAbstracta = null;
+				newPaqueteAbstracta = AbstractaFactory.eINSTANCE.createPackageba();
+				newPaqueteAbstracta.setName(packageConcreta.getName());
+				newPaqueteAbstracta.setPath(packageConcreta.getPath());
+				raizRelativa.getListPackages().add(newPaqueteAbstracta);
+				System.out.println("Raiz relativa actual: " + raizRelativa.getName());
+				System.out.println("Paquete: " + packageConcreta.getName());
+				System.out.println("Path del paquete: " + packageConcreta.getPath());
+				System.out.println("Agregado!");
+				System.out.println("");
+			} else{
+				//Los que no esten en la raiz quedan como copia
+				listaNoAgregados.add(packageConcreta);
+				System.out.println("Raiz relativa actual: " + raizRelativa.getName());
+				System.out.println("Paquete: " + packageConcreta.getName());
+				System.out.println("Path del paquete: " + packageConcreta.getPath());
+				System.out.println("NOOO Agregado!, Sigue buscando");
+				System.out.println("");
+			}
+		}
+
+		/*
+	        Si hay no agregados significa que no pertenecen a dicha raiz relativa
+	        y hay que buscar en los hijos de la raiz relativa, siempre que esta
+	        tenga hijos, sino pertenecen a otra ruta diferente.
+		 */
+		if(!listaNoAgregados.isEmpty() && !raizRelativa.getListPackages().isEmpty()){
+			for (abstracta.Packageba paquete : raizRelativa.getListPackages()) {
+				metodoPackage(paquete, listaNoAgregados);
+			}
+		}
+
+	}
+
+
+	private boolean crearPaquete(concreta.Packageba packageConcreta, abstracta.Packageba packageRaizba) {
+
+		abstracta.Packageba newPaqueteAbstracta = null;
+		newPaqueteAbstracta = AbstractaFactory.eINSTANCE.createPackageba();
+		newPaqueteAbstracta.setName(packageConcreta.getName());
+		newPaqueteAbstracta.setPath(packageConcreta.getPath());
+
+		String[] padres = newPaqueteAbstracta.getPath().split("/");
+
+		return buscarRuta(packageRaizba.getListPackages(),padres[padres.length-1],newPaqueteAbstracta);
+
+
+
+	}
+
+	public boolean buscarRuta(EList<Packageba> eList, String padre, Packageba newPaqueteAbstracta) {
+
+		for (Packageba packageba : eList) {
+			if(packageba.getName().equals(padre)) {
+				packageba.getListPackages().add(newPaqueteAbstracta);
+				return true;
+			}
+
+		}
+
+		for (Packageba packageba : eList) {
+
+			if(!packageba.getListPackages().isEmpty()) {
+				if(buscarRuta(packageba.getListPackages(), padre, newPaqueteAbstracta)) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	} 
+
+	private abstracta.Packageba obtenerPackagePadre(String path, abstracta.Packageba packageRaizRam) {
+
+
+		String[] pathArray = path.split("/");//src,main
+		abstracta.Packageba padre = packageRaizRam;
+		for (int j = 1; j < pathArray.length; j++) {
+			padre = obtenerPaquete(pathArray[j],padre);
+		}
+
+		return padre;
+	}
+
+	private abstracta.Packageba obtenerPaquete(String nameP,abstracta.Packageba packageParentba) {
+		for (abstracta.Packageba pac : packageParentba.getListPackages()) {
+			if(pac.getName().equalsIgnoreCase(nameP)) {
+				return pac;
+			}
+		}
+
+		abstracta.Packageba packageba2 = AbstractaFactory.eINSTANCE.createPackageba();
+		packageba2.setName(nameP);
+		packageba2.setPath(packageParentba.getPath()+"/"+packageParentba.getName());
+		packageParentba.getListPackages().add(packageba2);
+		return packageba2;
+
+	}
+	private void crearClass(Packageba packageRaizba, InterfaceClassba interfaceClassba) {
+		abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
+		classbaAbstracta.setName(interfaceClassba.getName());
+		classbaAbstracta.setPath(interfaceClassba.getPath());
+
+		abstracta.Packageba paquetePadre = obtenerPackagePadre(classbaAbstracta.getPath(), packageRaizba);
+		paquetePadre.getLstClass().add(classbaAbstracta);
+
+		for (concreta.Attributeba attributeRamConcreta : interfaceClassba.getLstAttributesba()) {
+			abstracta.Attributeba attributeRamAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+			attributeRamAbstracta.setName(attributeRamConcreta.getName());
+			attributeRamAbstracta.setDefaultValue(attributeRamAbstracta.getDefaultValue());
+			classbaAbstracta.getLstAttributesba().add(attributeRamAbstracta);
+		}
+		for (Operationba methodbaConcreta : interfaceClassba.getLstMethodba()) {
+			abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+			methodba.setName(methodbaConcreta.getName());
+			methodba.setBody("");
+			classbaAbstracta.getLstMethodba().add(methodba);
+			for (concreta.Parameter parameterConcreta : methodbaConcreta.getLstParametersba()) {
+				abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
+				parameterAbstracta.setName(parameterConcreta.getName());
+				parameterAbstracta.setType((abstracta.Clasifier)parameterConcreta.getType());
+			}	
+		}
+
+	}
+
+	private void crearClass(Packageba packageRaizba, AbsctractClassba abstractConcreta) {
+
+		abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
+		classbaAbstracta.setName(abstractConcreta.getName());
+		classbaAbstracta.setPath(abstractConcreta.getPath());
+
+		abstracta.Packageba paquetePadre = obtenerPackagePadre(classbaAbstracta.getPath(), packageRaizba);
+		paquetePadre.getLstClass().add(classbaAbstracta);
+
+		for (concreta.Attributeba attributeRamConcreta : abstractConcreta.getLstAttributesba()) {
+			abstracta.Attributeba attributeRamAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+			attributeRamAbstracta.setName(attributeRamConcreta.getName());
+			attributeRamAbstracta.setDefaultValue(attributeRamAbstracta.getDefaultValue());
+			classbaAbstracta.getLstAttributesba().add(attributeRamAbstracta);
+		}
+		for (concreta.Methodba methodbaConcreta : abstractConcreta.getLstMethodba()) {
+			abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+			methodba.setName(methodbaConcreta.getName());
+			methodba.setBody(methodbaConcreta.getBody());
+			classbaAbstracta.getLstMethodba().add(methodba);
+		}
+	}
+
+	private void crearClass(abstracta.Packageba packageRaizba, concreta.Classba classbaConcreta) {
+		abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
+		classbaAbstracta.setName(classbaConcreta.getName());
+		classbaAbstracta.setPath(classbaConcreta.getPath());
+
+		abstracta.Packageba paquetePadre = obtenerPackagePadre(classbaAbstracta.getPath(), packageRaizba);
+		paquetePadre.getLstClass().add(classbaAbstracta);
+
+		for (concreta.Attributeba attributeRamConcreta : classbaConcreta.getLstAttributesba()) {
+			abstracta.Attributeba attributeRamAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
+			attributeRamAbstracta.setName(attributeRamConcreta.getName());
+			attributeRamAbstracta.setDefaultValue(attributeRamAbstracta.getDefaultValue());
+			classbaAbstracta.getLstAttributesba().add(attributeRamAbstracta);
+		}
+		for (concreta.Methodba methodbaConcreta : classbaConcreta.getLstMethodba()) {
+			abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
+			methodba.setName(methodbaConcreta.getName());
+			//methodba.setModifyAcces(methodbaConcreta.getAccessModify());
+			classbaAbstracta.getLstMethodba().add(methodba);
+		}
+	}
+
 
 	private void crearRelacion(concreta.Relationshipba relationbaConcreta, abstracta.Packageba packageRaizba) {
-		
+
 		concreta.Classba sourceConcreta = relationbaConcreta.getSource();
 		concreta.Classba targetConcret = relationbaConcreta.getTarget();
-		
+
 		abstracta.Classba classbaAbstractaSource = obtenerClase(sourceConcreta,packageRaizba);
 		abstracta.Classba classbaAbstractaTarget = obtenerClase(targetConcret,packageRaizba);
-		
+
 		abstracta.Relationshipba relationbaAbstractaSource = AbstractaFactory.eINSTANCE.createRelationshipba();
 		relationbaAbstractaSource.setSource(classbaAbstractaTarget);
 		relationbaAbstractaSource.setTarget(classbaAbstractaTarget);
@@ -199,7 +626,7 @@ public class ModelFactoryModel {
 		relationbaAbstractaSource.setMultS(relationbaConcreta.getMultS());
 		relationbaAbstractaSource.setMultT(relationbaConcreta.getMultT());
 		classbaAbstractaSource.getLstRelationshipTargetba().add(relationbaAbstractaSource);
-		
+
 		abstracta.Relationshipba relationRamAbstractaTarget = AbstractaFactory.eINSTANCE.createRelationshipba();
 		relationRamAbstractaTarget.setSource(classbaAbstractaSource);
 		relationRamAbstractaTarget.setTarget(classbaAbstractaTarget);
@@ -208,14 +635,14 @@ public class ModelFactoryModel {
 		relationRamAbstractaTarget.setMultS(relationbaConcreta.getMultS());
 		relationRamAbstractaTarget.setMultT(relationbaConcreta.getMultT());
 		classbaAbstractaTarget.getLstRelationshipTargetba().add(relationbaAbstractaSource);
-		
+
 	}
 
 
 	private abstracta.Classba obtenerClase(concreta.Classba claseABuscar, abstracta.Packageba packageRaizba) {
 
 		abstracta.Packageba packageba = obtenerPackagePadre(claseABuscar.getPath(), packageRaizba);
-		
+
 		for (abstracta.Classba clase : packageba.getLstClass()) {
 			if(claseABuscar.getName().equals(clase.getName())) {
 				return clase;
@@ -226,196 +653,187 @@ public class ModelFactoryModel {
 
 
 
-
-	private void crearClass(abstracta.Packageba packageRaizba, concreta.Classba classbaConcreta) {
-		abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
-		classbaAbstracta.setIsAbstract(classbaConcreta instanceof Abstract?true:false);
-		classbaAbstracta.setName(classbaConcreta.getName());
-		classbaAbstracta.setPath(classbaConcreta.getPath());
-		
-		abstracta.Packageba paquetePadre = obtenerPackagePadre(classbaAbstracta.getPath(), packageRaizba);
-		paquetePadre.getLstClass().add(classbaAbstracta);
-		
-		for (concreta.Attributeba attributeRamConcreta : classbaConcreta.getLstAttributesba()) {
-			abstracta.Attributeba attributeRamAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
-			attributeRamAbstracta.setName(attributeRamConcreta.getName());
-			attributeRamAbstracta.setDefaultValue(attributeRamAbstracta.getDefaultValue());
-			classbaAbstracta.getLstAttributesba().add(attributeRamAbstracta);
-		}
-		for (concreta.Methodba methodbaConcreta : classbaConcreta.getLstMethodba()) {
-			abstracta.Methodba methodba = AbstractaFactory.eINSTANCE.createMethodba();
-			methodba.setName(methodbaConcreta.getName());
-			classbaAbstracta.getLstMethodba().add(methodba);
-		}
-	}
-
+	//------------------------------------------------------------------------------------------------------------------------------------------
 
 	// -------------------------------- Tranformacion M2T de parte abstracta a archivos de texto -----------------------------------------------
 
-
-	private void crearPaquete(concreta.Packageba packageConcreta, abstracta.Packageba packageRaizRam) {
-
-		abstracta.Packageba newPaqueteAbstracta = null;
-		newPaqueteAbstracta = AbstractaFactory.eINSTANCE.createPackageba();
-		newPaqueteAbstracta.setName(packageConcreta.getName());
-		newPaqueteAbstracta.setPath(packageConcreta.getPath()== null?"":packageConcreta.getPath());
-
-		abstracta.Packageba packageRamPadre = obtenerPackagePadre(packageConcreta.getPath(),packageRaizRam);//src/main
-		packageRamPadre.getListPackages().add(newPaqueteAbstracta);
-	}
-
-
-
-
-	private abstracta.Packageba obtenerPackagePadre(String path, abstracta.Packageba packageRaizRam) {
-		
-		
-		String[] pathArray = path.split("/");//src,main
-		abstracta.Packageba padre = packageRaizRam;
-		for (int j = 0; j < pathArray.length; j++) {
-			padre = obtenerPaquete(pathArray[j],padre);
-		}
-		
-		return padre;
-	}
-
-
-
-
-	private abstracta.Packageba obtenerPaquete(String nameP,abstracta.Packageba packageParentba) {
-		for (abstracta.Packageba pac : packageParentba.getListPackages()) {
-			if(pac.getName().equalsIgnoreCase(nameP)) {
-				return pac;
-			}
-		}
-		abstracta.Packageba packageba2 = AbstractaFactory.eINSTANCE.createPackageba();
-		packageba2.setName(nameP);
-		packageba2.setPath(packageParentba.getPath()+"/"+packageParentba.getName());
-		packageParentba.getListPackages().add(packageba2);
-		return packageba2;
-	}
-
-
-
-
 	/**
-	 * Este metodo permite tranformar la parte abstacta del diagrama de clases a archivos de php
+	 * Este metodo permite tranformar la parte abstracta del diagrama de clases a archivos de php
 	 */
 	public void transformationM2T() {
 
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Selecciona una ruta de archivo");
+		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+		int returnValue = fileChooser.showOpenDialog(null);
+		String rutaDirectorio=null;
+		if (returnValue == JFileChooser.APPROVE_OPTION) {
+			rutaDirectorio = fileChooser.getSelectedFile().getAbsolutePath()+"/";
+			System.out.println("Ruta del directorio seleccionado: " + rutaDirectorio);
+		}
 		modelFactoryAbstracta = loadAbstractaModel();
-		
+
 		for (Projectba proyecto : modelFactoryAbstracta.getLstProjectba()) {
-			
-			createFolderWindows(proyecto.getPath(), proyecto.getName());
-			
+			//se crea el directorio del proyecto
+			createFolderWindows(rutaDirectorio+proyecto.getPath(), proyecto.getName());
+
 			for (abstracta.Packageba paquete : proyecto.getLstPackages()) {
-				createFolderWindows(paquete.getPath(), paquete.getName());
-				
+				//se crea el directorio del paquete completo
+				createFolderWindows(rutaDirectorio+paquete.getPath(), paquete.getName());
+
 				for (abstracta.Classba clase : paquete.getLstClass()) {
-					generarClase(clase);
+					generarClase(clase, rutaDirectorio);
 				}
-				
-				generarPaquete(paquete);
+
+				generarPaquete(paquete, rutaDirectorio);
 			}
 		}
 	}
 
 
-	private void generarPaquete(abstracta.Packageba paquete) {
-		createFolderWindows(paquete.getPath(), paquete.getName());
-		
+	private void generarPaquete(abstracta.Packageba paquete, String ruta) {
+		createFolderWindows(ruta+paquete.getPath(), paquete.getName());
+
 		for (abstracta.Classba clase : paquete.getLstClass()) {
-			generarClase(clase);
+			generarClase(clase, ruta);
 		}
-		
+
 		for (abstracta.Packageba paquetHijo : paquete.getListPackages()) {
-			generarPaquete(paquetHijo);
+			generarPaquete(paquetHijo, ruta);
 		}
-		
+
 	}
 
+	private void generarClase(abstracta.Classba clase, String ruta) {
 
-
-
-	private void generarClase(abstracta.Classba clase) {
-		
 		StringBuilder cadenaClass = new StringBuilder();
 		String abstractaCadena = (clase.getIsAbstract()?"abstract":"");
 		String extendsCadena = crearCadenaExtends(clase);
-		
+
 		cadenaClass.append("<?php\r\n" + 
 				"\r\n" + 
-				"class "+clase.getName()+"  {\r\n" + 
+				abstractaCadena+"class "+clase.getName()+extendsCadena+"  {\r\n" + 
 				agregarAtributos(cadenaClass, clase)+
 				"\r\n" + 
-				"    public function __construct($nombre, $apellido, $salario) {\r\n" + 
-				"        $this->nombre = $nombre;\r\n" + 
-				"        $this->apellido = $apellido;\r\n" + 
-				"        $this->salario = $salario;\r\n" + 
+				"    public function __construct("+atributosConstructor(clase)+") {\r\n" + 
+				atributosBodyConstructor(clase)+
 				"    }\r\n" + 
 				"\r\n" + 
-				"    public function getNombre() {\r\n" + 
-				"        return $this->nombre;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function setNombre($nombre) {\r\n" + 
-				"        $this->nombre = $nombre;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function getApellido() {\r\n" + 
-				"        return $this->apellido;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function setApellido($apellido) {\r\n" + 
-				"        $this->apellido = $apellido;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function getSalario() {\r\n" + 
-				"        return $this->salario;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function setSalario($salario) {\r\n" + 
-				"        $this->salario = $salario;\r\n" + 
-				"    }\r\n" + 
-				"\r\n" + 
-				"    public function calcularSalarioAnual() {\r\n" + 
-				"        return $this->salario * 12;\r\n" + 
-				"    }\r\n" + 
+				atributosGetSet(clase) + 
+				metodosClase(clase)+ 
 				"}\r\n" + 
 				"?>\r\n" + 
 				"");
 
-		createFileWindows(clase.getPath(), clase.getName()+".java", cadenaClass.toString());
+		createFileWindows(ruta+clase.getPath(), clase.getName()+".php", cadenaClass.toString());
+	}
+
+	private StringBuilder atributosBodyConstructor(Classba clase) {
+
+		StringBuilder cadena = new StringBuilder();
+
+		for(abstracta.Attributeba atributo :clase.getLstAttributesba()) {
+			cadena.append("        $this->"+atributo.getName()+" = $"+atributo.getName()+";\r\n");
+		}
+
+		return cadena;
+
+	}
+
+	private StringBuilder atributosGetSet(Classba clase) {
+
+		StringBuilder cadena = new StringBuilder();
+
+		for(abstracta.Attributeba atributo :clase.getLstAttributesba()) {
+
+			String cadenaConvertida = atributo.getName().substring(0, 1).toUpperCase() + atributo.getName().substring(1).toLowerCase();
+
+			cadena.append("    public function get"+cadenaConvertida+"() {\r\n" + 
+					"        return $this->"+atributo.getName()+";\r\n" + 
+					"    }\r\n" + 
+					"\r\n"+ 
+					"    public function set"+cadenaConvertida+"($"+atributo.getName()+") {\r\n" + 
+					"        $this->"+atributo.getName()+" = $"+atributo.getName()+";\r\n" + 
+					"    }\r\n" + 
+					"\r\n");
+		}
+		return cadena;
+
+	}
+
+	public StringBuilder metodosClase(Classba clase) {
+
+		StringBuilder cadena = new StringBuilder();
+
+		for(abstracta.Methodba methodba :clase.getLstMethodba()) {
+
+			cadena.append("    "+methodba.getModifyAcces()+" function "+methodba.getName()+"("+cargarParametrosMetodo(methodba)+") {\r\n" + 
+					"        "+methodba.getBody()+"\r\n" + 
+					"    }\r\n" + 
+					"\r\n");
+		}
+		return cadena;
+
+	}
+
+	private String cargarParametrosMetodo(Methodba methodba) {
+
+		String cadena = "";
+
+		for(abstracta.Parameter parametereba :methodba.getLstParametersba()) {
+		}
+		return cadena;
+	}
+
+
+
+
+	private String atributosConstructor(Classba clase) {
+
+		String cadena = "";
+
+		for(int i = 0; i < clase.getLstAttributesba().size(); i++) {
+			if(i==0) {
+				cadena = "$"+clase.getLstAttributesba().get(i).getName();
+			}
+			cadena += ", $"+clase.getLstAttributesba().get(i).getName();
+		}
+
+		return cadena;
 	}
 
 
 
 
 	private StringBuilder agregarAtributos(StringBuilder cadenaClass, Classba clase) {
-		
+
 		for(abstracta.Attributeba atributo :clase.getLstAttributesba()) {
 			cadenaClass.append("    private $"+atributo.getName()+";\r\n");
 		}
-		
+
 		return cadenaClass;
 	}
 
-
-
-
 	private String crearCadenaExtends(abstracta.Classba clase) {
 		String cadena = "";
-		
+
 		for (int i = 0; i < clase.getLstRelationshipTargetba().size(); i++) {
-			cadena += clase.getLstRelationshipTargetba().get(i).getTarget().getName();
-			break;
+
+			if(clase.getLstRelationshipTargetba().get(i).getIsGeneralization()) {
+				cadena += clase.getLstRelationshipTargetba().get(i).getTarget().getName();
+				break;
+			}
+
 		}
 		if(clase.getLstRelationshipTargetba().size() > 0) {
-			cadena = "extends "+cadena;
+			cadena = " extends "+cadena;
 		}
 		return cadena;
 	}
+
+
+	//-------------------------------------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Este metodo permite abrir un cuadro de dialogo para ingresar el nomber del proyecto
@@ -432,7 +850,7 @@ public class ModelFactoryModel {
 			return "newProject";
 		}
 	}
-	
+
 	/**
 	 * Este metodo permite crear una carpeta en el sistema de windows
 	 * @param path

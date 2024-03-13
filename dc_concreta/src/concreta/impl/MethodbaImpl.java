@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link concreta.impl.MethodbaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link concreta.impl.MethodbaImpl#getBody <em>Body</em>}</li>
  *   <li>{@link concreta.impl.MethodbaImpl#getAccessModify <em>Access Modify</em>}</li>
  *   <li>{@link concreta.impl.MethodbaImpl#getRetorno <em>Retorno</em>}</li>
  *   <li>{@link concreta.impl.MethodbaImpl#getClassba <em>Classba</em>}</li>
@@ -62,6 +63,26 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BODY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected String body = BODY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAccessModify() <em>Access Modify</em>}' attribute.
@@ -151,6 +172,27 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METHODBA__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getBody() {
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBody(String newBody) {
+		String oldBody = body;
+		body = newBody;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConcretaPackage.METHODBA__BODY, oldBody, body));
 	}
 
 	/**
@@ -286,6 +328,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case ConcretaPackage.METHODBA__NAME:
 				return getName();
+			case ConcretaPackage.METHODBA__BODY:
+				return getBody();
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				return getAccessModify();
 			case ConcretaPackage.METHODBA__RETORNO:
@@ -311,6 +355,9 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case ConcretaPackage.METHODBA__NAME:
 				setName((String)newValue);
+				return;
+			case ConcretaPackage.METHODBA__BODY:
+				setBody((String)newValue);
 				return;
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				setAccessModify((AccessModifyba)newValue);
@@ -340,6 +387,9 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 			case ConcretaPackage.METHODBA__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ConcretaPackage.METHODBA__BODY:
+				setBody(BODY_EDEFAULT);
+				return;
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				setAccessModify(ACCESS_MODIFY_EDEFAULT);
 				return;
@@ -366,6 +416,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case ConcretaPackage.METHODBA__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ConcretaPackage.METHODBA__BODY:
+				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 			case ConcretaPackage.METHODBA__ACCESS_MODIFY:
 				return accessModify != ACCESS_MODIFY_EDEFAULT;
 			case ConcretaPackage.METHODBA__RETORNO:
@@ -390,6 +442,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", body: ");
+		result.append(body);
 		result.append(", accessModify: ");
 		result.append(accessModify);
 		result.append(')');

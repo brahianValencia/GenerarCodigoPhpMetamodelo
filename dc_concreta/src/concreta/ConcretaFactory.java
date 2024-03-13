@@ -67,22 +67,22 @@ public interface ConcretaFactory extends EFactory {
 	Classba createClassba();
 
 	/**
-	 * Returns a new object of class '<em>Interface</em>'.
+	 * Returns a new object of class '<em>Interface Classba</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Interface</em>'.
+	 * @return a new object of class '<em>Interface Classba</em>'.
 	 * @generated
 	 */
-	Interface createInterface();
+	InterfaceClassba createInterfaceClassba();
 
 	/**
-	 * Returns a new object of class '<em>Abstract</em>'.
+	 * Returns a new object of class '<em>Absctract Classba</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Abstract</em>'.
+	 * @return a new object of class '<em>Absctract Classba</em>'.
 	 * @generated
 	 */
-	Abstract createAbstract();
+	AbsctractClassba createAbsctractClassba();
 
 	/**
 	 * Returns a new object of class '<em>Containment</em>'.
@@ -164,6 +164,15 @@ public interface ConcretaFactory extends EFactory {
 	 * @generated
 	 */
 	Methodba createMethodba();
+
+	/**
+	 * Returns a new object of class '<em>Operationba</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operationba</em>'.
+	 * @generated
+	 */
+	Operationba createOperationba();
 
 	/**
 	 * Returns a new object of class '<em>Parameter</em>'.

@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Concreta"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2003,2001,2004,3001,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,3001,3002,3008,3003,3007,3005,3006,3009"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="Concreta"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2002,2003,2001,2004,3001,3002"/>
+            <method name="getType()" value="2001,2002,2003,2004,3001,3002,3008,3003,3007,3005,3006,3009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5004,5005,5003,5006,5001,5002"/>
+            <method name="getType()" value="5003,5006,5009,5010,5001,5002,5012,5004,5011,5007,5008,5013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7003,7004,7005,7006,7001,7002"/>
+            <method name="getType()" value="7001,7002,7007,7003,7004,7008,7005,7006,7009"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -294,20 +294,20 @@
          <object class="concreta.diagram.edit.parts.DiagramClassbaEditPart" id="DiagramClassba_1000"/>
          <context elements="DiagramClassba_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfInterfaceEditPart">
-         <Priority name="Lowest"/>
-         <object class="concreta.diagram.edit.parts.InterfaceEditPart" id="Interface_2002"/>
-         <context elements="Interface_2002"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfAbstractEditPart">
-         <Priority name="Lowest"/>
-         <object class="concreta.diagram.edit.parts.AbstractEditPart" id="Abstract_2003"/>
-         <context elements="Abstract_2003"/>
-      </modelingAssistantProvider>
             <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfClassbaEditPart">
          <Priority name="Lowest"/>
          <object class="concreta.diagram.edit.parts.ClassbaEditPart" id="Classba_2001"/>
          <context elements="Classba_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfAbsctractClassbaEditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.AbsctractClassbaEditPart" id="AbsctractClassba_2002"/>
+         <context elements="AbsctractClassba_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfInterfaceClassbaEditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.InterfaceClassbaEditPart" id="InterfaceClassba_2003"/>
+         <context elements="InterfaceClassba_2003"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfPackagebaEditPart">
          <Priority name="Lowest"/>
@@ -323,6 +323,36 @@
          <Priority name="Lowest"/>
          <object class="concreta.diagram.edit.parts.MethodbaEditPart" id="Methodba_3002"/>
          <context elements="Methodba_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.ParameterEditPart" id="Parameter_3008"/>
+         <context elements="Parameter_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfAttributeba2EditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.Attributeba2EditPart" id="Attributeba_3003"/>
+         <context elements="Attributeba_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfMethodba2EditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.Methodba2EditPart" id="Methodba_3007"/>
+         <context elements="Methodba_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfAttributeba3EditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.Attributeba3EditPart" id="Attributeba_3005"/>
+         <context elements="Attributeba_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfOperationbaEditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.OperationbaEditPart" id="Operationba_3006"/>
+         <context elements="Operationba_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="concreta.diagram.providers.assistants.ConcretaModelingAssistantProviderOfParameter2EditPart">
+         <Priority name="Lowest"/>
+         <object class="concreta.diagram.edit.parts.Parameter2EditPart" id="Parameter_3009"/>
+         <context elements="Parameter_3009"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -347,7 +377,7 @@
       <decoratorProvider class="concreta.diagram.providers.ConcretaShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2002,2003,2001,2004"/>
+            <method name="getType()" value="2001,2002,2003,2004"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -367,32 +397,32 @@
       </metamodel>
       <metamodel nsURI="http://concreta">
          <metamodelType
-               id="dc_concreta.diagram.Interface_2002"
-               name="%metatype.name.Interface_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Interface"
-               edithelper="concreta.diagram.edit.helpers.InterfaceEditHelper">
-            <param name="semanticHint" value="2002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://concreta">
-         <metamodelType
-               id="dc_concreta.diagram.Abstract_2003"
-               name="%metatype.name.Abstract_2003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Abstract"
-               edithelper="concreta.diagram.edit.helpers.AbstractEditHelper">
-            <param name="semanticHint" value="2003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://concreta">
-         <metamodelType
                id="dc_concreta.diagram.Classba_2001"
                name="%metatype.name.Classba_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Classba"
                edithelper="concreta.diagram.edit.helpers.ClassbaEditHelper">
             <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <metamodelType
+               id="dc_concreta.diagram.AbsctractClassba_2002"
+               name="%metatype.name.AbsctractClassba_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AbsctractClassba"
+               edithelper="concreta.diagram.edit.helpers.AbsctractClassbaEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <metamodelType
+               id="dc_concreta.diagram.InterfaceClassba_2003"
+               name="%metatype.name.InterfaceClassba_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InterfaceClassba"
+               edithelper="concreta.diagram.edit.helpers.InterfaceClassbaEditHelper">
+            <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://concreta">
@@ -424,6 +454,62 @@
                edithelper="concreta.diagram.edit.helpers.MethodbaEditHelper">
             <param name="semanticHint" value="3002"/>
          </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <metamodelType
+               id="dc_concreta.diagram.Parameter_3008"
+               name="%metatype.name.Parameter_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Parameter"
+               edithelper="concreta.diagram.edit.helpers.ParameterEditHelper">
+            <param name="semanticHint" value="3008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <specializationType
+               id="dc_concreta.diagram.Attributeba_3003"
+               name="%metatype.name.Attributeba_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="dc_concreta.diagram.Attributeba_3001"/>
+            <param name="semanticHint" value="3003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <specializationType
+               id="dc_concreta.diagram.Methodba_3007"
+               name="%metatype.name.Methodba_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="dc_concreta.diagram.Methodba_3002"/>
+            <param name="semanticHint" value="3007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <specializationType
+               id="dc_concreta.diagram.Attributeba_3005"
+               name="%metatype.name.Attributeba_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="dc_concreta.diagram.Attributeba_3001"/>
+            <param name="semanticHint" value="3005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <metamodelType
+               id="dc_concreta.diagram.Operationba_3006"
+               name="%metatype.name.Operationba_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operationba"
+               edithelper="concreta.diagram.edit.helpers.OperationbaEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://concreta">
+         <specializationType
+               id="dc_concreta.diagram.Parameter_3009"
+               name="%metatype.name.Parameter_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="dc_concreta.diagram.Parameter_3008"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://concreta">
          <metamodelType
@@ -488,12 +574,18 @@
       </clientContext> 
       <binding context="dc_concreta.diagram.TypeContext">
          <elementType ref="dc_concreta.diagram.DiagramClassba_1000"/>
-         <elementType ref="dc_concreta.diagram.Interface_2002"/>
-         <elementType ref="dc_concreta.diagram.Abstract_2003"/>
          <elementType ref="dc_concreta.diagram.Classba_2001"/>
+         <elementType ref="dc_concreta.diagram.AbsctractClassba_2002"/>
+         <elementType ref="dc_concreta.diagram.InterfaceClassba_2003"/>
          <elementType ref="dc_concreta.diagram.Packageba_2004"/>
          <elementType ref="dc_concreta.diagram.Attributeba_3001"/>
          <elementType ref="dc_concreta.diagram.Methodba_3002"/>
+         <elementType ref="dc_concreta.diagram.Parameter_3008"/>
+         <elementType ref="dc_concreta.diagram.Attributeba_3003"/>
+         <elementType ref="dc_concreta.diagram.Methodba_3007"/>
+         <elementType ref="dc_concreta.diagram.Attributeba_3005"/>
+         <elementType ref="dc_concreta.diagram.Operationba_3006"/>
+         <elementType ref="dc_concreta.diagram.Parameter_3009"/>
          <elementType ref="dc_concreta.diagram.Containment_4001"/>
          <elementType ref="dc_concreta.diagram.Aggregation_4002"/>
          <elementType ref="dc_concreta.diagram.Association_4003"/>

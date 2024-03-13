@@ -588,8 +588,8 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_Retorno() {
-		return (EReference)methodbaEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMethodba_Body() {
+		return (EAttribute)methodbaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -597,7 +597,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_Classba() {
+	public EReference getMethodba_Retorno() {
 		return (EReference)methodbaEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -606,7 +606,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethodba_LstParametersba() {
+	public EReference getMethodba_Classba() {
 		return (EReference)methodbaEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -615,8 +615,17 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMethodba_LstParametersba() {
+		return (EReference)methodbaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getMethodba_ModifyAcces() {
-		return (EAttribute)methodbaEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)methodbaEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -746,6 +755,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 
 		methodbaEClass = createEClass(METHODBA);
 		createEAttribute(methodbaEClass, METHODBA__NAME);
+		createEAttribute(methodbaEClass, METHODBA__BODY);
 		createEReference(methodbaEClass, METHODBA__RETORNO);
 		createEReference(methodbaEClass, METHODBA__CLASSBA);
 		createEReference(methodbaEClass, METHODBA__LST_PARAMETERSBA);
@@ -846,6 +856,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 
 		initEClass(methodbaEClass, Methodba.class, "Methodba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethodba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMethodba_Body(), ecorePackage.getEString(), "body", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Retorno(), this.getClasifier(), null, "retorno", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_Classba(), this.getClassba(), null, "classba", null, 0, 1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodba_LstParametersba(), this.getParameter(), null, "lstParametersba", null, 0, -1, Methodba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

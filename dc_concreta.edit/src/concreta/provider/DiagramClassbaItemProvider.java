@@ -126,6 +126,8 @@ public class DiagramClassbaItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_CLASS);
+			childrenFeatures.add(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA);
+			childrenFeatures.add(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA);
 			childrenFeatures.add(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_PACKAGEBA);
 			childrenFeatures.add(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA);
 		}
@@ -188,6 +190,8 @@ public class DiagramClassbaItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_CLASS:
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA:
+			case ConcretaPackage.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA:
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_PACKAGEBA:
 			case ConcretaPackage.DIAGRAM_CLASSBA__LST_RELATIONSHIPBA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -214,13 +218,13 @@ public class DiagramClassbaItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_CLASS,
-				 ConcretaFactory.eINSTANCE.createInterface()));
+				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_ABSTRACTA_CLASSBA,
+				 ConcretaFactory.eINSTANCE.createAbsctractClassba()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_CLASS,
-				 ConcretaFactory.eINSTANCE.createAbstract()));
+				(ConcretaPackage.Literals.DIAGRAM_CLASSBA__LST_INTERFACE_CLASSBA,
+				 ConcretaFactory.eINSTANCE.createInterfaceClassba()));
 
 		newChildDescriptors.add
 			(createChildParameter

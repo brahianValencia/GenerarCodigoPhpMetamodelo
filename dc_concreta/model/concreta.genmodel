@@ -24,6 +24,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//DiagramClassba/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//DiagramClassba/path"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstAbstractaClassba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstInterfaceClassba"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstPackageba"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//DiagramClassba/lstRelationshipba"/>
     </genClasses>
@@ -39,8 +41,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Classba/lstMethodba"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Classba/accessModify"/>
     </genClasses>
-    <genClasses ecoreClass="concreta.ecore#//Interface"/>
-    <genClasses ecoreClass="concreta.ecore#//Abstract"/>
+    <genClasses ecoreClass="concreta.ecore#//InterfaceClassba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//InterfaceClassba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//InterfaceClassba/lstAttributesba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//InterfaceClassba/lstMethodba"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//InterfaceClassba/accessModify"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//AbsctractClassba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//AbsctractClassba/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//AbsctractClassba/lstAttributesba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//AbsctractClassba/lstMethodba"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//AbsctractClassba/accessModify"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="concreta.ecore#//Relationshipba">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/ide"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Relationshipba/multS"/>
@@ -69,10 +81,18 @@
     </genClasses>
     <genClasses ecoreClass="concreta.ecore#//Methodba">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/body"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Methodba/accessModify"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/retorno"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/classba"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Methodba/lstParametersba"/>
+    </genClasses>
+    <genClasses ecoreClass="concreta.ecore#//Operationba">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Operationba/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Operationba/accessModify"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Operationba/retorno"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference concreta.ecore#//Operationba/classba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference concreta.ecore#//Operationba/lstParametersba"/>
     </genClasses>
     <genClasses ecoreClass="concreta.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute concreta.ecore#//Parameter/name"/>

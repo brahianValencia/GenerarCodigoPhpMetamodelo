@@ -88,12 +88,12 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 				return createClassbaAdapter();
 			}
 			@Override
-			public Adapter caseInterface(Interface object) {
-				return createInterfaceAdapter();
+			public Adapter caseInterfaceClassba(InterfaceClassba object) {
+				return createInterfaceClassbaAdapter();
 			}
 			@Override
-			public Adapter caseAbstract(Abstract object) {
-				return createAbstractAdapter();
+			public Adapter caseAbsctractClassba(AbsctractClassba object) {
+				return createAbsctractClassbaAdapter();
 			}
 			@Override
 			public Adapter caseRelationshipba(Relationshipba object) {
@@ -134,6 +134,10 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMethodba(Methodba object) {
 				return createMethodbaAdapter();
+			}
+			@Override
+			public Adapter caseOperationba(Operationba object) {
+				return createOperationbaAdapter();
 			}
 			@Override
 			public Adapter caseParameter(Parameter object) {
@@ -230,30 +234,30 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link concreta.Interface <em>Interface</em>}'.
+	 * Creates a new adapter for an object of class '{@link concreta.InterfaceClassba <em>Interface Classba</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see concreta.Interface
+	 * @see concreta.InterfaceClassba
 	 * @generated
 	 */
-	public Adapter createInterfaceAdapter() {
+	public Adapter createInterfaceClassbaAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link concreta.Abstract <em>Abstract</em>}'.
+	 * Creates a new adapter for an object of class '{@link concreta.AbsctractClassba <em>Absctract Classba</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see concreta.Abstract
+	 * @see concreta.AbsctractClassba
 	 * @generated
 	 */
-	public Adapter createAbstractAdapter() {
+	public Adapter createAbsctractClassbaAdapter() {
 		return null;
 	}
 
@@ -394,6 +398,20 @@ public class ConcretaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMethodbaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link concreta.Operationba <em>Operationba</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see concreta.Operationba
+	 * @generated
+	 */
+	public Adapter createOperationbaAdapter() {
 		return null;
 	}
 

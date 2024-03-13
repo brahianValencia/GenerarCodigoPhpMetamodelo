@@ -6,12 +6,12 @@ package concreta.diagram.providers.assistants;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import concreta.diagram.edit.parts.AbstractEditPart;
+
 import concreta.diagram.edit.parts.ClassbaEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
 import concreta.diagram.providers.ConcretaElementTypes;
 import concreta.diagram.providers.ConcretaModelingAssistantProvider;
 
@@ -72,47 +72,17 @@ public class ConcretaModelingAssistantProviderOfClassbaEditPart extends Concreta
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(ClassbaEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(ConcretaElementTypes.Containment_4001);
-		}
-		if (targetEditPart instanceof AbstractEditPart) {
-			types.add(ConcretaElementTypes.Containment_4001);
-		}
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Containment_4001);
-		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(ConcretaElementTypes.Aggregation_4002);
-		}
-		if (targetEditPart instanceof AbstractEditPart) {
-			types.add(ConcretaElementTypes.Aggregation_4002);
 		}
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Aggregation_4002);
 		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(ConcretaElementTypes.Association_4003);
-		}
-		if (targetEditPart instanceof AbstractEditPart) {
-			types.add(ConcretaElementTypes.Association_4003);
-		}
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Association_4003);
 		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(ConcretaElementTypes.Generalization_4004);
-		}
-		if (targetEditPart instanceof AbstractEditPart) {
-			types.add(ConcretaElementTypes.Generalization_4004);
-		}
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Generalization_4004);
-		}
-		if (targetEditPart instanceof InterfaceEditPart) {
-			types.add(ConcretaElementTypes.Implementation_4005);
-		}
-		if (targetEditPart instanceof AbstractEditPart) {
-			types.add(ConcretaElementTypes.Implementation_4005);
 		}
 		if (targetEditPart instanceof ClassbaEditPart) {
 			types.add(ConcretaElementTypes.Implementation_4005);
@@ -136,24 +106,14 @@ public class ConcretaModelingAssistantProviderOfClassbaEditPart extends Concreta
 	public List<IElementType> doGetTypesForTarget(ClassbaEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ConcretaElementTypes.Containment_4001) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Aggregation_4002) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Association_4003) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Generalization_4004) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Implementation_4005) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		}
 		return types;
@@ -198,24 +158,14 @@ public class ConcretaModelingAssistantProviderOfClassbaEditPart extends Concreta
 	public List<IElementType> doGetTypesForSource(ClassbaEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ConcretaElementTypes.Containment_4001) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Aggregation_4002) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Association_4003) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Generalization_4004) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		} else if (relationshipType == ConcretaElementTypes.Implementation_4005) {
-			types.add(ConcretaElementTypes.Interface_2002);
-			types.add(ConcretaElementTypes.Abstract_2003);
 			types.add(ConcretaElementTypes.Classba_2001);
 		}
 		return types;

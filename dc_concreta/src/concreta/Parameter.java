@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see concreta.ConcretaPackage#getParameter()
- * @model
+ * @model annotation="gmf.node label='name' border.style='solid' figure='rectangle' color='201,209,113'"
  * @generated
  */
 public interface Parameter extends EObject {

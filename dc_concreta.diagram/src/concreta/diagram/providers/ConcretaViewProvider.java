@@ -4,6 +4,7 @@
 package concreta.diagram.providers;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -24,7 +25,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
-import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -36,7 +36,6 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
 import org.eclipse.gmf.runtime.notation.Routing;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
@@ -45,10 +44,10 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import concreta.diagram.edit.parts.AbstractAbstractLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractAbstractLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.AbstractEditPart;
-import concreta.diagram.edit.parts.AbstractNameEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaEditPart;
+import concreta.diagram.edit.parts.AbsctractClassbaNameEditPart;
 import concreta.diagram.edit.parts.AggregationEditPart;
 import concreta.diagram.edit.parts.AggregationMultSEditPart;
 import concreta.diagram.edit.parts.AggregationMultTEditPart;
@@ -59,7 +58,11 @@ import concreta.diagram.edit.parts.AssociationMultSEditPart;
 import concreta.diagram.edit.parts.AssociationMultTEditPart;
 import concreta.diagram.edit.parts.AssociationRolSEditPart;
 import concreta.diagram.edit.parts.AssociationRolTEditPart;
+import concreta.diagram.edit.parts.Attributeba2EditPart;
+import concreta.diagram.edit.parts.Attributeba3EditPart;
 import concreta.diagram.edit.parts.AttributebaEditPart;
+import concreta.diagram.edit.parts.AttributebaName2EditPart;
+import concreta.diagram.edit.parts.AttributebaName3EditPart;
 import concreta.diagram.edit.parts.AttributebaNameEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstAttributesbaCompartmentEditPart;
 import concreta.diagram.edit.parts.ClassbaClassbaLstMethodbaCompartmentEditPart;
@@ -73,14 +76,27 @@ import concreta.diagram.edit.parts.ContainmentRolTEditPart;
 import concreta.diagram.edit.parts.DiagramClassbaEditPart;
 import concreta.diagram.edit.parts.GeneralizationEditPart;
 import concreta.diagram.edit.parts.ImplementationEditPart;
-import concreta.diagram.edit.parts.InterfaceEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstAttributesbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceInterfaceLstMethodbaCompartmentEditPart;
-import concreta.diagram.edit.parts.InterfaceNameEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart;
+import concreta.diagram.edit.parts.InterfaceClassbaNameEditPart;
+import concreta.diagram.edit.parts.Methodba2EditPart;
 import concreta.diagram.edit.parts.MethodbaEditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartment2EditPart;
+import concreta.diagram.edit.parts.MethodbaMethodbaLstParametersbaCompartmentEditPart;
+import concreta.diagram.edit.parts.MethodbaName2EditPart;
 import concreta.diagram.edit.parts.MethodbaNameEditPart;
+import concreta.diagram.edit.parts.Operationba2EditPart;
+import concreta.diagram.edit.parts.OperationbaEditPart;
+import concreta.diagram.edit.parts.OperationbaName2EditPart;
+import concreta.diagram.edit.parts.OperationbaNameEditPart;
+import concreta.diagram.edit.parts.OperationbaOperationbaLstParametersbaCompartmentEditPart;
 import concreta.diagram.edit.parts.PackagebaEditPart;
 import concreta.diagram.edit.parts.PackagebaNameEditPart;
+import concreta.diagram.edit.parts.Parameter2EditPart;
+import concreta.diagram.edit.parts.ParameterEditPart;
+import concreta.diagram.edit.parts.ParameterName2EditPart;
+import concreta.diagram.edit.parts.ParameterNameEditPart;
 import concreta.diagram.part.ConcretaVisualIDRegistry;
 
 /**
@@ -165,12 +181,18 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case InterfaceEditPart.VISUAL_ID:
-				case AbstractEditPart.VISUAL_ID:
 				case ClassbaEditPart.VISUAL_ID:
+				case AbsctractClassbaEditPart.VISUAL_ID:
+				case InterfaceClassbaEditPart.VISUAL_ID:
 				case PackagebaEditPart.VISUAL_ID:
 				case AttributebaEditPart.VISUAL_ID:
 				case MethodbaEditPart.VISUAL_ID:
+				case ParameterEditPart.VISUAL_ID:
+				case OperationbaEditPart.VISUAL_ID:
+				case Attributeba2EditPart.VISUAL_ID:
+				case Methodba2EditPart.VISUAL_ID:
+				case Attributeba3EditPart.VISUAL_ID:
+				case Parameter2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ConcretaVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -181,9 +203,12 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 				}
 			}
 		}
-		return InterfaceEditPart.VISUAL_ID == visualID || AbstractEditPart.VISUAL_ID == visualID
-				|| ClassbaEditPart.VISUAL_ID == visualID || PackagebaEditPart.VISUAL_ID == visualID
-				|| AttributebaEditPart.VISUAL_ID == visualID || MethodbaEditPart.VISUAL_ID == visualID;
+		return ClassbaEditPart.VISUAL_ID == visualID || AbsctractClassbaEditPart.VISUAL_ID == visualID
+				|| InterfaceClassbaEditPart.VISUAL_ID == visualID || PackagebaEditPart.VISUAL_ID == visualID
+				|| AttributebaEditPart.VISUAL_ID == visualID || MethodbaEditPart.VISUAL_ID == visualID
+				|| ParameterEditPart.VISUAL_ID == visualID || Attributeba2EditPart.VISUAL_ID == visualID
+				|| Methodba2EditPart.VISUAL_ID == visualID || Attributeba3EditPart.VISUAL_ID == visualID
+				|| OperationbaEditPart.VISUAL_ID == visualID || Parameter2EditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -232,18 +257,30 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 			visualID = ConcretaVisualIDRegistry.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case InterfaceEditPart.VISUAL_ID:
-			return createInterface_2002(domainElement, containerView, index, persisted, preferencesHint);
-		case AbstractEditPart.VISUAL_ID:
-			return createAbstract_2003(domainElement, containerView, index, persisted, preferencesHint);
 		case ClassbaEditPart.VISUAL_ID:
 			return createClassba_2001(domainElement, containerView, index, persisted, preferencesHint);
+		case AbsctractClassbaEditPart.VISUAL_ID:
+			return createAbsctractClassba_2002(domainElement, containerView, index, persisted, preferencesHint);
+		case InterfaceClassbaEditPart.VISUAL_ID:
+			return createInterfaceClassba_2003(domainElement, containerView, index, persisted, preferencesHint);
 		case PackagebaEditPart.VISUAL_ID:
 			return createPackageba_2004(domainElement, containerView, index, persisted, preferencesHint);
 		case AttributebaEditPart.VISUAL_ID:
 			return createAttributeba_3001(domainElement, containerView, index, persisted, preferencesHint);
 		case MethodbaEditPart.VISUAL_ID:
 			return createMethodba_3002(domainElement, containerView, index, persisted, preferencesHint);
+		case ParameterEditPart.VISUAL_ID:
+			return createParameter_3008(domainElement, containerView, index, persisted, preferencesHint);
+		case Attributeba2EditPart.VISUAL_ID:
+			return createAttributeba_3003(domainElement, containerView, index, persisted, preferencesHint);
+		case Methodba2EditPart.VISUAL_ID:
+			return createMethodba_3007(domainElement, containerView, index, persisted, preferencesHint);
+		case Attributeba3EditPart.VISUAL_ID:
+			return createAttributeba_3005(domainElement, containerView, index, persisted, preferencesHint);
+		case OperationbaEditPart.VISUAL_ID:
+			return createOperationba_3006(domainElement, containerView, index, persisted, preferencesHint);
+		case Parameter2EditPart.VISUAL_ID:
+			return createParameter_3009(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -275,92 +312,6 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;
-	}
-
-	/**
-	* @generated
-	*/
-	public Node createInterface_2002(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ConcretaVisualIDRegistry.getType(InterfaceEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		Node label5004 = createLabel(node, ConcretaVisualIDRegistry.getType(InterfaceNameEditPart.VISUAL_ID));
-		createCompartment(node,
-				ConcretaVisualIDRegistry.getType(InterfaceInterfaceLstAttributesbaCompartmentEditPart.VISUAL_ID), true,
-				false, true, true);
-		createCompartment(node,
-				ConcretaVisualIDRegistry.getType(InterfaceInterfaceLstMethodbaCompartmentEditPart.VISUAL_ID), true,
-				false, true, true);
-		return node;
-	}
-
-	/**
-	* @generated
-	*/
-	public Node createAbstract_2003(EObject domainElement, View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(ConcretaVisualIDRegistry.getType(AbstractEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		stampShortcut(containerView, node);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
-					IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
-		}
-		Node label5005 = createLabel(node, ConcretaVisualIDRegistry.getType(AbstractNameEditPart.VISUAL_ID));
-		createCompartment(node,
-				ConcretaVisualIDRegistry.getType(AbstractAbstractLstAttributesbaCompartmentEditPart.VISUAL_ID), true,
-				false, true, true);
-		createCompartment(node,
-				ConcretaVisualIDRegistry.getType(AbstractAbstractLstMethodbaCompartmentEditPart.VISUAL_ID), true, false,
-				true, true);
-		return node;
 	}
 
 	/**
@@ -409,6 +360,96 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 	/**
 	* @generated
 	*/
+	public Node createAbsctractClassba_2002(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(AbsctractClassbaEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5006 = createLabel(node, ConcretaVisualIDRegistry.getType(AbsctractClassbaNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				ConcretaVisualIDRegistry
+						.getType(AbsctractClassbaAbsctractClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		createCompartment(node,
+				ConcretaVisualIDRegistry
+						.getType(AbsctractClassbaAbsctractClassbaLstMethodbaCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createInterfaceClassba_2003(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(InterfaceClassbaEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5009 = createLabel(node, ConcretaVisualIDRegistry.getType(InterfaceClassbaNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				ConcretaVisualIDRegistry
+						.getType(InterfaceClassbaInterfaceClassbaLstAttributesbaCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		createCompartment(node,
+				ConcretaVisualIDRegistry
+						.getType(InterfaceClassbaInterfaceClassbaLstMethodbaCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
 	public Node createPackageba_2004(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -438,7 +479,7 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Node label5006 = createLabel(node, ConcretaVisualIDRegistry.getType(PackagebaNameEditPart.VISUAL_ID));
+		Node label5010 = createLabel(node, ConcretaVisualIDRegistry.getType(PackagebaNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -482,7 +523,11 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 	*/
 	public Node createMethodba_3002(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(ConcretaVisualIDRegistry.getType(MethodbaEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -505,11 +550,228 @@ public class ConcretaViewProvider extends AbstractProvider implements IViewProvi
 					IPreferenceConstants.PREF_FONT_COLOR);
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
-				IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5002 = createLabel(node, ConcretaVisualIDRegistry.getType(MethodbaNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				ConcretaVisualIDRegistry.getType(MethodbaMethodbaLstParametersbaCompartmentEditPart.VISUAL_ID), true,
+				false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createParameter_3008(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5012 = createLabel(node, ConcretaVisualIDRegistry.getType(ParameterNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createAttributeba_3003(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(Attributeba2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5004 = createLabel(node, ConcretaVisualIDRegistry.getType(AttributebaName2EditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createMethodba_3007(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(Methodba2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5011 = createLabel(node, ConcretaVisualIDRegistry.getType(MethodbaName2EditPart.VISUAL_ID));
+		createCompartment(node,
+				ConcretaVisualIDRegistry.getType(MethodbaMethodbaLstParametersbaCompartment2EditPart.VISUAL_ID), true,
+				false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createAttributeba_3005(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(Attributeba3EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5007 = createLabel(node, ConcretaVisualIDRegistry.getType(AttributebaName3EditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createOperationba_3006(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(OperationbaEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5008 = createLabel(node, ConcretaVisualIDRegistry.getType(OperationbaNameEditPart.VISUAL_ID));
+		createCompartment(node,
+				ConcretaVisualIDRegistry.getType(OperationbaOperationbaLstParametersbaCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
+	public Node createParameter_3009(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ConcretaVisualIDRegistry.getType(Parameter2EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Node label5013 = createLabel(node, ConcretaVisualIDRegistry.getType(ParameterName2EditPart.VISUAL_ID));
 		return node;
 	}
 

@@ -68,6 +68,7 @@ class Attributeba {
 class Methodba {
 	
 	attr String name;
+	attr String body;
 	ref Clasifier retorno;
 	ref Classba classba;
 	val Parameter[*] lstParametersba;

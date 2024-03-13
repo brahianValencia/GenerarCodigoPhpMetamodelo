@@ -588,13 +588,22 @@ public interface AbstractaPackage extends EPackage {
 	int METHODBA__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHODBA__BODY = 1;
+
+	/**
 	 * The feature id for the '<em><b>Retorno</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__RETORNO = 1;
+	int METHODBA__RETORNO = 2;
 
 	/**
 	 * The feature id for the '<em><b>Classba</b></em>' reference.
@@ -603,7 +612,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__CLASSBA = 2;
+	int METHODBA__CLASSBA = 3;
 
 	/**
 	 * The feature id for the '<em><b>Lst Parametersba</b></em>' containment reference list.
@@ -612,7 +621,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__LST_PARAMETERSBA = 3;
+	int METHODBA__LST_PARAMETERSBA = 4;
 
 	/**
 	 * The feature id for the '<em><b>Modify Acces</b></em>' attribute.
@@ -621,7 +630,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA__MODIFY_ACCES = 4;
+	int METHODBA__MODIFY_ACCES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Methodba</em>' class.
@@ -630,7 +639,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METHODBA_FEATURE_COUNT = 5;
+	int METHODBA_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link abstracta.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1187,6 +1196,17 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getMethodba_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link abstracta.Methodba#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see abstracta.Methodba#getBody()
+	 * @see #getMethodba()
+	 * @generated
+	 */
+	EAttribute getMethodba_Body();
+
+	/**
 	 * Returns the meta object for the reference '{@link abstracta.Methodba#getRetorno <em>Retorno</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1690,6 +1710,14 @@ public interface AbstractaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute METHODBA__NAME = eINSTANCE.getMethodba_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METHODBA__BODY = eINSTANCE.getMethodba_Body();
 
 		/**
 		 * The meta object literal for the '<em><b>Retorno</b></em>' reference feature.

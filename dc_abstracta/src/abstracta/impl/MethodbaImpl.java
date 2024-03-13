@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link abstracta.impl.MethodbaImpl#getName <em>Name</em>}</li>
+ *   <li>{@link abstracta.impl.MethodbaImpl#getBody <em>Body</em>}</li>
  *   <li>{@link abstracta.impl.MethodbaImpl#getRetorno <em>Retorno</em>}</li>
  *   <li>{@link abstracta.impl.MethodbaImpl#getClassba <em>Classba</em>}</li>
  *   <li>{@link abstracta.impl.MethodbaImpl#getLstParametersba <em>Lst Parametersba</em>}</li>
@@ -62,6 +63,26 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BODY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBody()
+	 * @generated
+	 * @ordered
+	 */
+	protected String body = BODY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRetorno() <em>Retorno</em>}' reference.
@@ -151,6 +172,27 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.METHODBA__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getBody() {
+		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBody(String newBody) {
+		String oldBody = body;
+		body = newBody;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.METHODBA__BODY, oldBody, body));
 	}
 
 	/**
@@ -286,6 +328,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case AbstractaPackage.METHODBA__NAME:
 				return getName();
+			case AbstractaPackage.METHODBA__BODY:
+				return getBody();
 			case AbstractaPackage.METHODBA__RETORNO:
 				if (resolve) return getRetorno();
 				return basicGetRetorno();
@@ -311,6 +355,9 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case AbstractaPackage.METHODBA__NAME:
 				setName((String)newValue);
+				return;
+			case AbstractaPackage.METHODBA__BODY:
+				setBody((String)newValue);
 				return;
 			case AbstractaPackage.METHODBA__RETORNO:
 				setRetorno((Clasifier)newValue);
@@ -340,6 +387,9 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 			case AbstractaPackage.METHODBA__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case AbstractaPackage.METHODBA__BODY:
+				setBody(BODY_EDEFAULT);
+				return;
 			case AbstractaPackage.METHODBA__RETORNO:
 				setRetorno((Clasifier)null);
 				return;
@@ -366,6 +416,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		switch (featureID) {
 			case AbstractaPackage.METHODBA__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AbstractaPackage.METHODBA__BODY:
+				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 			case AbstractaPackage.METHODBA__RETORNO:
 				return retorno != null;
 			case AbstractaPackage.METHODBA__CLASSBA:
@@ -390,6 +442,8 @@ public class MethodbaImpl extends EObjectImpl implements Methodba {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", body: ");
+		result.append(body);
 		result.append(", modifyAcces: ");
 		result.append(modifyAcces);
 		result.append(')');

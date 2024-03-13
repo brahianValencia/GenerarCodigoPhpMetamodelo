@@ -214,16 +214,6 @@ public class PackagebaItemProvider
 			(createChildParameter
 				(ConcretaPackage.Literals.PACKAGEBA__LST_CLASS,
 				 ConcretaFactory.eINSTANCE.createClassba()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.PACKAGEBA__LST_CLASS,
-				 ConcretaFactory.eINSTANCE.createInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConcretaPackage.Literals.PACKAGEBA__LST_CLASS,
-				 ConcretaFactory.eINSTANCE.createAbstract()));
 	}
 
 	/**
