@@ -122,13 +122,22 @@ public interface AbstractaPackage extends EPackage {
 	int PROJECTBA__PATH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECTBA__IDE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Lst Packages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECTBA__LST_PACKAGES = 2;
+	int PROJECTBA__LST_PACKAGES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Projectba</em>' class.
@@ -137,7 +146,7 @@ public interface AbstractaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECTBA_FEATURE_COUNT = 3;
+	int PROJECTBA_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link abstracta.impl.PackagebaImpl <em>Packageba</em>}' class.
@@ -314,7 +323,7 @@ public interface AbstractaPackage extends EPackage {
 	int CLASSBA__LST_ATTRIBUTESBA = CLASIFIER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Lst Relationship Targetba</b></em>' reference list.
+	 * The feature id for the '<em><b>Lst Relationship Targetba</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -763,6 +772,17 @@ public interface AbstractaPackage extends EPackage {
 	EAttribute getProjectba_Path();
 
 	/**
+	 * Returns the meta object for the attribute '{@link abstracta.Projectba#getIde <em>Ide</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ide</em>'.
+	 * @see abstracta.Projectba#getIde()
+	 * @see #getProjectba()
+	 * @generated
+	 */
+	EAttribute getProjectba_Ide();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link abstracta.Projectba#getLstPackages <em>Lst Packages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -904,10 +924,10 @@ public interface AbstractaPackage extends EPackage {
 	EReference getClassba_LstAttributesba();
 
 	/**
-	 * Returns the meta object for the reference list '{@link abstracta.Classba#getLstRelationshipTargetba <em>Lst Relationship Targetba</em>}'.
+	 * Returns the meta object for the containment reference list '{@link abstracta.Classba#getLstRelationshipTargetba <em>Lst Relationship Targetba</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Lst Relationship Targetba</em>'.
+	 * @return the meta object for the containment reference list '<em>Lst Relationship Targetba</em>'.
 	 * @see abstracta.Classba#getLstRelationshipTargetba()
 	 * @see #getClassba()
 	 * @generated
@@ -1378,6 +1398,14 @@ public interface AbstractaPackage extends EPackage {
 		EAttribute PROJECTBA__PATH = eINSTANCE.getProjectba_Path();
 
 		/**
+		 * The meta object literal for the '<em><b>Ide</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROJECTBA__IDE = eINSTANCE.getProjectba_Ide();
+
+		/**
 		 * The meta object literal for the '<em><b>Lst Packages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1486,7 +1514,7 @@ public interface AbstractaPackage extends EPackage {
 		EReference CLASSBA__LST_ATTRIBUTESBA = eINSTANCE.getClassba_LstAttributesba();
 
 		/**
-		 * The meta object literal for the '<em><b>Lst Relationship Targetba</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Lst Relationship Targetba</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

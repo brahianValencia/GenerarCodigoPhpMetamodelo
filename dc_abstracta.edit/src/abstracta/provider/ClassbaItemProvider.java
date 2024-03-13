@@ -52,7 +52,6 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 			addIsInterfacePropertyDescriptor(object);
 			addModifyAccesPropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
-			addLstRelationshipTargetbaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,28 +145,6 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Lst Relationship Targetba feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLstRelationshipTargetbaPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Classba_lstRelationshipTargetba_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Classba_lstRelationshipTargetba_feature", "_UI_Classba_type"),
-				 AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_TARGETBA,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -181,6 +158,7 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_SOURCEBA);
 			childrenFeatures.add(AbstractaPackage.Literals.CLASSBA__LST_ATTRIBUTESBA);
+			childrenFeatures.add(AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_TARGETBA);
 			childrenFeatures.add(AbstractaPackage.Literals.CLASSBA__LST_METHODBA);
 		}
 		return childrenFeatures;
@@ -245,6 +223,7 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 				return;
 			case AbstractaPackage.CLASSBA__LST_RELATIONSHIP_SOURCEBA:
 			case AbstractaPackage.CLASSBA__LST_ATTRIBUTESBA:
+			case AbstractaPackage.CLASSBA__LST_RELATIONSHIP_TARGETBA:
 			case AbstractaPackage.CLASSBA__LST_METHODBA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -275,8 +254,36 @@ public class ClassbaItemProvider extends ClasifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_TARGETBA,
+				 AbstractaFactory.eINSTANCE.createRelationshipba()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(AbstractaPackage.Literals.CLASSBA__LST_METHODBA,
 				 AbstractaFactory.eINSTANCE.createMethodba()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_SOURCEBA ||
+			childFeature == AbstractaPackage.Literals.CLASSBA__LST_RELATIONSHIP_TARGETBA;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

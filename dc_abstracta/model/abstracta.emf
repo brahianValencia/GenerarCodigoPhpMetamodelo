@@ -9,6 +9,7 @@ class ModelFactoryAbstracta{
 class Projectba{
 	attr String name;
 	attr String path;
+	attr int ide;
 	val Packageba[*] lstPackages;
 }
 
@@ -26,7 +27,7 @@ class Classba extends Clasifier{
 	attr String path;
 	val Relationshipba[*] lstRelationshipSourceba;
 	val Attributeba[*] lstAttributesba;
-	ref Relationshipba[*] lstRelationshipTargetba;
+	val Relationshipba[*] lstRelationshipTargetba;
 	val Methodba[*] lstMethodba;
 	
 }

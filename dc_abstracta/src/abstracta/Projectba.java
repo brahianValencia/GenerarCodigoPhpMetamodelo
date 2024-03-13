@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link abstracta.Projectba#getName <em>Name</em>}</li>
  *   <li>{@link abstracta.Projectba#getPath <em>Path</em>}</li>
+ *   <li>{@link abstracta.Projectba#getIde <em>Ide</em>}</li>
  *   <li>{@link abstracta.Projectba#getLstPackages <em>Lst Packages</em>}</li>
  * </ul>
  *
@@ -76,6 +77,32 @@ public interface Projectba extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ide</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ide</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ide</em>' attribute.
+	 * @see #setIde(int)
+	 * @see abstracta.AbstractaPackage#getProjectba_Ide()
+	 * @model
+	 * @generated
+	 */
+	int getIde();
+
+	/**
+	 * Sets the value of the '{@link abstracta.Projectba#getIde <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ide</em>' attribute.
+	 * @see #getIde()
+	 * @generated
+	 */
+	void setIde(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Lst Packages</b></em>' containment reference list.

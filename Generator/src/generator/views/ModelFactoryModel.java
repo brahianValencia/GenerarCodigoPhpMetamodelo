@@ -1,5 +1,6 @@
 package generator.views;
 
+import java.awt.Container;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,9 +18,13 @@ import abstracta.ModelFactoryAbstracta;
 import abstracta.Packageba;
 import abstracta.Projectba;
 import concreta.AbsctractClassba;
+import concreta.Aggregation;
+import concreta.Association;
 import concreta.ConcretaFactory;
 import concreta.ConcretaPackage;
+import concreta.Containment;
 import concreta.DiagramClassba;
+import concreta.Generalization;
 import concreta.InterfaceClassba;
 import concreta.ModelFactoryConcreta;
 import concreta.Operationba;
@@ -198,8 +203,8 @@ public class ModelFactoryModel {
 
 				organizarAbstractas(packageRaizba, abstractas);
 
-				for (concreta.Relationshipba relationRam : diagrama.getLstRelationshipba()) {
-					crearRelacion(relationRam,packageRaizba);
+				for (concreta.Relationshipba relationba : diagrama.getLstRelationshipba()) {
+					crearRelacion(relationba,packageRaizba);
 				}
 			}
 
@@ -209,7 +214,7 @@ public class ModelFactoryModel {
 	}
 
 	private void organizarAbstractas(Packageba packageRaizba, List<AbsctractClassba> abstractas) {
-		
+
 		ArrayList<concreta.AbsctractClassba> listaNoAgregados = new ArrayList<>();
 
 		//Agregar todos los paquetes que esten en la raiz relativa
@@ -220,11 +225,11 @@ public class ModelFactoryModel {
 				abstracta.Classba classbaAbstracta = AbstractaFactory.eINSTANCE.createClassba();
 				classbaAbstracta.setName(abstractaConcreta.getName());
 				classbaAbstracta.setPath(abstractaConcreta.getPath());
-				
+
 				classbaAbstracta.setIsAbstract(false);
 				classbaAbstracta.setIsInterface(true);
 				classbaAbstracta.setModifyAcces(abstracta.AccessModifyba.get(abstractaConcreta.getAccessModify().getValue()));
-				
+
 				for (concreta.Attributeba attributebaConcreta : abstractaConcreta.getLstAttributesba()) {
 					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
 					attributebaAbstracta.setName(attributebaConcreta.getName());
@@ -239,19 +244,19 @@ public class ModelFactoryModel {
 					methodba.setBody("");
 					methodba.setModifyAcces(abstracta.AccessModifyba.get(methodbaConcreta.getAccessModify().getValue()));
 					methodba.setRetorno((abstracta.Clasifier) methodbaConcreta.getRetorno());
-					
+
 					for (concreta.Parameter parameterConcreta : methodbaConcreta.getLstParametersba()) {
 						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
-						
+
 						parameterAbstracta.setName(parameterConcreta.getName());
 						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
-						
+
 						methodba.getLstParametersba().add(parameterAbstracta);
 					}
-					
+
 					classbaAbstracta.getLstMethodba().add(methodba);
 				}
-				
+
 
 				packageRaizba.getLstClass().add(classbaAbstracta);
 				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
@@ -297,7 +302,7 @@ public class ModelFactoryModel {
 				interfaceba.setIsAbstract(false);
 				interfaceba.setIsInterface(true);
 				interfaceba.setModifyAcces(abstracta.AccessModifyba.get(interfaceConcreta.getAccessModify().getValue()));
-				
+
 				for (concreta.Attributeba attributebaConcreta : interfaceConcreta.getLstAttributesba()) {
 					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
 					attributebaAbstracta.setName(attributebaConcreta.getName());
@@ -312,19 +317,19 @@ public class ModelFactoryModel {
 					methodba.setBody("");
 					methodba.setModifyAcces(abstracta.AccessModifyba.get(operationbaConcreta.getAccessModify().getValue()));
 					methodba.setRetorno((abstracta.Clasifier) operationbaConcreta.getRetorno());
-					
+
 					for (concreta.Parameter parameterConcreta : operationbaConcreta.getLstParametersba()) {
 						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
-						
+
 						parameterAbstracta.setName(parameterConcreta.getName());
 						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
-						
+
 						methodba.getLstParametersba().add(parameterAbstracta);
 					}
-					
+
 					interfaceba.getLstMethodba().add(methodba);
 				}
-				
+
 				packageRaizba.getLstClass().add(interfaceba);
 				System.out.println("Raiz relativa actual: " + packageRaizba.getName());
 				System.out.println("Clase: " + interfaceba.getName());
@@ -370,7 +375,7 @@ public class ModelFactoryModel {
 				classba.setIsAbstract(false);
 				classba.setIsInterface(false);
 				classba.setModifyAcces(abstracta.AccessModifyba.get(claseConcreta.getAccessModify().getValue()));
-				
+
 				for (concreta.Attributeba attributebaConcreta : claseConcreta.getLstAttributesba()) {
 					abstracta.Attributeba attributebaAbstracta = AbstractaFactory.eINSTANCE.createAttributeba();
 					attributebaAbstracta.setName(attributebaConcreta.getName());
@@ -385,20 +390,20 @@ public class ModelFactoryModel {
 					methodba.setBody(methodbaConcreta.getBody());
 					methodba.setModifyAcces(abstracta.AccessModifyba.get(methodbaConcreta.getAccessModify().getValue()));
 					methodba.setRetorno((abstracta.Clasifier) methodbaConcreta.getRetorno());
-					
+
 					for (concreta.Parameter parameterConcreta : methodbaConcreta.getLstParametersba()) {
 						abstracta.Parameter parameterAbstracta = AbstractaFactory.eINSTANCE.createParameter();
-						
+
 						parameterAbstracta.setName(parameterConcreta.getName());
 						parameterAbstracta.setType((abstracta.Clasifier) parameterConcreta.getType());
-						
+
 						methodba.getLstParametersba().add(parameterAbstracta);
 					}
-					
+
 					classba.getLstMethodba().add(methodba);
 				}
-				
-				
+
+
 				raizRelativa.getLstClass().add(classba);
 				System.out.println("Raiz relativa actual: " + raizRelativa.getName());
 				System.out.println("Clase: " + classba.getName());
@@ -510,13 +515,13 @@ public class ModelFactoryModel {
 		return false;
 	} 
 
-	private abstracta.Packageba obtenerPackagePadre(String path, abstracta.Packageba packageRaizRam) {
+	private abstracta.Packageba obtenerPackagePadre(String path, abstracta.Packageba packageRaizba) {
 
 
-		String[] pathArray = path.split("/");//src,main
-		abstracta.Packageba padre = packageRaizRam;
+		String[] pathArray = path.split("/");//Biblioteca,biblioteca,operaciones
+		abstracta.Packageba padre = packageRaizba;//Biblioteca
 		for (int j = 1; j < pathArray.length; j++) {
-			padre = obtenerPaquete(pathArray[j],padre);
+			padre = obtenerPaquete(pathArray[j],padre);//operaciones,biblioteca
 		}
 
 		return padre;
@@ -528,12 +533,12 @@ public class ModelFactoryModel {
 				return pac;
 			}
 		}
-
-		abstracta.Packageba packageba2 = AbstractaFactory.eINSTANCE.createPackageba();
+		return null;
+		/**abstracta.Packageba packageba2 = AbstractaFactory.eINSTANCE.createPackageba();
 		packageba2.setName(nameP);
 		packageba2.setPath(packageParentba.getPath()+"/"+packageParentba.getName());
 		packageParentba.getListPackages().add(packageba2);
-		return packageba2;
+		return packageba2;*/
 
 	}
 	private void crearClass(Packageba packageRaizba, InterfaceClassba interfaceClassba) {
@@ -612,36 +617,74 @@ public class ModelFactoryModel {
 
 	private void crearRelacion(concreta.Relationshipba relationbaConcreta, abstracta.Packageba packageRaizba) {
 
-		concreta.Classba sourceConcreta = relationbaConcreta.getSource();
-		concreta.Classba targetConcret = relationbaConcreta.getTarget();
+		concreta.Classba sourceConcreta = relationbaConcreta.getSource();//Biblioteca
+		concreta.Classba targetConcret = relationbaConcreta.getTarget();//Libro
 
 		abstracta.Classba classbaAbstractaSource = obtenerClase(sourceConcreta,packageRaizba);
 		abstracta.Classba classbaAbstractaTarget = obtenerClase(targetConcret,packageRaizba);
 
-		abstracta.Relationshipba relationbaAbstractaSource = AbstractaFactory.eINSTANCE.createRelationshipba();
-		relationbaAbstractaSource.setSource(classbaAbstractaTarget);
-		relationbaAbstractaSource.setTarget(classbaAbstractaTarget);
-		relationbaAbstractaSource.setRolS(relationbaConcreta.getRolS());
-		relationbaAbstractaSource.setRolT(relationbaConcreta.getRolT());
-		relationbaAbstractaSource.setMultS(relationbaConcreta.getMultS());
-		relationbaAbstractaSource.setMultT(relationbaConcreta.getMultT());
-		classbaAbstractaSource.getLstRelationshipTargetba().add(relationbaAbstractaSource);
+		if(relationbaConcreta instanceof Aggregation) {
+			//relacion abstracta source
+			crearRelacionAbstracta(classbaAbstractaSource,classbaAbstractaTarget,relationbaConcreta.getRolS(),relationbaConcreta.getRolT(),relationbaConcreta.getMultS(),relationbaConcreta.getMultT(),true,false,false,false,false);
+			//relacion abstracta target
+			crearRelacionAbstracta(classbaAbstractaTarget,classbaAbstractaSource,relationbaConcreta.getRolT(),relationbaConcreta.getRolS(),relationbaConcreta.getMultT(),relationbaConcreta.getMultS(),false,false,false,true,false);
+		}
+		
+		if(relationbaConcreta instanceof Containment) {
+			//relacion abstracta source
+			crearRelacionAbstracta(classbaAbstractaSource,classbaAbstractaTarget,relationbaConcreta.getRolS(),relationbaConcreta.getRolT(),relationbaConcreta.getMultS(),relationbaConcreta.getMultT(),false,true,false,false,false);
+			//relacion abstracta target
+			crearRelacionAbstracta(classbaAbstractaTarget,classbaAbstractaSource,relationbaConcreta.getRolT(),relationbaConcreta.getRolS(),relationbaConcreta.getMultT(),relationbaConcreta.getMultS(),false,false,false,true,false);
+		}
+		
+		if(relationbaConcreta instanceof Association) {
+			//relacion abstracta source
+			crearRelacionAbstracta(classbaAbstractaSource,classbaAbstractaTarget,relationbaConcreta.getRolS(),relationbaConcreta.getRolT(),relationbaConcreta.getMultS(),relationbaConcreta.getMultT(),false,false,false,true,false);
+			//relacion abstracta target
+			crearRelacionAbstracta(classbaAbstractaTarget,classbaAbstractaSource,relationbaConcreta.getRolT(),relationbaConcreta.getRolS(),relationbaConcreta.getMultT(),relationbaConcreta.getMultS(),false,false,false,true,false);
+		}
+		
+		if(relationbaConcreta instanceof Generalization) {
+			//relacion abstracta source
+			crearRelacionAbstracta(classbaAbstractaSource,classbaAbstractaTarget,relationbaConcreta.getRolS(),relationbaConcreta.getRolT(),relationbaConcreta.getMultS(),relationbaConcreta.getMultT(),false,false,false,true,false);
+		}
+	}
 
-		abstracta.Relationshipba relationRamAbstractaTarget = AbstractaFactory.eINSTANCE.createRelationshipba();
+
+	private void crearRelacionAbstracta(Classba classbaAbstractaSource, Classba classbaAbstractaTarget, String rolS,
+			String rolT, String multS, String multT, boolean isAgregation, boolean isContaiment, boolean isGeneralization, boolean isAssociation, boolean isImplementation) {
+
+		abstracta.Relationshipba relationbaAbstracta = AbstractaFactory.eINSTANCE.createRelationshipba();
+		relationbaAbstracta.setSource(classbaAbstractaSource);
+		relationbaAbstracta.setTarget(classbaAbstractaTarget);
+		relationbaAbstracta.setRolS(rolS);
+		relationbaAbstracta.setRolT(rolT);
+		relationbaAbstracta.setMultS(multS);
+		relationbaAbstracta.setMultT(multT);
+		relationbaAbstracta.setIsAgregation(isAgregation);
+		relationbaAbstracta.setIsContainment(isContaiment);
+		relationbaAbstracta.setIsGeneralization(isGeneralization);
+		relationbaAbstracta.setIsAssociation(isAssociation);
+		relationbaAbstracta.setIsImplementation(isImplementation);
+		classbaAbstractaSource.getLstRelationshipTargetba().add(relationbaAbstracta);
+
+		/*abstracta.Relationshipba relationRamAbstractaTarget = AbstractaFactory.eINSTANCE.createRelationshipba();
 		relationRamAbstractaTarget.setSource(classbaAbstractaSource);
 		relationRamAbstractaTarget.setTarget(classbaAbstractaTarget);
 		relationRamAbstractaTarget.setRolS(relationbaConcreta.getRolS());
 		relationRamAbstractaTarget.setRolT(relationbaConcreta.getRolT());
 		relationRamAbstractaTarget.setMultS(relationbaConcreta.getMultS());
 		relationRamAbstractaTarget.setMultT(relationbaConcreta.getMultT());
-		classbaAbstractaTarget.getLstRelationshipTargetba().add(relationbaAbstractaSource);
+		classbaAbstractaTarget.getLstRelationshipTargetba().add(relationbaAbstractaSource);*/
 
 	}
 
 
+
+
 	private abstracta.Classba obtenerClase(concreta.Classba claseABuscar, abstracta.Packageba packageRaizba) {
 
-		abstracta.Packageba packageba = obtenerPackagePadre(claseABuscar.getPath(), packageRaizba);
+		abstracta.Packageba packageba = obtenerPackagePadre(claseABuscar.getPath(), packageRaizba);//Biblioteca/biblioteca, Biblioteca
 
 		for (abstracta.Classba clase : packageba.getLstClass()) {
 			if(claseABuscar.getName().equals(clase.getName())) {

@@ -27,4 +27,10 @@
 <fullyQualifiedTypeName name="abstracta.Parameter"/>
 <fullyQualifiedTypeName name="abstracta.AbstractaFactory"/>
 <fullyQualifiedTypeName name="abstracta.Clasifier"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="java.awt.Container"/>
+<fullyQualifiedTypeName name="concreta.Containment"/>
+<fullyQualifiedTypeName name="concreta.Aggregation"/>
+<fullyQualifiedTypeName name="concreta.Association"/>
+<fullyQualifiedTypeName name="concreta.Generalization"/>
 </qualifiedTypeNameHistroy>

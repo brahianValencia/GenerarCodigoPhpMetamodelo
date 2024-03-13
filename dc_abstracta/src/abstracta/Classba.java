@@ -168,7 +168,7 @@ public interface Classba extends Clasifier {
 	EList<Attributeba> getLstAttributesba();
 
 	/**
-	 * Returns the value of the '<em><b>Lst Relationship Targetba</b></em>' reference list.
+	 * Returns the value of the '<em><b>Lst Relationship Targetba</b></em>' containment reference list.
 	 * The list contents are of type {@link abstracta.Relationshipba}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -176,9 +176,9 @@ public interface Classba extends Clasifier {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lst Relationship Targetba</em>' reference list.
+	 * @return the value of the '<em>Lst Relationship Targetba</em>' containment reference list.
 	 * @see abstracta.AbstractaPackage#getClassba_LstRelationshipTargetba()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Relationshipba> getLstRelationshipTargetba();

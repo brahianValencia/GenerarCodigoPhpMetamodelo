@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link abstracta.impl.ProjectbaImpl#getName <em>Name</em>}</li>
  *   <li>{@link abstracta.impl.ProjectbaImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link abstracta.impl.ProjectbaImpl#getIde <em>Ide</em>}</li>
  *   <li>{@link abstracta.impl.ProjectbaImpl#getLstPackages <em>Lst Packages</em>}</li>
  * </ul>
  *
@@ -77,6 +78,26 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 	 * @ordered
 	 */
 	protected String path = PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIde() <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIde()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int IDE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getIde() <em>Ide</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIde()
+	 * @generated
+	 * @ordered
+	 */
+	protected int ide = IDE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLstPackages() <em>Lst Packages</em>}' containment reference list.
@@ -154,6 +175,27 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getIde() {
+		return ide;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIde(int newIde) {
+		int oldIde = ide;
+		ide = newIde;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractaPackage.PROJECTBA__IDE, oldIde, ide));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Packageba> getLstPackages() {
 		if (lstPackages == null) {
 			lstPackages = new EObjectContainmentEList<Packageba>(Packageba.class, this, AbstractaPackage.PROJECTBA__LST_PACKAGES);
@@ -187,6 +229,8 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 				return getName();
 			case AbstractaPackage.PROJECTBA__PATH:
 				return getPath();
+			case AbstractaPackage.PROJECTBA__IDE:
+				return getIde();
 			case AbstractaPackage.PROJECTBA__LST_PACKAGES:
 				return getLstPackages();
 		}
@@ -207,6 +251,9 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 				return;
 			case AbstractaPackage.PROJECTBA__PATH:
 				setPath((String)newValue);
+				return;
+			case AbstractaPackage.PROJECTBA__IDE:
+				setIde((Integer)newValue);
 				return;
 			case AbstractaPackage.PROJECTBA__LST_PACKAGES:
 				getLstPackages().clear();
@@ -230,6 +277,9 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 			case AbstractaPackage.PROJECTBA__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
+			case AbstractaPackage.PROJECTBA__IDE:
+				setIde(IDE_EDEFAULT);
+				return;
 			case AbstractaPackage.PROJECTBA__LST_PACKAGES:
 				getLstPackages().clear();
 				return;
@@ -249,6 +299,8 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AbstractaPackage.PROJECTBA__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case AbstractaPackage.PROJECTBA__IDE:
+				return ide != IDE_EDEFAULT;
 			case AbstractaPackage.PROJECTBA__LST_PACKAGES:
 				return lstPackages != null && !lstPackages.isEmpty();
 		}
@@ -269,6 +321,8 @@ public class ProjectbaImpl extends EObjectImpl implements Projectba {
 		result.append(name);
 		result.append(", path: ");
 		result.append(path);
+		result.append(", ide: ");
+		result.append(ide);
 		result.append(')');
 		return result.toString();
 	}

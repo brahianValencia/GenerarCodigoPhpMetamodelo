@@ -10,6 +10,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Projectba">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstPackages" upperBound="-1"
         eType="#//Packageba" containment="true"/>
   </eClassifiers>
@@ -31,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstAttributesba" upperBound="-1"
         eType="#//Attributeba" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstRelationshipTargetba"
-        upperBound="-1" eType="#//Relationshipba"/>
+        upperBound="-1" eType="#//Relationshipba" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lstMethodba" upperBound="-1"
         eType="#//Methodba" containment="true"/>
   </eClassifiers>

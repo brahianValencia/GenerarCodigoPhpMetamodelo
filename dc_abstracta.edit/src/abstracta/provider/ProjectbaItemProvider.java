@@ -65,6 +65,7 @@ public class ProjectbaItemProvider
 
 			addNamePropertyDescriptor(object);
 			addPathPropertyDescriptor(object);
+			addIdePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class ProjectbaItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ide feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Projectba_ide_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Projectba_ide_feature", "_UI_Projectba_type"),
+				 AbstractaPackage.Literals.PROJECTBA__IDE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -183,6 +206,7 @@ public class ProjectbaItemProvider
 		switch (notification.getFeatureID(Projectba.class)) {
 			case AbstractaPackage.PROJECTBA__NAME:
 			case AbstractaPackage.PROJECTBA__PATH:
+			case AbstractaPackage.PROJECTBA__IDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case AbstractaPackage.PROJECTBA__LST_PACKAGES:

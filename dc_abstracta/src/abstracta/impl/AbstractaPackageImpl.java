@@ -228,8 +228,17 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getProjectba_Ide() {
+		return (EAttribute)projectbaEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getProjectba_LstPackages() {
-		return (EReference)projectbaEClass.getEStructuralFeatures().get(2);
+		return (EReference)projectbaEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -708,6 +717,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		projectbaEClass = createEClass(PROJECTBA);
 		createEAttribute(projectbaEClass, PROJECTBA__NAME);
 		createEAttribute(projectbaEClass, PROJECTBA__PATH);
+		createEAttribute(projectbaEClass, PROJECTBA__IDE);
 		createEReference(projectbaEClass, PROJECTBA__LST_PACKAGES);
 
 		packagebaEClass = createEClass(PACKAGEBA);
@@ -809,6 +819,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		initEClass(projectbaEClass, Projectba.class, "Projectba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProjectba_Name(), ecorePackage.getEString(), "name", null, 0, 1, Projectba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProjectba_Path(), ecorePackage.getEString(), "path", null, 0, 1, Projectba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProjectba_Ide(), ecorePackage.getEInt(), "ide", null, 0, 1, Projectba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProjectba_LstPackages(), this.getPackageba(), null, "lstPackages", null, 0, -1, Projectba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packagebaEClass, Packageba.class, "Packageba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -824,7 +835,7 @@ public class AbstractaPackageImpl extends EPackageImpl implements AbstractaPacka
 		initEAttribute(getClassba_Path(), ecorePackage.getEString(), "path", null, 0, 1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassba_LstRelationshipSourceba(), this.getRelationshipba(), null, "lstRelationshipSourceba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassba_LstAttributesba(), this.getAttributeba(), null, "lstAttributesba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClassba_LstRelationshipTargetba(), this.getRelationshipba(), null, "lstRelationshipTargetba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClassba_LstRelationshipTargetba(), this.getRelationshipba(), null, "lstRelationshipTargetba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassba_LstMethodba(), this.getMethodba(), null, "lstMethodba", null, 0, -1, Classba.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationshipbaEClass, Relationshipba.class, "Relationshipba", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

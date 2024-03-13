@@ -147,7 +147,7 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 	protected EList<Attributeba> lstAttributesba;
 
 	/**
-	 * The cached value of the '{@link #getLstRelationshipTargetba() <em>Lst Relationship Targetba</em>}' reference list.
+	 * The cached value of the '{@link #getLstRelationshipTargetba() <em>Lst Relationship Targetba</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLstRelationshipTargetba()
@@ -300,7 +300,7 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 	 */
 	public EList<Relationshipba> getLstRelationshipTargetba() {
 		if (lstRelationshipTargetba == null) {
-			lstRelationshipTargetba = new EObjectResolvingEList<Relationshipba>(Relationshipba.class, this, AbstractaPackage.CLASSBA__LST_RELATIONSHIP_TARGETBA);
+			lstRelationshipTargetba = new EObjectContainmentEList<Relationshipba>(Relationshipba.class, this, AbstractaPackage.CLASSBA__LST_RELATIONSHIP_TARGETBA);
 		}
 		return lstRelationshipTargetba;
 	}
@@ -329,6 +329,8 @@ public class ClassbaImpl extends ClasifierImpl implements Classba {
 				return ((InternalEList<?>)getLstRelationshipSourceba()).basicRemove(otherEnd, msgs);
 			case AbstractaPackage.CLASSBA__LST_ATTRIBUTESBA:
 				return ((InternalEList<?>)getLstAttributesba()).basicRemove(otherEnd, msgs);
+			case AbstractaPackage.CLASSBA__LST_RELATIONSHIP_TARGETBA:
+				return ((InternalEList<?>)getLstRelationshipTargetba()).basicRemove(otherEnd, msgs);
 			case AbstractaPackage.CLASSBA__LST_METHODBA:
 				return ((InternalEList<?>)getLstMethodba()).basicRemove(otherEnd, msgs);
 		}
